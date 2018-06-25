@@ -1,7 +1,4 @@
-package fr.eni.clinique.bo;
-
-import java.util.ArrayList;
-import java.util.List;
+package fr.eni.clinique.BO;
 
 public class Client {
 

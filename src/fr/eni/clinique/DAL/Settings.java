@@ -1,4 +1,4 @@
-package fr.eni.clinique.dal;
+package fr.eni.clinique.DAL;
 
 import java.io.IOException;
 import java.util.Properties;

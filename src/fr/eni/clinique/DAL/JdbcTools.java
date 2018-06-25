@@ -1,4 +1,4 @@
-package fr.eni.clinique.dal;
+package fr.eni.clinique.DAL;
 
 public class JdbcTools {
     private static String urlDb;
