@@ -7,7 +7,6 @@ import fr.eni.clinique.BO.Veterinaire;
 public class AppliTestBOConnexion {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
         Admin a1 = new Admin("BOSAPIN Edmond", "test", "adm", false);
         Admin a2 = new Admin("DE CAJOU Benoît", "test", "adm", false);
@@ -31,11 +30,14 @@ public class AppliTestBOConnexion {
         System.out.println("\r");
 
         Veterinaire v1 = new Veterinaire("MALALANICH Melanie", "test", "vet", false);
-        Veterinaire v2 = new Veterinaire("MALALANICH Melanie", "test", "vet", false);
+        Veterinaire v2 = new Veterinaire("AIMONE Anne", "test", "vet", false);
+        Veterinaire v3 = new Veterinaire("TOURNE Sylvain", "test", "vet", false);
 
         System.out.println(v1);
         System.out.println("\r");
         System.out.println(v2);
+        System.out.println("\r");
+        System.out.println(v3);
         System.out.println("\r");
     }
 

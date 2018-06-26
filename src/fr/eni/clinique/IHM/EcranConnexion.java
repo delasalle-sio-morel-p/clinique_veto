@@ -7,12 +7,10 @@ public class EcranConnexion extends JFrame {
     private JButton btnOK;
 
     public EcranConnexion() {
-
         this.setSize(400, 175);
         this.setTitle("Connexion");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
-
         initIhm();
 
     }

@@ -16,23 +16,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EcranConnexion.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EcranConnexion.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/EcranConnexion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="-51">
+              <caret line="9" column="21" selection-start-line="9" selection-end-line="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnexionMgt.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/ConnexionMgt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -41,37 +32,7 @@
         <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/Connexion/AppliTestIHMConnexion.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Secretaire.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BO/Secretaire.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Veterinaire.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BO/Veterinaire.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppliTestBOConnexion.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/Connexion/AppliTestBOConnexion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+              <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,11 +66,11 @@
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/AppliTestBOConnexion.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/DAL/DAO.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/DAL/DALException.java" />
-        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/EcranConnexion.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/Connexion/AppliTestIHMConnexion.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/BO/Secretaire.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/BO/Veterinaire.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/Connexion/AppliTestBOConnexion.java" />
+        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/EcranConnexion.java" />
       </list>
     </option>
   </component>
@@ -233,7 +194,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AppliTestBOConnexion">
+  <component name="RunManager" selected="Application.AppliTestIHMConnexion">
     <configuration name="AppliTestBOConnexion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.eni.clinique.AppliTest.Connexion.AppliTestBOConnexion" />
       <module name="clinique_veto" />
@@ -247,6 +208,17 @@
     </configuration>
     <configuration name="AppliTestBoConnexion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.eni.clinique.AppliTest.AppliTestBoConnexion" />
+      <module name="clinique_veto" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.eni.clinique.AppliTest.Connexion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="AppliTestIHMConnexion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.eni.clinique.AppliTest.Connexion.AppliTestIHMConnexion" />
       <module name="clinique_veto" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -300,9 +272,11 @@
     <list>
       <item itemvalue="Application.AppliTestBoConnexion" />
       <item itemvalue="Application.AppliTestBOConnexion" />
+      <item itemvalue="Application.AppliTestIHMConnexion" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AppliTestIHMConnexion" />
         <item itemvalue="Application.AppliTestBOConnexion" />
         <item itemvalue="Application.AppliTestBoConnexion" />
       </list>
@@ -320,16 +294,15 @@
       <updated>1529933399745</updated>
       <workItem from="1529933404162" duration="221000" />
       <workItem from="1529997157400" duration="5052000" />
-      <workItem from="1530004433704" duration="3826000" />
+      <workItem from="1530004433704" duration="5827000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10353000" />
+    <option name="totallyTimeSpent" value="12354000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="18" y="0" width="1400" height="820" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -466,37 +439,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/ConnexionMgt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/EcranConnexion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/GestionPersonnel/AppliTestBOGestionPersonnel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/Connexion/AppliTestIHMConnexion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -507,24 +453,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BO/Secretaire.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/Connexion/AppliTestBOConnexion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BO/Veterinaire.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/Connexion/AppliTestBOConnexion.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BO/Secretaire.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+        <state relative-caret-position="255">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/ConnexionMgt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/Connexion/AppliTestIHMConnexion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/EcranConnexion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="9" column="21" selection-start-line="9" selection-end-line="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
