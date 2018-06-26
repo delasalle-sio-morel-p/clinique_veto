@@ -76,7 +76,7 @@ public abstract class Personnel {
 
     @Override
     public String toString() {
-        return "Personnel :" + nom;
+        return "Personnel : " + nom;
     }
 
 
