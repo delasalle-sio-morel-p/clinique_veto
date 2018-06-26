@@ -1,4 +1,4 @@
-package fr.eni.clinique.bll;
+package fr.eni.clinique.BLL;
 
 import java.util.ArrayList;
 
@@ -24,13 +24,11 @@ public class BLLException extends Exception {
 
     @Override
     public String getMessage() {
-        StringBuilder builder = new StringBuilder(super.getMessage());
-        builder.append(System.lineSeparator());
+        String message = super.getMessage() + " " + System.lineSeparator();
         for(Exception e : exceptions) {
-            builder.append(e.getMessage()).append(System.lineSeparator());
+            message += e.getMessage() + " " + System.lineSeparator();
         }
-
-        return builder.toString();
+        return message;
     }
 
 }

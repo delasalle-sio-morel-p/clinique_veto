@@ -9,7 +9,7 @@ public class EcranGestionPersonnel extends JFrame{
 
 
     public EcranGestionPersonnel(){
-        this.setSize(400, 175);
+        this.setSize(800, 800);
         this.setTitle("Gestion du Personnel");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -26,7 +26,15 @@ public class EcranGestionPersonnel extends JFrame{
         gbc.gridy = 0;
         gbc.gridx = 0;
 
-        panelPrincipal.add(new JLabel("Référence"), gbc);
+        panelPrincipal.add(new JLabel("Nom Prénom :"), gbc);
+        panelPrincipal.add(new JLabel("Nom Prénom :"), gbc);
+        gbc.gridy = 0;
+        gbc.gridx = 2;
+        panelPrincipal.add(new JLabel("Rôle :"), gbc);
+        gbc.gridy = 0;
+        gbc.gridx = 4;
+        panelPrincipal.add(new JLabel("Mot de passe :"), gbc);
+
 
         setContentPane(panelPrincipal);
 
