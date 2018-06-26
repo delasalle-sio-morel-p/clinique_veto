@@ -14,6 +14,10 @@ public class Admin extends Personnel {
         super(nom, motPasse, role, archive);
     }
 
+    @Override
+    public String toString() {
+        return "Administrateur : " + super.getNom();
+    }
 
 
 }
