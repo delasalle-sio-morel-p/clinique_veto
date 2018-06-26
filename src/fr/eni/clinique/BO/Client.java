@@ -2,7 +2,6 @@ package fr.eni.clinique.BO;
 
 public class Client {
 
-    // Variables membres
     private int codeClient;
     private String nomClient;
     private String prenomClient;
@@ -16,19 +15,8 @@ public class Client {
     private String remarque;
     private boolean archive;
 
-//    private List<Animal> listeAnimaux;
 
     // Getters/setters
-
-//    public List<Animal> getListeAnimaux() {
-//        if (listeAnimaux == null)
-//            listeAnimaux = new ArrayList<Animal>();
-//        return listeAnimaux;
-//    }
-//
-//    public void setListeAnimaux(List<Animal> listeAnimaux) {
-//        this.listeAnimaux = listeAnimaux;
-//    }
 
     public int getCodeClient() {
         return codeClient;
@@ -127,24 +115,11 @@ public class Client {
     }
 
 
-
-    /**
-     *
-     */
-//    public void addAnimal(Animal animal) {
-//
-//        getListeAnimaux().add(animal);
-//
-//    }
-
-
-
-    // Constructeur
+    // Constructeurs
 
     public Client() {
         // TODO Auto-generated constructor stub
     }
-
 
 
     public Client(String nomClient, String prenomClient, String adresse1, String adresse2, String codePostal,
@@ -163,48 +138,9 @@ public class Client {
     }
 
 
-
-
-//    public Client(String nomClient, String prenomClient, String adresse1, String adresse2, String codePostal,
-//                  String ville, String numTel, String assurance, String email, boolean archive, List<Animal> listeAnimaux) {
-//        super();
-//        this.nomClient = nomClient;
-//        this.prenomClient = prenomClient;
-//        this.adresse1 = adresse1;
-//        this.adresse2 = adresse2;
-//        this.codePostal = codePostal;
-//        this.ville = ville;
-//        this.numTel = numTel;
-//        this.assurance = assurance;
-//        this.email = email;
-//        this.archive = archive;
-//        this.listeAnimaux = listeAnimaux;
-//    }
-
-
-//    public Client(int codeClient, String nomClient, String prenomClient, String adresse1, String adresse2,
-//                  String codePostal, String ville, String numTel, String assurance, String email, boolean archive,
-//                  List<Animal> listeAnimaux) {
-//        super();
-//        this.codeClient = codeClient;
-//        this.nomClient = nomClient;
-//        this.prenomClient = prenomClient;
-//        this.adresse1 = adresse1;
-//        this.adresse2 = adresse2;
-//        this.codePostal = codePostal;
-//        this.ville = ville;
-//        this.numTel = numTel;
-//        this.assurance = assurance;
-//        this.email = email;
-//        this.archive = archive;
-//        this.listeAnimaux = listeAnimaux;
-//    }
-
-
-    // Pour avoir les bons affichages dans les JComboBox
     @Override
     public String toString() {
-        return "Client :" + nomClient ;
+        return "Client :" + nomClient;
     }
 
 }
