@@ -17,8 +17,6 @@ import fr.eni.clinique.DAL.PersonnelDAO;
 
 public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
-    // Les requêtes SQL
-
     private static final String SELECT_BY_ID = "SELECT Personnels.CodePers, Personnels.Nom, Personnels.MotPasse, Personnels.Role, "
             + "Personnels.Archive FROM Personnels WHERE Personnels.CodePers=?";
 
@@ -33,20 +31,16 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
             + "Archive=? WHERE CodePers=?";
 
 
-
-
-    // ******************************************************************************************
-
     @Override
     public Personnel selectById(int id) throws DALException {
         Personnel personnel = null;
 
-        try (Connection cnx = ConnexionDAO.getConnection()) {
+        try (Connection cnx = JDBCTools.getConnection()) {
 
-            PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_ID);
-            pstmt.setInt(1, id);
+            PreparedStatement rqt = cnx.prepareStatement(SELECT_BY_ID);
+            rqt.setInt(1, id);
 
-            ResultSet rs = pstmt.executeQuery();
+            ResultSet rs = rqt.executeQuery();
             if (rs.next()) {
                 personnel = this.personnelBuilder(rs);
 
@@ -60,53 +54,54 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
     }
 
 
-
     @Override
     public List<Personnel> selectAll() throws DALException {
-        List<Personnel> listeClients = new ArrayList<>();
+        Connection cnx = null;
+        Statement rqt = null;
+        ResultSet rs = null;
 
-        try (Connection cnx = ConnectionDAO.getConnection()) {
-            // On considère qu'on a une connexion opérationnelle
-            Statement stmt = cnx.createStatement();
-            ResultSet rs = stmt.executeQuery(SELECT_ALL);
+        List<Personnel> listeEmployes = new ArrayList<>();
+
+        try {
+            cnx = JDBCTools.getConnection();
+            rqt = cnx.createStatement();
+            rs = rqt.executeQuery(SELECT_ALL);
             while (rs.next()) {
-                listeClients.add(this.personnelBuilder(rs));
+                listeEmployes.add(this.creationPersonnel(rs));
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new DALException("selectAll");
+            throw new DALException("Erreur récupération liste complète du personnel");
         }
 
-        return listeClients;
+        return listeEmployes;
     }
 
     @Override
     public void insert(Personnel employe) throws DALException {
+        Connection cnx =null;
+        PreparedStatement rqt = null;
+        ResultSet rsId = null;
+
         if (employe == null) {
             throw new NullPointerException();
         }
 
-        // A partir d'ici, j'ai forcément un employé non null
-        try (Connection cnx = ConnectionDAO.getConnection()) {
+        try  {
+            cnx = JDBCTools.getConnection();
+            rqt = cnx.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
+            preparerParametres(employe, rqt);
 
-            // On considère qu'on a une connexion opérationnelle
-            PreparedStatement pstmt = cnx.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
+            rqt.executeUpdate();
 
-            // Ajout des paramètres à la requête
-            preparerParametres(employe, pstmt);
-
-            // Exécution de la requête
-            pstmt.executeUpdate();
-
-            // Récupération de l'id généré
-            ResultSet rsId = pstmt.getGeneratedKeys();
+            rsId = rqt.getGeneratedKeys();
 
             if (rsId.next()) {
                 employe.setCodePersonnel(rsId.getInt(1));
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new DALException("insertion personnel");
+            throw new DALException("Erreur lors de l'insertion d'un nouvel employé");
         }
 
     }
@@ -114,43 +109,32 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
     @Override
     public void update(Personnel employe) throws DALException {
-
+        PreparedStatement rqt = null;
+        Connection cnx = null;
         if (employe == null) {
             throw new NullPointerException();
         }
-        // ici, j'ai forcément un employé non null
-        try (Connection cnx = ConnectionDAO.getConnection()) {
-
-            // On considère qu'on a une connexion opérationnelle
-            PreparedStatement pstmt = cnx.prepareStatement(UPDATE);
-
-            // Ajout des paramètres à modifier en base à la requête
-            preparerParametres(employe, pstmt);
-
-            // Ajout du critère de restriction
-            pstmt.setInt(5, employe.getCodePersonnel());
-
-            // Exécution de la requête
-            pstmt.executeUpdate();
+        try {
+            cnx = JDBCTools.getConnection();
+            rqt = cnx.prepareStatement(UPDATE);
+            preparerParametres(employe, rqt);
+            rqt.setInt(5, employe.getCodePersonnel());
+            rqt.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new DALException("update_client");
+            throw new DALException("Erreur lors de la mise à jour d'une fiche employé");
         }
-
 
 
     }
 
+    @Override
+    public void delete(Personnel obj) throws DALException {
 
+    }
 
-
-
-    // ******************************************************************
-    // Utlitaires
-    //********************************************************************
-
-    public Personnel personnelBuilder(ResultSet rs) throws SQLException {
+    public Personnel creationPersonnel(ResultSet rs) throws SQLException {
         Personnel personne = null;
         String role = rs.getString("Role");
 
@@ -180,35 +164,22 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
     }
 
 
-    private void preparerParametres(Personnel employe, PreparedStatement pstmt) throws SQLException {
+    private void preparerParametres(Personnel employe, PreparedStatement rqt) throws SQLException {
 
-        pstmt.setString(1, employe.getNom());
-        pstmt.setString(2, employe.getMotPasse());
-        pstmt.setString(3, employe.getRole());
+        rqt.setString(1, employe.getNom());
+        rqt.setString(2, employe.getMotPasse());
+        rqt.setString(3, employe.getRole());
 
         if (employe.isArchive())
-            pstmt.setByte(4, (byte) 1);
+            rqt.setByte(4, (byte) 1);
 
         if (!employe.isArchive())
-            pstmt.setByte(4, (byte) 0);
+            rqt.setByte(4, (byte) 0);
 
     }
-
-
-
-
-
-
-
-    // Méthodes inutiles
-    // **************************************************************
 
     @Override
-    public boolean delete(Personnel value) throws DalException {
-        // TODO Auto-generated method stub
-        return false;
+    public Personnel personnelBuilder(ResultSet rs) throws SQLException {
+        return null;
     }
-
-    // **************************************************************
-
 }

@@ -1,17 +1,18 @@
 package fr.eni.clinique.DAL;
 
+import java.util.List;
+
 public interface DAO<T> {
 
-    // Insérer
-    public void create(T data) throws DALException;
+    public T selectById(int id) throws DALException;
 
-    // Sélectionner
-    public T read(int id) throws DALException;
+    public List<T> selectAll() throws DALException;
 
-    // Modifier
+    public void insert(T data) throws DALException;
+
     public void update(T data) throws DALException;
 
-    // Supprimer
     public void delete(T obj) throws DALException;
+
 
 }
