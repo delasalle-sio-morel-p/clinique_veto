@@ -2,8 +2,6 @@ package fr.eni.clinique.BO;
 
 public abstract class Personnel {
 
-    // Variables membres
-
     private int codePersonnel;
     private String nom;
     private String motPasse;
@@ -52,7 +50,7 @@ public abstract class Personnel {
         this.archive = archive;
     }
 
-    // Constructeur
+    // Constructeurs
 
     public Personnel() {
         // TODO Auto-generated constructor stub
@@ -76,7 +74,6 @@ public abstract class Personnel {
         this.archive = archive;
     }
 
-    // Pour avoir les bons affichages dans les JComboBox
     @Override
     public String toString() {
         return "Personnel :" + nom;
