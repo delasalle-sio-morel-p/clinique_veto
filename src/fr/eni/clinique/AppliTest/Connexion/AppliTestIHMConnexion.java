@@ -14,7 +14,6 @@ public class AppliTestIHMConnexion {
 
                 EcranConnexion connexion = new EcranConnexion();
                 connexion.setVisible(true);
-
             }
         });
 
