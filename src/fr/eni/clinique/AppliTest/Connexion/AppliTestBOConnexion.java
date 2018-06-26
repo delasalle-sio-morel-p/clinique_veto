@@ -1,4 +1,4 @@
-package fr.eni.clinique.AppliTest;
+package fr.eni.clinique.AppliTest.Connexion;
 
 import fr.eni.clinique.BO.Admin;
 
