@@ -15,14 +15,14 @@ public class JDBCTools {
     //bloc d'initialisation statique
     static {
         try {
-            Class.forName(Settings.getProperty("driverdb"));
+            Class.forName(Settings.getProperty("driverDb"));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        urldb = Settings.getProperty("urldb");
-        userdb = Settings.getProperty("userdb");
-        passworddb = Settings.getProperty("passworddb");
+        urldb = Settings.getProperty("urlDb");
+        userdb = Settings.getProperty("userDb");
+        passworddb = Settings.getProperty("passwordDb");
     }
 
     public static Connection getConnection() throws SQLException {
