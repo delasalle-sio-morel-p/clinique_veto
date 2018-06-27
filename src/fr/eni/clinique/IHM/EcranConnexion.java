@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class EcranConnexion extends JFrame {
     private JTextField txtNom, txtMdp;
+    private JPasswordField mdp;
     private JButton btnValider;
 
     public EcranConnexion() {
@@ -37,7 +38,12 @@ public class EcranConnexion extends JFrame {
         panelPrincipal.add(new JLabel("Mot de passe"), gbc);
 
         gbc.gridx = 1;
-        panelPrincipal.add(getTxtMdp(), gbc);
+        panelPrincipal.add(getMdp(), gbc);
+
+        // Mot de passe
+        gbc.gridy = 2;
+        gbc.gridx = 0;
+        panelPrincipal.add(getBtnValider(), gbc);
 
         setContentPane(panelPrincipal);
     }
@@ -54,5 +60,19 @@ public class EcranConnexion extends JFrame {
             txtMdp = new JTextField(30);
         }
         return txtMdp;
+    }
+
+    private JPasswordField getMdp() {
+        if (mdp == null) {
+            mdp = new JPasswordField(30);
+        }
+        return mdp;
+    }
+
+    private JButton getBtnValider() {
+        if (btnValider == null) {
+            btnValider = new JButton("Valider");
+        }
+        return btnValider;
     }
 }
