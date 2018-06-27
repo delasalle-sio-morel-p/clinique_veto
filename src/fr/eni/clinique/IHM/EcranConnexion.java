@@ -2,6 +2,8 @@ package fr.eni.clinique.IHM;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class EcranConnexion extends JFrame {
     private JTextField txtNom, txtMdp;
@@ -45,6 +47,8 @@ public class EcranConnexion extends JFrame {
         gbc.gridx = 0;
         panelPrincipal.add(getBtnValider(), gbc);
 
+        actionBtnValider();
+
         setContentPane(panelPrincipal);
     }
 
@@ -74,5 +78,21 @@ public class EcranConnexion extends JFrame {
             btnValider = new JButton("Valider");
         }
         return btnValider;
+
     }
+    private void actionBtnValider() {
+        btnValider.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                test();
+            }
+        });
+    }
+
+    private void test() {
+        System.out.println(txtNom.getText());
+        System.out.println(mdp.getPassword());
+    }
+
 }
