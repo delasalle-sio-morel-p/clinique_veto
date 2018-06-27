@@ -14,7 +14,7 @@ public class AppliTestDALGestionPersonnel {
         PersonnelDAO personnelDAO = DAOFactory.getPersonnelDAO();
 
         Personnel v1 = new Veterinaire("AIMONE Anne", "mdp", "vet", false);
-        Personnel v2 = new Veterinaire("CONNARD", "fdp", "vet", false);
+        Personnel v2 = new Veterinaire(5,"CONNARD", "fdp", "vet", false);
 
         try{
             Personnel v = personnelDAO.selectById(1);
