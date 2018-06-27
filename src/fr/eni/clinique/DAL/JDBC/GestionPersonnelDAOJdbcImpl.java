@@ -17,19 +17,18 @@ import fr.eni.clinique.DAL.PersonnelDAO;
 
 public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
-    private static final String SELECT_BY_ID = "SELECT Personnels.CodePers, Personnels.Nom, Personnels.MotPasse, Personnels.Role, "
-            + "Personnels.Archive FROM Personnels WHERE Personnels.CodePers=?";
+    private static final String SELECT_BY_ID = "SELECT * FROM Personnels WHERE CodePers=?";
 
 
-    private static final String SELECT_ALL = "SELECT Personnels.CodePers, Personnels.Nom, Personnels.MotPasse, Personnels.Role, "
-            + "Personnels.Archive FROM Personnels WHERE Personnels.Archive=0";
+    private static final String SELECT_ALL = "SELECT * FROM Personnels WHERE Archive=0";
 
-    private static final String INSERT = "INSERT INTO Personnels (Personnels.Nom, Personnels.MotPasse, "
-            + "Personnels.Role, Personnels.Archive) VALUES (?, ?, ?, ?)";
+    private static final String INSERT = "INSERT INTO Personnels (Nom, MotPasse, "
+            + "Role, Archive) VALUES (?, ?, ?, ?)";
 
     private static final String UPDATE = "UPDATE Personnels SET Nom=?, MotPasse=?, Role=?, "
             + "Archive=? WHERE CodePers=?";
-
+//A FAIRE @Patrick
+//    private static final String DELETE = "DELETE FROM Personnels WHERE CodePers=?";
 
     @Override
     public Personnel selectById(int id) throws DALException {
@@ -79,7 +78,7 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
     @Override
     public void insert(Personnel employe) throws DALException {
-        Connection cnx =null;
+        Connection cnx = null;
         PreparedStatement rqt = null;
         ResultSet rsId = null;
 
@@ -87,7 +86,7 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
             throw new NullPointerException();
         }
 
-        try  {
+        try {
             cnx = JDBCTools.getConnection();
             rqt = cnx.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
             preparerParametres(employe, rqt);
@@ -180,6 +179,31 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
     @Override
     public Personnel personnelBuilder(ResultSet rs) throws SQLException {
-        return null;
+        Personnel personne = null;
+        String role = rs.getString("Role");
+        switch (role) {
+            case "adm":
+                personne = new Admin();
+                break;
+            case "vet":
+                personne = new Veterinaire();
+                break;
+            case "sec":
+                personne = new Secretaire();
+                break;
+            default:
+                personne = null;
+                break;
+        }
+        personne.setCodePersonnel(rs.getInt("CodePers"));
+        personne.setNom(rs.getString("Nom"));
+        personne.setMotPasse(rs.getString("MotPasse"));
+        personne.setRole(role);
+        if (rs.getInt("Archive") == 0) {
+            personne.setArchive(false);
+        } else {
+            personne.setArchive(true);
+        }
+        return personne;
     }
 }
