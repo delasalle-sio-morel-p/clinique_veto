@@ -15,7 +15,7 @@ public class Secretaire extends Personnel {
     }
     @Override
     public String toString() {
-        return "Secretaire : " + super.getNom();
+        return super.getNom();
     }
 
 }
