@@ -6,9 +6,6 @@ package fr.eni.clinique.IHM;
 
 import javax.swing.*;
 import net.miginfocom.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * @author unknown
@@ -30,7 +27,7 @@ public class EcranGestionPersonnel extends JFrame {
         Supprimer = new JButton();
         Réinitialiser = new JButton();
         scrollBarListeEmployes = new JScrollPane();
-        ListeEmployes = new JList();
+        ListeEmployes = new JList(GestionPersonnelController.get().getListePersonnels().toArray());
 
         //======== this ========
 
