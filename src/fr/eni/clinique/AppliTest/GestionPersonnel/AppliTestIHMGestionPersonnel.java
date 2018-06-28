@@ -12,8 +12,8 @@ public class AppliTestIHMGestionPersonnel {
             @Override
             public void run() {
 
-                EcranGestionPersonnel connexion = new EcranGestionPersonnel();
-                connexion.setVisible(true);
+                EcranGestionPersonnel gestionPersonnel = new EcranGestionPersonnel();
+                gestionPersonnel.setVisible(true);
 
             }
         });
