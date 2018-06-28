@@ -7,13 +7,16 @@ public class BLLException extends Exception {
     private ArrayList<Exception> exceptions = new ArrayList<>();
 
     public BLLException() {
-
+        super();
     }
 
     public BLLException(String message) {
         super(message);
     }
 
+    public BLLException(String message, Throwable exception) {
+        super(message, exception);
+    }
     public void ajouterException(Exception e) {
         exceptions.add(e);
     }

@@ -12,42 +12,54 @@ import fr.eni.clinique.DAL.PersonnelDAO;
 
 public class GestionPersonnelMgt {
 
-    private PersonnelDAO daoPers;
-    // private VerifChamps verif = VerifChamps.getInstance();
-
-    /* ******* SINGLETON ******* */
+    private PersonnelDAO daoPersonnels;
+    private List<Personnel> listePersonnels;
     private static GestionPersonnelMgt instance = null;
 
-    private GestionPersonnelMgt() {
-        daoPers = DAOFactory.getPersonnelDAO();
-
+    private GestionPersonnelMgt() throws BLLException {
+        daoPersonnels = DAOFactory.getPersonnelDAO();
+        // Charger la liste de personnels
+        try {
+            listePersonnels = daoPersonnels.selectAll();
+        } catch (DALException e) {
+            throw new BLLException("Echec du chargement de la liste des personnels - ", e);
+        }
     }
 
-    public static GestionPersonnelMgt getInstance() {
+    public static GestionPersonnelMgt getInstance() throws BLLException {
         if (instance == null) {
             instance = new GestionPersonnelMgt();
         }
         return instance;
     }
 
-    public void addPersonnel(Personnel pers) throws BLLException {
+    public Personnel getPersonnel(int codePers) throws BLLException {
 
-        validerPersonnel(pers);
+        return listePersonnels.get(codePers);
+    }
+
+    public List<Personnel> getListePersonnels() throws BLLException {
+        return listePersonnels;
+    }
+
+    public void addPersonnel(Personnel personnel) throws BLLException {
+
+        validerPersonnel(personnel);
 
         try {
-            daoPers.insert(pers);
+            daoPersonnels.insert(personnel);
         } catch (DALException e) {
             throw new BLLException("Erreur lors de l'insertion en BDD du personnel.");
         }
 
     }
 
-    public void updatePersonnel(Personnel pers) throws BLLException {
+    public void updatePersonnel(Personnel personnel) throws BLLException {
 
-        validerPersonnel(pers);
+        validerPersonnel(personnel);
 
         try {
-            daoPers.update(pers);
+            daoPersonnels.update(personnel);
         } catch (DALException e) {
             throw new BLLException("Erreur lors de la mise à jour en BDD du personnel.");
         }
@@ -55,48 +67,16 @@ public class GestionPersonnelMgt {
 
     }
 
-    public List<Personnel> getListePersonnel() throws BLLException {
-
-        List<Personnel> listePersonnels = new ArrayList<>();
-
-        try {
-            listePersonnels = daoPers.selectAll();
-        } catch (DALException e) {
-            throw new BLLException("Erreur accès données : la liste du personnel n'est pas récupérable");
-        }
-
-
-        return listePersonnels;
-
-
-    }
-
-    public Personnel getPersonnel(int codePers) throws BLLException {
-
-        Personnel pers = null;
-
-        try {
-            pers = daoPers.selectById(codePers);
-        } catch (DALException e) {
-            throw new BLLException("Erreur accès données : Problème lors de l'accès aux données ");
-        }
-
-        return pers;
-    }
-
     public List<Veterinaire> getListeVeto() throws BLLException {
-        List<Veterinaire> listeVetos = new ArrayList<>();
-        List<Personnel> listePersonnels = getListePersonnel();
+        List<Veterinaire> listeVeterinaires = new ArrayList<>();
+        List<Personnel> listePersonnels = getListePersonnels();
 
         for (Personnel personnel : listePersonnels) {
             if (personnel instanceof Veterinaire) {
-                listeVetos.add((Veterinaire) personnel);
-
+                listeVeterinaires.add((Veterinaire) personnel);
             }
-
         }
-
-        return listeVetos;
+        return listeVeterinaires;
 
     }
 
@@ -110,18 +90,18 @@ public class GestionPersonnelMgt {
 
     }
 
-    private void verificationNomPersonnel(Personnel pers) throws BLLException {
-        if (pers.getNom() == null || pers.getNom().trim().isEmpty()) {
+    private void verificationNomPersonnel(Personnel personnel) throws BLLException {
+        if (personnel.getNom() == null || personnel.getNom().trim().isEmpty()) {
             throw new BLLException("Le nom est obligatoire");
-        } else if (pers.getNom().length() > 30) {
+        } else if (personnel.getNom().length() > 30) {
             throw new BLLException("Le nom ne doit pas dépasser 30 caractères.");
         }
     }
 
-    private void verificationRole(Personnel pers) throws BLLException {
-        if (pers.getRole() == null || pers.getRole().trim().isEmpty()) {
+    private void verificationRole(Personnel personnel) throws BLLException {
+        if (personnel.getRole() == null || personnel.getRole().trim().isEmpty()) {
             throw new BLLException("Il est obligatoire d'attribuer un rôle au nouveau salarié : sec, vet ou adm.");
-        } else if (!(pers.getRole().equals("sec") || pers.getRole().equals("adm") || pers.getRole().equals("vet"))) {
+        } else if (!(personnel.getRole().equals("sec") || personnel.getRole().equals("adm") || personnel.getRole().equals("vet"))) {
 
             throw new BLLException("Les rôles disponible pour un nouveau salarié sont : sec, vet ou adm.");
         }
