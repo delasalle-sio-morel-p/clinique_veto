@@ -1,5 +1,7 @@
 package fr.eni.clinique.IHM;
 
+import fr.eni.clinique.BLL.BLLException;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -89,7 +91,11 @@ public class EcranConnexion extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                connexionController.connexion(txtNom, mdp);
+                try {
+                    connexionController.connexion(txtNom, mdp);
+                } catch (BLLException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
     }
