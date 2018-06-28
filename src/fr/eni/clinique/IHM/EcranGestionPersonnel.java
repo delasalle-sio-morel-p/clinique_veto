@@ -1,17 +1,14 @@
 /*
- * Created by JFormDesigner on Thu Jun 28 09:25:55 CEST 2018
+ * Created by JFormDesigner on Thu Jun 28 13:46:37 CEST 2018
  */
 
 package fr.eni.clinique.IHM;
 
-import javax.swing.*;
-import net.miginfocom.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
 
 /**
- * @author unknown
+ * @author Mathieu BOURVIC
  */
 public class EcranGestionPersonnel extends JFrame {
     public EcranGestionPersonnel() {
@@ -25,90 +22,70 @@ public class EcranGestionPersonnel extends JFrame {
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
-        controleBarListeEmployes = new JPanel();
+        menuGestionPersonnel = new JToolBar();
         Ajouter = new JButton();
+        separator1 = new JSeparator();
         Supprimer = new JButton();
-        Réinitialiser = new JButton();
-        scrollBarListeEmployes = new JScrollPane();
-        ListeEmployes = new JList();
+        separator2 = new JSeparator();
+        ReinitialiserMDP = new JButton();
+        scrollPane1 = new JScrollPane();
+        ListeEmployes = new JTable();
 
         //======== this ========
+        Container contentPane = getContentPane();
+        contentPane.setLayout(new GridBagLayout());
+        ((GridBagLayout)contentPane.getLayout()).columnWidths = new int[] {0, 0, 0, 0, 0, 0};
+        ((GridBagLayout)contentPane.getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0};
+        ((GridBagLayout)contentPane.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+        ((GridBagLayout)contentPane.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
 
-        // JFormDesigner evaluation mark
-//        setBorder(new javax.swing.border.CompoundBorder(
-//            new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-//                "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-//                javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-//                java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
-
-        setLayout(new MigLayout(
-            "hidemode 3",
-            // columns
-            "[fill]" +
-            "[fill]" +
-            "[fill]",
-            // rows
-            "[]" +
-            "[]" +
-            "[]" +
-            "[]" +
-            "[]"));
-
-        //======== controleBarListeEmployes ========
+        //======== menuGestionPersonnel ========
         {
-            controleBarListeEmployes.setLayout(new MigLayout(
-                "hidemode 3",
-                // columns
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]" +
-                "[fill]",
-                // rows
-                "[]"));
 
             //---- Ajouter ----
+            Ajouter.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add.png")));
             Ajouter.setText("Ajouter");
-            controleBarListeEmployes.add(Ajouter, "cell 1 0");
+            menuGestionPersonnel.add(Ajouter);
+            menuGestionPersonnel.addSeparator();
+            menuGestionPersonnel.add(separator1);
 
             //---- Supprimer ----
+            Supprimer.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete.png")));
             Supprimer.setText("Supprimer");
-            controleBarListeEmployes.add(Supprimer, "cell 5 0");
+            menuGestionPersonnel.add(Supprimer);
+            menuGestionPersonnel.add(separator2);
+            menuGestionPersonnel.addSeparator();
 
-            //---- Réinitialiser ----
-            Réinitialiser.setText("R\u00e9inistialiser");
-            controleBarListeEmployes.add(Réinitialiser, "cell 10 0");
+            //---- ReinitialiserMDP ----
+            ReinitialiserMDP.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/padlock.png")));
+            ReinitialiserMDP.setText("R\u00e9inialiser MDP");
+            menuGestionPersonnel.add(ReinitialiserMDP);
         }
-        add(controleBarListeEmployes, "cell 1 1");
+        contentPane.add(menuGestionPersonnel, new GridBagConstraints(1, 0, 2, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
 
-        //======== scrollBarListeEmployes ========
+        //======== scrollPane1 ========
         {
-            scrollBarListeEmployes.setViewportView(ListeEmployes);
+            scrollPane1.setViewportView(ListeEmployes);
         }
-        add(scrollBarListeEmployes, "cell 1 3 1 2");
+        contentPane.add(scrollPane1, new GridBagConstraints(2, 3, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
+        pack();
+        setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
-    private JPanel controleBarListeEmployes;
+    private JToolBar menuGestionPersonnel;
     private JButton Ajouter;
+    private JSeparator separator1;
     private JButton Supprimer;
-    private JButton Réinitialiser;
-    private JScrollPane scrollBarListeEmployes;
-    private JList ListeEmployes;
+    private JSeparator separator2;
+    private JButton ReinitialiserMDP;
+    private JScrollPane scrollPane1;
+    private JTable ListeEmployes;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

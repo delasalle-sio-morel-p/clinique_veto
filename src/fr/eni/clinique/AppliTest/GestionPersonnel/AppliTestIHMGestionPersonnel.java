@@ -1,8 +1,7 @@
 package fr.eni.clinique.AppliTest.GestionPersonnel;
 
-import fr.eni.clinique.IHM.EcranGestionPersonnel;
-
 import javax.swing.*;
+import fr.eni.clinique.IHM.EcranGestionPersonnel;
 
 public class AppliTestIHMGestionPersonnel {
     public static void main(String[] args) {
