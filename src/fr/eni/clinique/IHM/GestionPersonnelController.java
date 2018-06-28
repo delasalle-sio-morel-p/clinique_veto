@@ -48,6 +48,12 @@ public class GestionPersonnelController {
         ecranGestionPersonnel.setVisible(true);
     }
 
+//    public void nouveau() {
+//        indexListe = listePersonnels.size();
+//        ecranGestionPersonnel.afficherNouveau();
+//
+//    }
+
     public List<Personnel> getListePersonnels() {
         return listePersonnels;
     }

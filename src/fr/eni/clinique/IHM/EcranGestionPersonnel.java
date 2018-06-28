@@ -12,7 +12,7 @@ import net.miginfocom.swing.*;
  */
 public class EcranGestionPersonnel extends JFrame {
     public EcranGestionPersonnel() {
-        this.setSize(500, 175);
+        this.setSize(500, 300);
         this.setTitle("Gestion du personnel");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
