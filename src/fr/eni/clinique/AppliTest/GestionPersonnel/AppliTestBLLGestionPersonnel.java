@@ -1,7 +1,7 @@
 package fr.eni.clinique.AppliTest.GestionPersonnel;
 
 import fr.eni.clinique.BLL.BLLException;
-import fr.eni.clinique.BLL.GestionPersonnelMgt;
+import fr.eni.clinique.BLL.GestionPersonnelManager;
 import fr.eni.clinique.BO.Admin;
 import fr.eni.clinique.BO.Personnel;
 import fr.eni.clinique.BO.Secretaire;
@@ -16,9 +16,9 @@ public class AppliTestBLLGestionPersonnel {
         Personnel v1 = new Veterinaire("BARLERIN Laetitia", "test", "vet", false);
 
 
-        GestionPersonnelMgt manager;
+        GestionPersonnelManager manager;
         try {
-            manager = GestionPersonnelMgt.getInstance();
+            manager = GestionPersonnelManager.getInstance();
         } catch (BLLException e1) {
             e1.printStackTrace();
             return;

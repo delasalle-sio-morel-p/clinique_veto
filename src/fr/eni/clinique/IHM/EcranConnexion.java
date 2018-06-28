@@ -6,11 +6,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class EcranConnexion extends JFrame {
-    private JTextField txtNom, txtMdp;
+    private JTextField txtNom;
     private JPasswordField mdp;
     private JButton btnValider;
+    private ConnexionController connexionController;
 
     public EcranConnexion() {
+        this.setSize(500, 175);
+        this.setTitle("Connexion");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        initIhm();
+
+    }
+
+    public EcranConnexion(ConnexionController connexionController) {
+        this.connexionController = connexionController;
         this.setSize(500, 175);
         this.setTitle("Connexion");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -59,13 +70,6 @@ public class EcranConnexion extends JFrame {
         return txtNom;
     }
 
-    private JTextField getTxtMdp() {
-        if (txtMdp == null) {
-            txtMdp = new JTextField(30);
-        }
-        return txtMdp;
-    }
-
     private JPasswordField getMdp() {
         if (mdp == null) {
             mdp = new JPasswordField(30);
@@ -85,14 +89,11 @@ public class EcranConnexion extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                test();
+                connexionController.connexion(txtNom, mdp);
             }
         });
     }
 
-    private void test() {
-        System.out.println(txtNom.getText());
-        System.out.println(mdp.getPassword());
-    }
+
 
 }

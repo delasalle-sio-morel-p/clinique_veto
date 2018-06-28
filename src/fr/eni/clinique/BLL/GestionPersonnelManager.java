@@ -10,13 +10,13 @@ import fr.eni.clinique.DAL.DAOFactory;
 import fr.eni.clinique.DAL.DALException;
 import fr.eni.clinique.DAL.PersonnelDAO;
 
-public class GestionPersonnelMgt {
+public class GestionPersonnelManager {
 
     private PersonnelDAO daoPersonnels;
     private List<Personnel> listePersonnels;
-    private static GestionPersonnelMgt instance = null;
+    private static GestionPersonnelManager instance = null;
 
-    private GestionPersonnelMgt() throws BLLException {
+    private GestionPersonnelManager() throws BLLException {
         daoPersonnels = DAOFactory.getPersonnelDAO();
         // Charger la liste de personnels
         try {
@@ -26,9 +26,9 @@ public class GestionPersonnelMgt {
         }
     }
 
-    public static GestionPersonnelMgt getInstance() throws BLLException {
+    public static GestionPersonnelManager getInstance() throws BLLException {
         if (instance == null) {
-            instance = new GestionPersonnelMgt();
+            instance = new GestionPersonnelManager();
         }
         return instance;
     }
@@ -107,10 +107,10 @@ public class GestionPersonnelMgt {
         }
     }
 
-    private void verificationMotPasse(Personnel pers) throws BLLException {
-        if (pers.getMotPasse() == null || pers.getMotPasse().trim().isEmpty()) {
+    private void verificationMotPasse(Personnel personnel) throws BLLException {
+        if (personnel.getMotPasse() == null || personnel.getMotPasse().trim().isEmpty()) {
             throw new BLLException("Le mot de passe est obligatoire");
-        } else if (pers.getMotPasse().length() > 10) {
+        } else if (personnel.getMotPasse().length() > 10) {
             throw new BLLException("Le mot de passe ne peut contenir que 10 caractères.");
         }
     }

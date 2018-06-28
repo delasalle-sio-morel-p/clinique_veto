@@ -1,7 +1,7 @@
 package fr.eni.clinique.IHM;
 
 import fr.eni.clinique.BLL.BLLException;
-import fr.eni.clinique.BLL.GestionPersonnelMgt;
+import fr.eni.clinique.BLL.GestionPersonnelManager;
 import fr.eni.clinique.BO.Personnel;
 
 import java.util.List;
@@ -10,7 +10,7 @@ public class GestionPersonnelController {
     private EcranGestionPersonnel ecranGestionPersonnel ;
     private int indexListe;
 
-    private GestionPersonnelMgt manager;
+    private GestionPersonnelManager manager;
 
     private List<Personnel> listePersonnels;
 
@@ -19,11 +19,10 @@ public class GestionPersonnelController {
     //Constructeur
     private GestionPersonnelController(){
         try {
-            manager = GestionPersonnelMgt.getInstance();
+            manager = GestionPersonnelManager.getInstance();
 
             //Initialisation du catalogue en mémoire
             listePersonnels = manager.getListePersonnels();
-
 
         } catch (BLLException e) {
             e.printStackTrace();
@@ -38,15 +37,11 @@ public class GestionPersonnelController {
         return instance;
     }
 
-    public void startApp(){
-//        ecrArticle = new EcranArticle();
+//    public void nouveau() {
+//        indexListe = listePersonnels.size();
+//        ecranGestionPersonnel.afficherNouveau();
 //
-//        afficherPremierArticle();
-//        ecrArticle.setVisible(true);
-
-        ecranGestionPersonnel = new EcranGestionPersonnel();
-        ecranGestionPersonnel.setVisible(true);
-    }
+//    }
 
     public List<Personnel> getListePersonnels() {
         return listePersonnels;
