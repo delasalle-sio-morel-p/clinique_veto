@@ -16,7 +16,7 @@ public class Veterinaire extends Personnel {
     }
     @Override
     public String toString() {
-        return "Veterinaire : " + super.getNom();
+        return super.getNom();
     }
 
 }

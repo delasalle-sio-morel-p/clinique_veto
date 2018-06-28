@@ -16,7 +16,7 @@ public class Admin extends Personnel {
 
     @Override
     public String toString() {
-        return "Administrateur : " + super.getNom();
+        return super.getNom();
     }
 
 
