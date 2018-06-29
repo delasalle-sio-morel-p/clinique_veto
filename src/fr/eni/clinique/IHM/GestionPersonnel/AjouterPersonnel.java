@@ -1,8 +1,10 @@
 /*
- * Created by JFormDesigner on Fri Jun 29 11:11:02 CEST 2018
+ * Created by JFormDesigner on Fri Jun 29 10:49:04 CEST 2018
  */
 
-package fr.eni.clinique.IHM;
+package fr.eni.clinique.IHM.GestionPersonnel;
+
+import fr.eni.clinique.IHM.Connexion.ConnexionController;
 
 import java.awt.*;
 import javax.swing.*;
@@ -11,8 +13,12 @@ import javax.swing.border.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class ReinitialiserMDP extends JPanel {
-    public ReinitialiserMDP() {
+public class AjouterPersonnel extends JPanel {
+    public AjouterPersonnel() {
+        initComponents();
+    }
+    public AjouterPersonnel(ConnexionController connexionController) {
+        this.connexionController = connexionController;
         initComponents();
     }
 
@@ -21,8 +27,12 @@ public class ReinitialiserMDP extends JPanel {
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
         dialogPane = new JPanel();
         contentPanel = new JPanel();
-        LabelNouveauMDP = new JLabel();
-        textboxNouveauMDP = new JTextField();
+        labelNom = new JLabel();
+        textboxNom = new JTextField();
+        labelRole = new JLabel();
+        comboboxRole = new JComboBox();
+        labelMotPasse = new JLabel();
+        textboxMdp = new JTextField();
         buttonBar = new JPanel();
         boutonOK = new JButton();
         boutonAnnuler = new JButton();
@@ -44,14 +54,32 @@ public class ReinitialiserMDP extends JPanel {
                 ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
                 ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
 
-                //---- LabelNouveauMDP ----
-                LabelNouveauMDP.setText("Nouveau mot de passe : ");
-                contentPanel.add(LabelNouveauMDP, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
+                //---- labelNom ----
+                labelNom.setText("Nom");
+                contentPanel.add(labelNom, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
-                contentPanel.add(textboxNouveauMDP, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
+                contentPanel.add(textboxNom, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 0), 0, 0));
+
+                //---- labelRole ----
+                labelRole.setText("R\u00f4le");
+                contentPanel.add(labelRole, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
+                contentPanel.add(comboboxRole, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 0), 0, 0));
+
+                //---- labelMotPasse ----
+                labelMotPasse.setText("Mot de passe");
+                contentPanel.add(labelMotPasse, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 5), 0, 0));
+                contentPanel.add(textboxMdp, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 0), 0, 0));
             }
             dialogPane.add(contentPanel, BorderLayout.NORTH);
 
@@ -84,10 +112,15 @@ public class ReinitialiserMDP extends JPanel {
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
     private JPanel contentPanel;
-    private JLabel LabelNouveauMDP;
-    private JTextField textboxNouveauMDP;
+    private JLabel labelNom;
+    private JTextField textboxNom;
+    private JLabel labelRole;
+    private JComboBox comboboxRole;
+    private JLabel labelMotPasse;
+    private JTextField textboxMdp;
     private JPanel buttonBar;
     private JButton boutonOK;
     private JButton boutonAnnuler;
+    private ConnexionController connexionController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

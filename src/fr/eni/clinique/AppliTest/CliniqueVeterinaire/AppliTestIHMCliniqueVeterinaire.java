@@ -1,6 +1,6 @@
 package fr.eni.clinique.AppliTest.CliniqueVeterinaire;
 
-import fr.eni.clinique.IHM.EcranAccueil;
+import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 
 import javax.swing.*;
 

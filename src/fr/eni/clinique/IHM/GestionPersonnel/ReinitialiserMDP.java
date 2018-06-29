@@ -1,8 +1,8 @@
 /*
- * Created by JFormDesigner on Fri Jun 29 11:17:42 CEST 2018
+ * Created by JFormDesigner on Fri Jun 29 11:11:02 CEST 2018
  */
 
-package fr.eni.clinique.IHM;
+package fr.eni.clinique.IHM.GestionPersonnel;
 
 import java.awt.*;
 import javax.swing.*;
@@ -11,8 +11,8 @@ import javax.swing.border.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class SupprimerPersonnel extends JPanel {
-    public SupprimerPersonnel() {
+public class ReinitialiserMDP extends JPanel {
+    public ReinitialiserMDP() {
         initComponents();
     }
 
@@ -20,19 +20,40 @@ public class SupprimerPersonnel extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
         dialogPane = new JPanel();
-        buttonBar = new JPanel();
-        boutonOk = new JButton();
-        boutonAnnuler = new JButton();
         contentPanel = new JPanel();
-        LblSupprimer = new JLabel();
+        LabelNouveauMDP = new JLabel();
+        textboxNouveauMDP = new JTextField();
+        buttonBar = new JPanel();
+        boutonOK = new JButton();
+        boutonAnnuler = new JButton();
 
         //======== this ========
+
         setLayout(new BorderLayout());
 
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
             dialogPane.setLayout(new BorderLayout());
+
+            //======== contentPanel ========
+            {
+                contentPanel.setLayout(new GridBagLayout());
+                ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 0, 0, 0};
+                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 0, 0};
+                ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
+                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
+
+                //---- LabelNouveauMDP ----
+                LabelNouveauMDP.setText("Nouveau mot de passe : ");
+                contentPanel.add(LabelNouveauMDP, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
+                contentPanel.add(textboxNouveauMDP, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
+            }
+            dialogPane.add(contentPanel, BorderLayout.NORTH);
 
             //======== buttonBar ========
             {
@@ -41,9 +62,9 @@ public class SupprimerPersonnel extends JPanel {
                 ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
                 ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
-                //---- boutonOk ----
-                boutonOk.setText("OK");
-                buttonBar.add(boutonOk, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                //---- boutonOK ----
+                boutonOK.setText("OK");
+                buttonBar.add(boutonOK, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
 
@@ -54,22 +75,6 @@ public class SupprimerPersonnel extends JPanel {
                     new Insets(0, 0, 0, 0), 0, 0));
             }
             dialogPane.add(buttonBar, BorderLayout.SOUTH);
-
-            //======== contentPanel ========
-            {
-                contentPanel.setLayout(new GridBagLayout());
-                ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 0, 0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
-                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 1.0E-4};
-
-                //---- LblSupprimer ----
-                LblSupprimer.setText("\u00cates-vous s\u00fbr de vouloir supprimer cet utilisateur ?");
-                contentPanel.add(LblSupprimer, new GridBagConstraints(4, 3, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 0), 0, 0));
-            }
-            dialogPane.add(contentPanel, BorderLayout.NORTH);
         }
         add(dialogPane, BorderLayout.CENTER);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -78,10 +83,11 @@ public class SupprimerPersonnel extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
-    private JPanel buttonBar;
-    private JButton boutonOk;
-    private JButton boutonAnnuler;
     private JPanel contentPanel;
-    private JLabel LblSupprimer;
+    private JLabel LabelNouveauMDP;
+    private JTextField textboxNouveauMDP;
+    private JPanel buttonBar;
+    private JButton boutonOK;
+    private JButton boutonAnnuler;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

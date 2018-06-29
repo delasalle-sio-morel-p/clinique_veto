@@ -2,9 +2,13 @@
  * Created by JFormDesigner on Fri Jun 29 10:29:00 CEST 2018
  */
 
-package fr.eni.clinique.IHM;
+package fr.eni.clinique.IHM.GestionPersonnel;
+
+import fr.eni.clinique.BO.Personnel;
+import fr.eni.clinique.IHM.Connexion.ConnexionController;
 
 import java.awt.*;
+import java.util.List;
 import javax.swing.*;
 
 /**
@@ -29,7 +33,25 @@ public class EcranGestionPersonnel extends JPanel {
         separator2 = new JSeparator();
         boutonReinitialiserMDP = new JButton();
         scrollPane1 = new JScrollPane();
-        tableauEmployes = new JTable();
+        String[] entetes = {"Nom", "Prenom", "Role", "Mot de passe"};
+
+        Object[][] donnees = new Object[5][4];
+        Object[] donnee = new Object[4];
+
+        List<Personnel> donneesP = GestionPersonnelController.get().getListePersonnels();
+        for (Personnel p : donneesP){
+            int i = 0;
+
+            donnee[0] = p.getNom();
+            donnee[1] = p.getPrenom();
+            donnee[2] = p.getRole();
+            donnee[3] = p.getMotPasse();
+
+            donnees[i] = donnee;
+            i++;
+        }
+
+        tableauEmployes = new JTable(donnees, entetes);
 
         //======== this ========
 
@@ -86,5 +108,6 @@ public class EcranGestionPersonnel extends JPanel {
     private JScrollPane scrollPane1;
     private JTable tableauEmployes;
     private ConnexionController connexionController;
+//    private GestionPersonnelController gestionPersonnelController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

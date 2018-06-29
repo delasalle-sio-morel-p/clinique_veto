@@ -1,8 +1,9 @@
-package fr.eni.clinique.IHM;
+package fr.eni.clinique.IHM.Connexion;
 
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.ConnexionManager;
 import fr.eni.clinique.BO.Personnel;
+import fr.eni.clinique.IHM.GestionPersonnel.EcranGestionPersonnel;
 
 import javax.swing.*;
 import java.util.List;
@@ -82,8 +83,15 @@ public class ConnexionController {
     }
 
     public void affichageEcranGestionPersonnel() {
-        ecranGestionPersonnel = new EcranGestionPersonnel(this);
-        ecranAccueil.setContentPane(ecranGestionPersonnel);
+        if(ecranGestionPersonnel == null)
+            ecranGestionPersonnel = new EcranGestionPersonnel(this);
+        //ecranAccueil.setContentPane(ecranGestionPersonnel)
+        ecranAccueil.add(ecranGestionPersonnel);
+
+        ecranAccueil.revalidate();
+    }
+    public void cacherEcranGestionPersonnel() {
+        ecranAccueil.remove(ecranGestionPersonnel);
         ecranAccueil.revalidate();
     }
 }

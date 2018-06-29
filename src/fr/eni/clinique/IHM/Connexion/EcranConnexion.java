@@ -1,4 +1,4 @@
-package fr.eni.clinique.IHM;
+package fr.eni.clinique.IHM.Connexion;
 
 import fr.eni.clinique.BLL.BLLException;
 

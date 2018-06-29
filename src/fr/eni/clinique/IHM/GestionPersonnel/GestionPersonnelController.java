@@ -1,4 +1,4 @@
-package fr.eni.clinique.IHM;
+package fr.eni.clinique.IHM.GestionPersonnel;
 
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.GestionPersonnelManager;
@@ -29,6 +29,10 @@ public class GestionPersonnelController {
         }
     }
 
+    public List<Personnel> getListePersonnels() {
+        return listePersonnels;
+    }
+
     //Méthodes
     public static synchronized GestionPersonnelController get(){
         if(instance == null){
@@ -36,16 +40,5 @@ public class GestionPersonnelController {
         }
         return instance;
     }
-
-//    public void nouveau() {
-//        indexListe = listePersonnels.size();
-//        ecranGestionPersonnel.afficherNouveau();
-//
-//    }
-
-    public List<Personnel> getListePersonnels() {
-        return listePersonnels;
-    }
-
 
 }

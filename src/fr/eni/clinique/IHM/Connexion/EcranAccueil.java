@@ -2,9 +2,9 @@
  * Created by JFormDesigner on Thu Jun 28 10:59:55 CEST 2018
  */
 
-package fr.eni.clinique.IHM;
+package fr.eni.clinique.IHM.Connexion;
 
-import fr.eni.clinique.BLL.BLLException;
+import fr.eni.clinique.IHM.Connexion.ConnexionController;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -139,21 +139,18 @@ public class EcranAccueil extends JFrame {
 
             @Override
             public void menuDeselected(MenuEvent e) {
-                System.out.println("menuDeselected");
+                try {
+                    System.out.println("menuDeselected");
+                    //connexionController.cacherEcranGestionPersonnel();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
             }
 
             @Override
             public void menuCanceled(MenuEvent e) {
                 System.out.println("menuCanceled");
             }
-//            public void actionPerformed(ActionEvent e) {
-//                try {
-//                    System.out.println("clic");
-//                    connexionController.affichageEcranGestionPersonnel();
-//                } catch (Exception e1) {
-//                    e1.printStackTrace();
-//                }
-//            }
         });
     }
 

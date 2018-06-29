@@ -1,6 +1,6 @@
 package fr.eni.clinique.AppliTest;
 
-import fr.eni.clinique.IHM.ConnexionController;
+import fr.eni.clinique.IHM.Connexion.ConnexionController;
 
 import javax.swing.*;
 

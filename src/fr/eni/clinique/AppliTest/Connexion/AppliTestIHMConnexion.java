@@ -1,6 +1,6 @@
 package fr.eni.clinique.AppliTest.Connexion;
 
-import fr.eni.clinique.IHM.EcranConnexion;
+import fr.eni.clinique.IHM.Connexion.EcranConnexion;
 
 import javax.swing.*;
 
