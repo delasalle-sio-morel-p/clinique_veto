@@ -52,6 +52,7 @@ public class ConnexionController {
 
     public void connexion(JTextField txtNom, JPasswordField mdp) throws BLLException {
 //        GestionPersonnelManager.verificationMotPasse();
+        System.out.println("Tentative de connexion");
         System.out.println(txtNom.getText());
         System.out.println(mdp.getText());
 
@@ -81,9 +82,8 @@ public class ConnexionController {
     }
 
     public void affichageEcranGestionPersonnel() {
-        ecranGestionPersonnel = new EcranGestionPersonnel();
-        ecranConnexion = new EcranConnexion(this);
-        ecranAccueil.setVisible(false);
-        ecranConnexion.setVisible(true);
+        ecranGestionPersonnel = new EcranGestionPersonnel(this);
+        ecranAccueil.setContentPane(ecranGestionPersonnel);
+        ecranAccueil.revalidate();
     }
 }

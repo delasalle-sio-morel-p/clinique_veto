@@ -10,6 +10,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 
 /**
  * @author Mathieu BOURVIC
@@ -36,13 +38,13 @@ public class EcranAccueil extends JFrame {
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
         menuBar = new JMenuBar();
         menuFermer = new JMenu();
-        Deconnexion = new JMenuItem();
-        Fermer = new JMenuItem();
+        menuItemDeconnexion = new JMenuItem();
+        menuItemfermer = new JMenuItem();
         menuRDV = new JMenu();
-        PriseRDV = new JMenuItem();
+        menuItemPriseRDV = new JMenuItem();
         menuItem2 = new JMenuItem();
-        Agenda = new JMenu();
-        GestionPersonnel = new JMenu();
+        menuAgenda = new JMenu();
+        menuGestionPersonnel = new JMenu();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -51,6 +53,10 @@ public class EcranAccueil extends JFrame {
         ((GridBagLayout)contentPane.getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0};
         ((GridBagLayout)contentPane.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
         ((GridBagLayout)contentPane.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+
+        //======== listener =======
+        actionBtnDeconnexion();
+        actionMenuGestionPersonnel();
 
         //======== menuBar ========
         {
@@ -61,12 +67,12 @@ public class EcranAccueil extends JFrame {
                 menuFermer.setPreferredSize(new Dimension(100, 21));
 
                 //---- Deconnexion ----
-                Deconnexion.setText("D\u00e9connexion");
-                menuFermer.add(Deconnexion);
-                actionBtnDeconnexion();
+                menuItemDeconnexion.setText("D\u00e9connexion");
+                menuFermer.add(menuItemDeconnexion);
+
                 //---- Fermer ----
-                Fermer.setText("Fermer");
-                menuFermer.add(Fermer);
+                menuItemfermer.setText("Fermer");
+                menuFermer.add(menuItemfermer);
             }
             menuBar.add(menuFermer);
 
@@ -76,8 +82,8 @@ public class EcranAccueil extends JFrame {
                 menuRDV.setPreferredSize(new Dimension(160, 21));
 
                 //---- PriseRDV ----
-                PriseRDV.setText("Prise de rendez-vous");
-                menuRDV.add(PriseRDV);
+                menuItemPriseRDV.setText("Prise de rendez-vous");
+                menuRDV.add(menuItemPriseRDV);
 
                 //---- menuItem2 ----
                 menuItem2.setText("Gestion des clients");
@@ -87,15 +93,15 @@ public class EcranAccueil extends JFrame {
 
             //======== Agenda ========
             {
-                Agenda.setText("Agenda");
+                menuAgenda.setText("Agenda");
             }
-            menuBar.add(Agenda);
+            menuBar.add(menuAgenda);
 
             //======== GestionPersonnel ========
             {
-                GestionPersonnel.setText("Gestion du personnel");
+                menuGestionPersonnel.setText("Gestion du personnel");
             }
-            menuBar.add(GestionPersonnel);
+            menuBar.add(menuGestionPersonnel);
         }
         setJMenuBar(menuBar);
         pack();
@@ -105,7 +111,7 @@ public class EcranAccueil extends JFrame {
     }
 
     private void actionBtnDeconnexion() {
-        Deconnexion.addActionListener(new ActionListener() {
+        menuItemDeconnexion.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -118,17 +124,36 @@ public class EcranAccueil extends JFrame {
         });
     }
 
-    private void actionBtnGestionPersonnel() {
-        Deconnexion.addActionListener(new ActionListener() {
+    private void actionMenuGestionPersonnel() {
+        menuGestionPersonnel.addMenuListener(new MenuListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void menuSelected(MenuEvent e) {
                 try {
-                    connexionController.deconnexion();
+                    System.out.println("menuSelected");
+                    connexionController.affichageEcranGestionPersonnel();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
             }
+
+            @Override
+            public void menuDeselected(MenuEvent e) {
+                System.out.println("menuDeselected");
+            }
+
+            @Override
+            public void menuCanceled(MenuEvent e) {
+                System.out.println("menuCanceled");
+            }
+//            public void actionPerformed(ActionEvent e) {
+//                try {
+//                    System.out.println("clic");
+//                    connexionController.affichageEcranGestionPersonnel();
+//                } catch (Exception e1) {
+//                    e1.printStackTrace();
+//                }
+//            }
         });
     }
 
@@ -136,13 +161,13 @@ public class EcranAccueil extends JFrame {
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JMenuBar menuBar;
     private JMenu menuFermer;
-    private JMenuItem Deconnexion;
-    private JMenuItem Fermer;
+    private JMenuItem menuItemDeconnexion;
+    private JMenuItem menuItemfermer;
     private JMenu menuRDV;
-    private JMenuItem PriseRDV;
+    private JMenuItem menuItemPriseRDV;
     private JMenuItem menuItem2;
-    private JMenu Agenda;
-    private JMenu GestionPersonnel;
+    private JMenu menuAgenda;
+    private JMenu menuGestionPersonnel;
     private ConnexionController connexionController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
