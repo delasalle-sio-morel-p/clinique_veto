@@ -66,10 +66,16 @@ public class ConnexionController {
         if (isPresent) {
             System.out.println("ok");
 
-            ecranAccueil = new EcranAccueil();
+            ecranAccueil = new EcranAccueil(this);
             ecranAccueil.setVisible(true);
             ecranConnexion.setVisible(false);
-        }else
+        } else
             System.out.println("wrong credentials");
+    }
+
+    public void deconnexion() {
+        ecranConnexion = new EcranConnexion(this);
+        ecranAccueil.setVisible(false);
+        ecranConnexion.setVisible(true);
     }
 }

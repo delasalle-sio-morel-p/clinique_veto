@@ -4,7 +4,11 @@
 
 package fr.eni.clinique.IHM;
 
+import fr.eni.clinique.BLL.BLLException;
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
@@ -12,6 +16,14 @@ import javax.swing.*;
  */
 public class EcranAccueil extends JFrame {
     public EcranAccueil() {
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setTitle("Clinique vétérinaire");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        initComponents();
+    }
+    public EcranAccueil(ConnexionController connexionController) {
+        this.connexionController = connexionController;
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setTitle("Clinique vétérinaire");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -51,7 +63,7 @@ public class EcranAccueil extends JFrame {
                 //---- Deconnexion ----
                 Deconnexion.setText("D\u00e9connexion");
                 menuFermer.add(Deconnexion);
-
+                actionBtnDeconnexion();
                 //---- Fermer ----
                 Fermer.setText("Fermer");
                 menuFermer.add(Fermer);
@@ -88,7 +100,22 @@ public class EcranAccueil extends JFrame {
         setJMenuBar(menuBar);
         pack();
         setLocationRelativeTo(getOwner());
+
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+    }
+
+    private void actionBtnDeconnexion() {
+        Deconnexion.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    connexionController.deconnexion();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
@@ -102,5 +129,6 @@ public class EcranAccueil extends JFrame {
     private JMenuItem menuItem2;
     private JMenu Agenda;
     private JMenu GestionPersonnel;
+    private ConnexionController connexionController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
