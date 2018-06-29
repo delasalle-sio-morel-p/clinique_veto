@@ -70,6 +70,6 @@ public class ConnexionController {
             ecranAccueil.setVisible(true);
             ecranConnexion.setVisible(false);
         }else
-            throw new BLLException("Identifiant ou mot de passe incorrect") ;
+            System.out.println("wrong credentials");
     }
 }
