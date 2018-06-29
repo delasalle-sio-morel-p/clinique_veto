@@ -141,7 +141,6 @@ public class EcranAccueil extends JFrame {
             public void menuDeselected(MenuEvent e) {
                 try {
                     System.out.println("menuDeselected");
-                    //connexionController.cacherEcranGestionPersonnel();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }

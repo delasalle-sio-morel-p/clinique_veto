@@ -90,8 +90,4 @@ public class ConnexionController {
 
         ecranAccueil.revalidate();
     }
-    public void cacherEcranGestionPersonnel() {
-        ecranAccueil.remove(ecranGestionPersonnel);
-        ecranAccueil.revalidate();
-    }
 }
