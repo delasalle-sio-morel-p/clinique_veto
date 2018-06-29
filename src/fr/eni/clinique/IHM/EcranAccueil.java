@@ -12,7 +12,7 @@ import javax.swing.*;
  */
 public class EcranAccueil extends JFrame {
     public EcranAccueil() {
-        this.setSize(500, 175);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setTitle("Clinique vétérinaire");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -22,23 +22,15 @@ public class EcranAccueil extends JFrame {
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
-        Menu = new JToolBar();
-        Fichier = new JButton();
-        GestionRDV = new JButton();
-        Agenda = new JButton();
-        GestionPersonnel = new JButton();
-        vSpacer1 = new JPanel(null);
-        vSpacer4 = new JPanel(null);
-        vSpacer3 = new JPanel(null);
-        vSpacer5 = new JPanel(null);
-        hSpacer1 = new JPanel(null);
-        Connexion = new JToolBar(null, JToolBar.VERTICAL);
-        Deconnexion = new JButton();
-        vSpacer6 = new JPanel(null);
-        Fermer = new JButton();
-        Gestion = new JToolBar(null, JToolBar.VERTICAL);
-        PriseRDV = new JButton();
-        GestionClients = new JButton();
+        menuBar = new JMenuBar();
+        menuFermer = new JMenu();
+        Deconnexion = new JMenuItem();
+        Fermer = new JMenuItem();
+        menuRDV = new JMenu();
+        PriseRDV = new JMenuItem();
+        menuItem2 = new JMenuItem();
+        Agenda = new JMenu();
+        GestionPersonnel = new JMenu();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -48,74 +40,52 @@ public class EcranAccueil extends JFrame {
         ((GridBagLayout)contentPane.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
         ((GridBagLayout)contentPane.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
 
-        //======== Menu ========
+        //======== menuBar ========
         {
 
-            //---- Fichier ----
-            Fichier.setText("Fichier");
-            Menu.add(Fichier);
+            //======== menuFermer ========
+            {
+                menuFermer.setText("Fichier");
+                menuFermer.setPreferredSize(new Dimension(100, 21));
 
-            //---- GestionRDV ----
-            GestionRDV.setText("Gestion des rendez vous");
-            Menu.add(GestionRDV);
+                //---- Deconnexion ----
+                Deconnexion.setText("D\u00e9connexion");
+                menuFermer.add(Deconnexion);
 
-            //---- Agenda ----
-            Agenda.setText("Agenda");
-            Menu.add(Agenda);
+                //---- Fermer ----
+                Fermer.setText("Fermer");
+                menuFermer.add(Fermer);
+            }
+            menuBar.add(menuFermer);
 
-            //---- GestionPersonnel ----
-            GestionPersonnel.setText("Gestion du personnel");
-            Menu.add(GestionPersonnel);
+            //======== menuRDV ========
+            {
+                menuRDV.setText("Gestion des rendez-vous");
+                menuRDV.setPreferredSize(new Dimension(160, 21));
+
+                //---- PriseRDV ----
+                PriseRDV.setText("Prise de rendez-vous");
+                menuRDV.add(PriseRDV);
+
+                //---- menuItem2 ----
+                menuItem2.setText("Gestion des clients");
+                menuRDV.add(menuItem2);
+            }
+            menuBar.add(menuRDV);
+
+            //======== Agenda ========
+            {
+                Agenda.setText("Agenda");
+            }
+            menuBar.add(Agenda);
+
+            //======== GestionPersonnel ========
+            {
+                GestionPersonnel.setText("Gestion du personnel");
+            }
+            menuBar.add(GestionPersonnel);
         }
-        contentPane.add(Menu, new GridBagConstraints(0, 0, 3, 1, 0.0, 0.0,
-            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 5, 0), 0, 0));
-        contentPane.add(vSpacer1, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
-            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 5, 5), 0, 0));
-        contentPane.add(vSpacer4, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
-            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 5, 0), 0, 0));
-        contentPane.add(vSpacer3, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0,
-            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 5, 5), 0, 0));
-        contentPane.add(vSpacer5, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
-            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 5, 0), 0, 0));
-        contentPane.add(hSpacer1, new GridBagConstraints(0, 3, 1, 1, 0.0, 0.0,
-            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 5, 5), 0, 0));
-
-        //======== Connexion ========
-        {
-
-            //---- Deconnexion ----
-            Deconnexion.setText("D\u00e9connexion");
-            Connexion.add(Deconnexion);
-            Connexion.add(vSpacer6);
-
-            //---- Fermer ----
-            Fermer.setText("Fermer");
-            Connexion.add(Fermer);
-        }
-        contentPane.add(Connexion, new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0,
-            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 5, 5), 0, 0));
-
-        //======== Gestion ========
-        {
-
-            //---- PriseRDV ----
-            PriseRDV.setText("Prise de rendez-vous");
-            Gestion.add(PriseRDV);
-
-            //---- GestionClients ----
-            GestionClients.setText("Gestion des clients");
-            Gestion.add(GestionClients);
-        }
-        contentPane.add(Gestion, new GridBagConstraints(2, 3, 1, 1, 0.0, 0.0,
-            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 5, 0), 0, 0));
+        setJMenuBar(menuBar);
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -123,22 +93,14 @@ public class EcranAccueil extends JFrame {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
-    private JToolBar Menu;
-    private JButton Fichier;
-    private JButton GestionRDV;
-    private JButton Agenda;
-    private JButton GestionPersonnel;
-    private JPanel vSpacer1;
-    private JPanel vSpacer4;
-    private JPanel vSpacer3;
-    private JPanel vSpacer5;
-    private JPanel hSpacer1;
-    private JToolBar Connexion;
-    private JButton Deconnexion;
-    private JPanel vSpacer6;
-    private JButton Fermer;
-    private JToolBar Gestion;
-    private JButton PriseRDV;
-    private JButton GestionClients;
+    private JMenuBar menuBar;
+    private JMenu menuFermer;
+    private JMenuItem Deconnexion;
+    private JMenuItem Fermer;
+    private JMenu menuRDV;
+    private JMenuItem PriseRDV;
+    private JMenuItem menuItem2;
+    private JMenu Agenda;
+    private JMenu GestionPersonnel;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

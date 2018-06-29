@@ -12,87 +12,43 @@ new FormModel {
 			"$alignTop": true
 		} ) {
 			name: "this"
-			add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
-				name: "Menu"
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "Fichier"
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menuFermer"
 					"text": "Fichier"
+					"preferredSize": new java.awt.Dimension( 100, 21 )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "Deconnexion"
+						"text": "Déconnexion"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "Fermer"
+						"text": "Fermer"
+					} )
 				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "GestionRDV"
-					"text": "Gestion des rendez vous"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menuRDV"
+					"text": "Gestion des rendez-vous"
+					"preferredSize": new java.awt.Dimension( 160, 21 )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "PriseRDV"
+						"text": "Prise de rendez-vous"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem2"
+						"text": "Gestion des clients"
+					} )
 				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "Agenda"
 					"text": "Agenda"
 				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "GestionPersonnel"
 					"text": "Gestion du personnel"
 				} )
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridwidth": 3
-			} )
-			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
-				name: "vSpacer1"
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridx": 1
-				"gridy": 1
-			} )
-			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
-				name: "vSpacer4"
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridx": 2
-				"gridy": 1
-			} )
-			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
-				name: "vSpacer3"
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridx": 1
-				"gridy": 2
-			} )
-			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
-				name: "vSpacer5"
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridx": 2
-				"gridy": 2
-			} )
-			add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
-				name: "hSpacer1"
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridy": 3
-			} )
-			add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
-				name: "Connexion"
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "Deconnexion"
-					"text": "Déconnexion"
-				} )
-				add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
-					name: "vSpacer6"
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "Fermer"
-					"text": "Fermer"
-				} )
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridx": 1
-				"gridy": 3
-			} )
-			add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
-				name: "Gestion"
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "PriseRDV"
-					"text": "Prise de rendez-vous"
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "GestionClients"
-					"text": "Gestion des clients"
-				} )
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridx": 2
-				"gridy": 3
-			} )
+			}
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 10, 0 )
 			"size": new java.awt.Dimension( 560, 300 )

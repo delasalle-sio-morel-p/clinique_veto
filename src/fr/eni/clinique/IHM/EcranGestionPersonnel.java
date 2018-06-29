@@ -1,5 +1,5 @@
 /*
- * Created by JFormDesigner on Thu Jun 28 13:46:37 CEST 2018
+ * Created by JFormDesigner on Fri Jun 29 10:29:00 CEST 2018
  */
 
 package fr.eni.clinique.IHM;
@@ -10,12 +10,8 @@ import javax.swing.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class EcranGestionPersonnel extends JFrame {
+public class EcranGestionPersonnel extends JPanel {
     public EcranGestionPersonnel() {
-        this.setSize(500, 175);
-        this.setTitle("Gestion du personnel");
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
         initComponents();
     }
 
@@ -32,12 +28,19 @@ public class EcranGestionPersonnel extends JFrame {
         ListeEmployes = new JTable();
 
         //======== this ========
-        Container contentPane = getContentPane();
-        contentPane.setLayout(new GridBagLayout());
-        ((GridBagLayout)contentPane.getLayout()).columnWidths = new int[] {0, 0, 0, 0, 0, 0};
-        ((GridBagLayout)contentPane.getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0};
-        ((GridBagLayout)contentPane.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
-        ((GridBagLayout)contentPane.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+
+        // JFormDesigner evaluation mark
+        setBorder(new javax.swing.border.CompoundBorder(
+            new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+
+        setLayout(new GridBagLayout());
+        ((GridBagLayout)getLayout()).columnWidths = new int[] {0, 0, 0};
+        ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 0, 0, 0};
+        ((GridBagLayout)getLayout()).columnWeights = new double[] {0.0, 0.0, 1.0E-4};
+        ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
 
         //======== menuGestionPersonnel ========
         {
@@ -61,7 +64,7 @@ public class EcranGestionPersonnel extends JFrame {
             ReinitialiserMDP.setText("R\u00e9inialiser MDP");
             menuGestionPersonnel.add(ReinitialiserMDP);
         }
-        contentPane.add(menuGestionPersonnel, new GridBagConstraints(1, 0, 2, 1, 0.0, 0.0,
+        add(menuGestionPersonnel, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
@@ -69,11 +72,9 @@ public class EcranGestionPersonnel extends JFrame {
         {
             scrollPane1.setViewportView(ListeEmployes);
         }
-        contentPane.add(scrollPane1, new GridBagConstraints(2, 3, 1, 1, 0.0, 0.0,
+        add(scrollPane1, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
-        pack();
-        setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 

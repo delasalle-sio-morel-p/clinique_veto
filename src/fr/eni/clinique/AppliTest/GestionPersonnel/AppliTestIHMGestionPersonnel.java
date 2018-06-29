@@ -18,7 +18,7 @@ public class AppliTestIHMGestionPersonnel {
                 EcranGestionPersonnel gestionPersonnel = new EcranGestionPersonnel();
                 gestionPersonnel.setVisible(true);
 
-                AjouterPersonnel addPersonnel = new AjouterPersonnel(gestionPersonnel);
+                AjouterPersonnel addPersonnel = new AjouterPersonnel();
                 addPersonnel.setVisible(true);
 
                 SupprimerPersonnel suppPersonnel = new SupprimerPersonnel(gestionPersonnel);

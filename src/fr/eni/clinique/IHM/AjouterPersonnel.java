@@ -1,5 +1,5 @@
 /*
- * Created by JFormDesigner on Thu Jun 28 14:52:59 CEST 2018
+ * Created by JFormDesigner on Fri Jun 29 10:49:04 CEST 2018
  */
 
 package fr.eni.clinique.IHM;
@@ -11,22 +11,8 @@ import javax.swing.border.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class AjouterPersonnel extends JDialog {
-    public AjouterPersonnel(Frame owner) {
-        super(owner);
-        this.setSize(500, 175);
-        this.setTitle("Ajouter un utilisateur");
-        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        this.setLocationRelativeTo(null);
-        initComponents();
-    }
-
-    public AjouterPersonnel(Dialog owner) {
-        super(owner);
-        this.setSize(500, 175);
-        this.setTitle("Ajouter un utilisateur");
-        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        this.setLocationRelativeTo(null);
+public class AjouterPersonnel extends JPanel {
+    public AjouterPersonnel() {
         initComponents();
     }
 
@@ -34,7 +20,7 @@ public class AjouterPersonnel extends JDialog {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
         dialogPane = new JPanel();
-        contentPanel = new JPanel();
+        contentPanel2 = new JPanel();
         LblNom = new JLabel();
         TbNom = new JTextField();
         LblRole = new JLabel();
@@ -46,51 +32,57 @@ public class AjouterPersonnel extends JDialog {
         cancelButton = new JButton();
 
         //======== this ========
-        Container contentPane = getContentPane();
-        contentPane.setLayout(new BorderLayout());
+
+        // JFormDesigner evaluation mark
+        setBorder(new javax.swing.border.CompoundBorder(
+            new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+
+        setLayout(new BorderLayout());
 
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-
             dialogPane.setLayout(new BorderLayout());
 
-            //======== contentPanel ========
+            //======== contentPanel2 ========
             {
-                contentPanel.setLayout(new GridBagLayout());
-                ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
-                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
+                contentPanel2.setLayout(new GridBagLayout());
+                ((GridBagLayout)contentPanel2.getLayout()).columnWidths = new int[] {0, 0, 0, 0};
+                ((GridBagLayout)contentPanel2.getLayout()).rowHeights = new int[] {0, 0, 0, 0};
+                ((GridBagLayout)contentPanel2.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
+                ((GridBagLayout)contentPanel2.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
 
                 //---- LblNom ----
                 LblNom.setText("Nom");
-                contentPanel.add(LblNom, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                contentPanel2.add(LblNom, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
-                contentPanel.add(TbNom, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                contentPanel2.add(TbNom, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 0), 0, 0));
 
                 //---- LblRole ----
                 LblRole.setText("R\u00f4le");
-                contentPanel.add(LblRole, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
+                contentPanel2.add(LblRole, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
-                contentPanel.add(CbRole, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
+                contentPanel2.add(CbRole, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 0), 0, 0));
 
                 //---- LblMotPasse ----
                 LblMotPasse.setText("Mot de passe");
-                contentPanel.add(LblMotPasse, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0,
+                contentPanel2.add(LblMotPasse, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
-                contentPanel.add(TbMdp, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
+                contentPanel2.add(TbMdp, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
             }
-            dialogPane.add(contentPanel, BorderLayout.CENTER);
+            dialogPane.add(contentPanel2, BorderLayout.NORTH);
 
             //======== buttonBar ========
             {
@@ -113,16 +105,14 @@ public class AjouterPersonnel extends JDialog {
             }
             dialogPane.add(buttonBar, BorderLayout.SOUTH);
         }
-        contentPane.add(dialogPane, BorderLayout.CENTER);
-        pack();
-        setLocationRelativeTo(getOwner());
+        add(dialogPane, BorderLayout.CENTER);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
-    private JPanel contentPanel;
+    private JPanel contentPanel2;
     private JLabel LblNom;
     private JTextField TbNom;
     private JLabel LblRole;
