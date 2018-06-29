@@ -22,10 +22,10 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
     private static final String SELECT_ALL = "SELECT * FROM Personnels WHERE Archive=0";
 
-    private static final String INSERT = "INSERT INTO Personnels (Nom, MotPasse, "
-            + "Role, Archive) VALUES (?, ?, ?, ?)";
+    private static final String INSERT = "INSERT INTO Personnels (Nom, Prenom, MotPasse, "
+            + "Role, Archive) VALUES (?, ?, ?, ?, ?)";
 
-    private static final String UPDATE = "UPDATE Personnels SET Nom=?, MotPasse=?, Role=?, "
+    private static final String UPDATE = "UPDATE Personnels SET Nom=?, Prenom=?, MotPasse=?, Role=?, "
             + "Archive=? WHERE CodePers=?";
 //A FAIRE @Patrick
 //    private static final String DELETE = "DELETE FROM Personnels WHERE CodePers=?";
@@ -117,7 +117,7 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
             cnx = JDBCTools.getConnection();
             rqt = cnx.prepareStatement(UPDATE);
             preparerParametres(employe, rqt);
-            rqt.setInt(5, employe.getCodePersonnel());
+            rqt.setInt(6, employe.getCodePersonnel());
             rqt.executeUpdate();
 
         } catch (SQLException e) {
@@ -151,6 +151,7 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
         personne.setCodePersonnel(rs.getInt("CodePers"));
         personne.setNom(rs.getString("Nom"));
+        personne.setPrenom(rs.getString("Prenom"));
         personne.setMotPasse(rs.getString("MotPasse"));
         personne.setRole(role);
         if (rs.getInt("Archive") == 0) {
@@ -166,14 +167,15 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
     private void preparerParametres(Personnel employe, PreparedStatement rqt) throws SQLException {
 
         rqt.setString(1, employe.getNom());
-        rqt.setString(2, employe.getMotPasse());
-        rqt.setString(3, employe.getRole());
+        rqt.setString(2, employe.getPrenom());
+        rqt.setString(3, employe.getMotPasse());
+        rqt.setString(4, employe.getRole());
 
         if (employe.isArchive())
-            rqt.setByte(4, (byte) 1);
+            rqt.setByte(5, (byte) 1);
 
         if (!employe.isArchive())
-            rqt.setByte(4, (byte) 0);
+            rqt.setByte(5, (byte) 0);
 
     }
 
