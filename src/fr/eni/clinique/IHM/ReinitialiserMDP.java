@@ -1,5 +1,5 @@
 /*
- * Created by JFormDesigner on Thu Jun 28 15:40:13 CEST 2018
+ * Created by JFormDesigner on Fri Jun 29 11:11:02 CEST 2018
  */
 
 package fr.eni.clinique.IHM;
@@ -11,22 +11,8 @@ import javax.swing.border.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class ReinitialiserMDP extends JDialog {
-    public ReinitialiserMDP(Frame owner) {
-        super(owner);
-        this.setSize(200, 175);
-        this.setTitle("Réinitialiser le mot de passe de cet utilisateur");
-        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        this.setLocationRelativeTo(null);
-        initComponents();
-    }
-
-    public ReinitialiserMDP(Dialog owner) {
-        super(owner);
-        this.setSize(200, 175);
-        this.setTitle("Réinitialiser le mot de passe de cet utilisateur");
-        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        this.setLocationRelativeTo(null);
+public class ReinitialiserMDP extends JPanel {
+    public ReinitialiserMDP() {
         initComponents();
     }
 
@@ -42,13 +28,19 @@ public class ReinitialiserMDP extends JDialog {
         cancelButton = new JButton();
 
         //======== this ========
-        Container contentPane = getContentPane();
-        contentPane.setLayout(new BorderLayout());
+
+        // JFormDesigner evaluation mark
+        setBorder(new javax.swing.border.CompoundBorder(
+            new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+
+        setLayout(new BorderLayout());
 
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-
             dialogPane.setLayout(new BorderLayout());
 
             //======== contentPanel ========
@@ -68,7 +60,7 @@ public class ReinitialiserMDP extends JDialog {
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
             }
-            dialogPane.add(contentPanel, BorderLayout.CENTER);
+            dialogPane.add(contentPanel, BorderLayout.NORTH);
 
             //======== buttonBar ========
             {
@@ -84,16 +76,14 @@ public class ReinitialiserMDP extends JDialog {
                     new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- cancelButton ----
-                cancelButton.setText("Annuler");
+                cancelButton.setText("Cancel");
                 buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
             }
             dialogPane.add(buttonBar, BorderLayout.SOUTH);
         }
-        contentPane.add(dialogPane, BorderLayout.CENTER);
-        pack();
-        setLocationRelativeTo(getOwner());
+        add(dialogPane, BorderLayout.CENTER);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
