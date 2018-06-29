@@ -13,8 +13,8 @@ public class AppliTestDALGestionPersonnel {
     public static void main(String[] args) {
         PersonnelDAO personnelDAO = DAOFactory.getPersonnelDAO();
 
-        Personnel v1 = new Veterinaire("AIMONE Anne", "mdp", "vet", false);
-        Personnel v2 = new Veterinaire(5,"CONNARD", "fdp", "vet", false);
+        Personnel v1 = new Veterinaire("AIMONE", "Anne", "mdp", "vet", false);
+        Personnel v2 = new Veterinaire(5, "Le","CONNARD", "fdp", "vet", false);
 
         try{
             Personnel v = personnelDAO.selectById(1);
@@ -28,7 +28,8 @@ public class AppliTestDALGestionPersonnel {
                 System.out.println("- " + personne.getNom());
             }
 
-            v2.setNom("TOURNE Sylvain");
+            v2.setNom("TOURNE");
+            v2.setPrenom("Sylvain");
             personnelDAO.update(v2);
             System.out.println(v2.getCodePersonnel());
             System.out.println("Personne mise à jour -> nom : "  + v2.getNom());
