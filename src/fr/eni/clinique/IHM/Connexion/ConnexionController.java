@@ -4,6 +4,7 @@ import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.ConnexionManager;
 import fr.eni.clinique.BO.Personnel;
 import fr.eni.clinique.IHM.GestionPersonnel.EcranGestionPersonnel;
+import fr.eni.clinique.IHM.GestionPersonnel.GestionPersonnelController;
 
 import javax.swing.*;
 import java.util.List;
@@ -84,8 +85,7 @@ public class ConnexionController {
 
     public void affichageEcranGestionPersonnel() {
         if(ecranGestionPersonnel == null)
-            ecranGestionPersonnel = new EcranGestionPersonnel(this);
-        //ecranAccueil.setContentPane(ecranGestionPersonnel)
+            ecranGestionPersonnel = new EcranGestionPersonnel();
         ecranAccueil.add(ecranGestionPersonnel);
 
         ecranAccueil.revalidate();

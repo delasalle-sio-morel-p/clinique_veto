@@ -3,11 +3,14 @@ package fr.eni.clinique.IHM.GestionPersonnel;
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.GestionPersonnelManager;
 import fr.eni.clinique.BO.Personnel;
+import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 
 import java.util.List;
 
 public class GestionPersonnelController {
+    private EcranAccueil ecranAccueil;
     private EcranGestionPersonnel ecranGestionPersonnel ;
+
     private int indexListe;
 
     private GestionPersonnelManager manager;
@@ -15,6 +18,7 @@ public class GestionPersonnelController {
     private List<Personnel> listePersonnels;
 
     private static GestionPersonnelController instance;
+
 
     //Constructeur
     private GestionPersonnelController(){
@@ -39,6 +43,22 @@ public class GestionPersonnelController {
             instance = new GestionPersonnelController();
         }
         return instance;
+    }
+
+    public void affichageEcranGestionPersonnel() {
+        if(ecranGestionPersonnel == null)
+            ecranGestionPersonnel = new EcranGestionPersonnel(this);
+        //ecranAccueil.setContentPane(ecranGestionPersonnel)
+        ecranAccueil.add(ecranGestionPersonnel);
+
+        ecranAccueil.revalidate();
+    }
+    public void ajouter() {
+        System.out.println("ajouter");
+//        ecranAccueil.remove(ecranGestionPersonnel);
+//        ecranAccueil.add(ecranGestionPersonnel);
+
+//        ecranAccueil.revalidate();
     }
 
 }

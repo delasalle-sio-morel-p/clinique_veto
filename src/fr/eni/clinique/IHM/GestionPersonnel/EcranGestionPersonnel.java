@@ -8,6 +8,8 @@ import fr.eni.clinique.BO.Personnel;
 import fr.eni.clinique.IHM.Connexion.ConnexionController;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.*;
 
@@ -18,8 +20,8 @@ public class EcranGestionPersonnel extends JPanel {
     public EcranGestionPersonnel() {
         initComponents();
     }
-    public EcranGestionPersonnel(ConnexionController connexionController) {
-        this.connexionController = connexionController;
+    public EcranGestionPersonnel(GestionPersonnelController gestionPersonnelController) {
+        this.gestionPersonnelController = gestionPersonnelController;
         initComponents();
     }
 
@@ -33,7 +35,7 @@ public class EcranGestionPersonnel extends JPanel {
         separator2 = new JSeparator();
         boutonReinitialiserMDP = new JButton();
         scrollPane1 = new JScrollPane();
-        modele = new TablePersonnelModel(GestionPersonnelController.get().getListePersonnels());
+        modele = new TablePersonnelModel(gestionPersonnelController.get().getListePersonnels());
         tableauEmployes = new JTable(modele);
 
         //======== this ========
@@ -43,6 +45,9 @@ public class EcranGestionPersonnel extends JPanel {
         ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 0, 0, 0};
         ((GridBagLayout)getLayout()).columnWeights = new double[] {0.0, 0.0, 1.0E-4};
         ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
+
+        //======== listener =======
+        actionBtnAjouter();
 
         //======== menuGestionPersonnel ========
         {
@@ -80,6 +85,20 @@ public class EcranGestionPersonnel extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    private void actionBtnAjouter() {
+        boutonAjouter.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionPersonnelController.ajouter();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JToolBar menuGestionPersonnel;
@@ -90,7 +109,7 @@ public class EcranGestionPersonnel extends JPanel {
     private JButton boutonReinitialiserMDP;
     private JScrollPane scrollPane1;
     private JTable tableauEmployes;
-    private ConnexionController connexionController;
+    private GestionPersonnelController gestionPersonnelController;
     private TablePersonnelModel modele;
 //    private GestionPersonnelController gestionPersonnelController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
