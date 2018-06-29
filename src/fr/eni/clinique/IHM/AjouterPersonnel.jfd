@@ -16,40 +16,40 @@ new FormModel {
 					"$alignLeft": true
 					"$alignTop": true
 				} ) {
-					name: "contentPanel2"
+					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "LblNom"
+						name: "labelNom"
 						"text": "Nom"
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 1
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "TbNom"
+						name: "textboxNom"
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 2
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "LblRole"
+						name: "labelRole"
 						"text": "Rôle"
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridy": 1
 						"gridx": 1
 					} )
 					add( new FormComponent( "javax.swing.JComboBox" ) {
-						name: "CbRole"
+						name: "comboboxRole"
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 2
 						"gridy": 1
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "LblMotPasse"
+						name: "labelMotPasse"
 						"text": "Mot de passe"
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 1
 						"gridy": 2
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "TbMdp"
+						name: "textboxMdp"
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 2
 						"gridy": 2
@@ -66,15 +66,15 @@ new FormModel {
 					name: "buttonBar"
 					"border": new javax.swing.border.EmptyBorder( 12, 0, 0, 0 )
 					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "okButton"
+						name: "boutonOK"
 						"text": "OK"
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 1
 						"gridy": 0
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "cancelButton"
-						"text": "Cancel"
+						name: "boutonAnnuler"
+						"text": "Annuler"
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 2
 						"gridy": 0

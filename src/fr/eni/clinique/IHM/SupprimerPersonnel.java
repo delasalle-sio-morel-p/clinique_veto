@@ -21,13 +21,12 @@ public class SupprimerPersonnel extends JPanel {
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
         dialogPane = new JPanel();
         buttonBar = new JPanel();
-        okButton = new JButton();
-        cancelButton = new JButton();
+        boutonOk = new JButton();
+        boutonAnnuler = new JButton();
         contentPanel = new JPanel();
         LblSupprimer = new JLabel();
 
         //======== this ========
-
         setLayout(new BorderLayout());
 
         //======== dialogPane ========
@@ -42,15 +41,15 @@ public class SupprimerPersonnel extends JPanel {
                 ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
                 ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
-                //---- okButton ----
-                okButton.setText("OK");
-                buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                //---- boutonOk ----
+                boutonOk.setText("OK");
+                buttonBar.add(boutonOk, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
 
-                //---- cancelButton ----
-                cancelButton.setText("Cancel");
-                buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                //---- boutonAnnuler ----
+                boutonAnnuler.setText("Annuler");
+                buttonBar.add(boutonAnnuler, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
             }
@@ -80,8 +79,8 @@ public class SupprimerPersonnel extends JPanel {
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
     private JPanel buttonBar;
-    private JButton okButton;
-    private JButton cancelButton;
+    private JButton boutonOk;
+    private JButton boutonAnnuler;
     private JPanel contentPanel;
     private JLabel LblSupprimer;
     // JFormDesigner - End of variables declaration  //GEN-END:variables

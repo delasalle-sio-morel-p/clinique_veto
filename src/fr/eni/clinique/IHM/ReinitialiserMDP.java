@@ -21,11 +21,11 @@ public class ReinitialiserMDP extends JPanel {
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
         dialogPane = new JPanel();
         contentPanel = new JPanel();
-        LblNouveauMDP = new JLabel();
-        TbNouveauMDP = new JTextField();
+        LabelNouveauMDP = new JLabel();
+        textboxNouveauMDP = new JTextField();
         buttonBar = new JPanel();
-        okButton = new JButton();
-        cancelButton = new JButton();
+        boutonOK = new JButton();
+        boutonAnnuler = new JButton();
 
         //======== this ========
 
@@ -44,12 +44,12 @@ public class ReinitialiserMDP extends JPanel {
                 ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
                 ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
 
-                //---- LblNouveauMDP ----
-                LblNouveauMDP.setText("Nouveau mot de passe : ");
-                contentPanel.add(LblNouveauMDP, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
+                //---- LabelNouveauMDP ----
+                LabelNouveauMDP.setText("Nouveau mot de passe : ");
+                contentPanel.add(LabelNouveauMDP, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
-                contentPanel.add(TbNouveauMDP, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
+                contentPanel.add(textboxNouveauMDP, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
             }
@@ -62,15 +62,15 @@ public class ReinitialiserMDP extends JPanel {
                 ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
                 ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
-                //---- okButton ----
-                okButton.setText("OK");
-                buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                //---- boutonOK ----
+                boutonOK.setText("OK");
+                buttonBar.add(boutonOK, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
 
-                //---- cancelButton ----
-                cancelButton.setText("Cancel");
-                buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                //---- boutonAnnuler ----
+                boutonAnnuler.setText("Annuler");
+                buttonBar.add(boutonAnnuler, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
             }
@@ -84,10 +84,10 @@ public class ReinitialiserMDP extends JPanel {
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
     private JPanel contentPanel;
-    private JLabel LblNouveauMDP;
-    private JTextField TbNouveauMDP;
+    private JLabel LabelNouveauMDP;
+    private JTextField textboxNouveauMDP;
     private JPanel buttonBar;
-    private JButton okButton;
-    private JButton cancelButton;
+    private JButton boutonOK;
+    private JButton boutonAnnuler;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

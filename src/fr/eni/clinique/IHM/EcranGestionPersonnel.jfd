@@ -15,7 +15,7 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
 				name: "menuGestionPersonnel"
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "Ajouter"
+					name: "boutonAjouter"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/add.png" )
 					"text": "Ajouter"
 				} )
@@ -26,7 +26,7 @@ new FormModel {
 					name: "separator1"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "Supprimer"
+					name: "boutonSupprimer"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/delete.png" )
 					"text": "Supprimer"
 				} )
@@ -37,7 +37,7 @@ new FormModel {
 					name: "separator4"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "ReinitialiserMDP"
+					name: "boutonReinitialiserMDP"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/padlock.png" )
 					"text": "Réinialiser MDP"
 				} )
@@ -45,7 +45,7 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPane1"
 				add( new FormComponent( "javax.swing.JTable" ) {
-					name: "ListeEmployes"
+					name: "tableauEmployes"
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridy": 1

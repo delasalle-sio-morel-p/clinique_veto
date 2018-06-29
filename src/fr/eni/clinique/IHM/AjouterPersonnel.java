@@ -24,16 +24,16 @@ public class AjouterPersonnel extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
         dialogPane = new JPanel();
-        contentPanel2 = new JPanel();
-        LblNom = new JLabel();
-        TbNom = new JTextField();
-        LblRole = new JLabel();
-        CbRole = new JComboBox();
-        LblMotPasse = new JLabel();
-        TbMdp = new JTextField();
+        contentPanel = new JPanel();
+        labelNom = new JLabel();
+        textboxNom = new JTextField();
+        labelRole = new JLabel();
+        comboboxRole = new JComboBox();
+        labelMotPasse = new JLabel();
+        textboxMdp = new JTextField();
         buttonBar = new JPanel();
-        okButton = new JButton();
-        cancelButton = new JButton();
+        boutonOK = new JButton();
+        boutonAnnuler = new JButton();
 
         //======== this ========
 
@@ -44,42 +44,42 @@ public class AjouterPersonnel extends JPanel {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
             dialogPane.setLayout(new BorderLayout());
 
-            //======== contentPanel2 ========
+            //======== contentPanel ========
             {
-                contentPanel2.setLayout(new GridBagLayout());
-                ((GridBagLayout)contentPanel2.getLayout()).columnWidths = new int[] {0, 0, 0, 0};
-                ((GridBagLayout)contentPanel2.getLayout()).rowHeights = new int[] {0, 0, 0, 0};
-                ((GridBagLayout)contentPanel2.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
-                ((GridBagLayout)contentPanel2.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
+                contentPanel.setLayout(new GridBagLayout());
+                ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 0, 0, 0};
+                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 0, 0};
+                ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
+                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
 
-                //---- LblNom ----
-                LblNom.setText("Nom");
-                contentPanel2.add(LblNom, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                //---- labelNom ----
+                labelNom.setText("Nom");
+                contentPanel.add(labelNom, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
-                contentPanel2.add(TbNom, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                contentPanel.add(textboxNom, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 0), 0, 0));
 
-                //---- LblRole ----
-                LblRole.setText("R\u00f4le");
-                contentPanel2.add(LblRole, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
+                //---- labelRole ----
+                labelRole.setText("R\u00f4le");
+                contentPanel.add(labelRole, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
-                contentPanel2.add(CbRole, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
+                contentPanel.add(comboboxRole, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 0), 0, 0));
 
-                //---- LblMotPasse ----
-                LblMotPasse.setText("Mot de passe");
-                contentPanel2.add(LblMotPasse, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0,
+                //---- labelMotPasse ----
+                labelMotPasse.setText("Mot de passe");
+                contentPanel.add(labelMotPasse, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
-                contentPanel2.add(TbMdp, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
+                contentPanel.add(textboxMdp, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
             }
-            dialogPane.add(contentPanel2, BorderLayout.NORTH);
+            dialogPane.add(contentPanel, BorderLayout.NORTH);
 
             //======== buttonBar ========
             {
@@ -88,15 +88,15 @@ public class AjouterPersonnel extends JPanel {
                 ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
                 ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
-                //---- okButton ----
-                okButton.setText("OK");
-                buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                //---- boutonOK ----
+                boutonOK.setText("OK");
+                buttonBar.add(boutonOK, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
 
-                //---- cancelButton ----
-                cancelButton.setText("Cancel");
-                buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                //---- boutonAnnuler ----
+                boutonAnnuler.setText("Annuler");
+                buttonBar.add(boutonAnnuler, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
             }
@@ -109,16 +109,16 @@ public class AjouterPersonnel extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
-    private JPanel contentPanel2;
-    private JLabel LblNom;
-    private JTextField TbNom;
-    private JLabel LblRole;
-    private JComboBox CbRole;
-    private JLabel LblMotPasse;
-    private JTextField TbMdp;
+    private JPanel contentPanel;
+    private JLabel labelNom;
+    private JTextField textboxNom;
+    private JLabel labelRole;
+    private JComboBox comboboxRole;
+    private JLabel labelMotPasse;
+    private JTextField textboxMdp;
     private JPanel buttonBar;
-    private JButton okButton;
-    private JButton cancelButton;
+    private JButton boutonOK;
+    private JButton boutonAnnuler;
     private ConnexionController connexionController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
