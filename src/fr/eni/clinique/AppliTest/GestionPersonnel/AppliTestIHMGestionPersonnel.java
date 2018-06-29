@@ -21,10 +21,10 @@ public class AppliTestIHMGestionPersonnel {
                 AjouterPersonnel addPersonnel = new AjouterPersonnel();
                 addPersonnel.setVisible(true);
 
-                SupprimerPersonnel suppPersonnel = new SupprimerPersonnel(gestionPersonnel);
+                SupprimerPersonnel suppPersonnel = new SupprimerPersonnel();
                 suppPersonnel.setVisible(true);
 
-                ReinitialiserMDP reinitMDP = new ReinitialiserMDP(gestionPersonnel);
+                ReinitialiserMDP reinitMDP = new ReinitialiserMDP();
                 reinitMDP.setVisible(true);
 
             }

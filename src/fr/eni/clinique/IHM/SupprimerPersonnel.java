@@ -1,5 +1,5 @@
 /*
- * Created by JFormDesigner on Thu Jun 28 15:18:00 CEST 2018
+ * Created by JFormDesigner on Fri Jun 29 11:17:42 CEST 2018
  */
 
 package fr.eni.clinique.IHM;
@@ -11,22 +11,8 @@ import javax.swing.border.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class SupprimerPersonnel extends JDialog {
-    public SupprimerPersonnel(Frame owner) {
-        super(owner);
-        this.setSize(200, 175);
-        this.setTitle("Supprimer l'utilisateur");
-        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        this.setLocationRelativeTo(null);
-        initComponents();
-    }
-
-    public SupprimerPersonnel(Dialog owner) {
-        super(owner);
-        this.setSize(200, 175);
-        this.setTitle("Supprimer l'utilisateur");
-        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        this.setLocationRelativeTo(null);
+public class SupprimerPersonnel extends JPanel {
+    public SupprimerPersonnel() {
         initComponents();
     }
 
@@ -34,37 +20,27 @@ public class SupprimerPersonnel extends JDialog {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
         dialogPane = new JPanel();
-        contentPanel = new JPanel();
-        LblSupprimer = new JLabel();
         buttonBar = new JPanel();
         okButton = new JButton();
         cancelButton = new JButton();
+        contentPanel = new JPanel();
+        LblSupprimer = new JLabel();
 
         //======== this ========
-        Container contentPane = getContentPane();
-        contentPane.setLayout(new BorderLayout());
+
+        // JFormDesigner evaluation mark
+        setBorder(new javax.swing.border.CompoundBorder(
+            new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+
+        setLayout(new BorderLayout());
 
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-
             dialogPane.setLayout(new BorderLayout());
-
-            //======== contentPanel ========
-            {
-                contentPanel.setLayout(new GridBagLayout());
-                ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 0, 0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
-                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 1.0E-4};
-
-                //---- LblSupprimer ----
-                LblSupprimer.setText("\u00cates-vous s\u00fbr de vouloir supprimer cet utilisateur ?");
-                contentPanel.add(LblSupprimer, new GridBagConstraints(4, 3, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 0), 0, 0));
-            }
-            dialogPane.add(contentPanel, BorderLayout.CENTER);
 
             //======== buttonBar ========
             {
@@ -80,26 +56,40 @@ public class SupprimerPersonnel extends JDialog {
                     new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- cancelButton ----
-                cancelButton.setText("Annuler");
+                cancelButton.setText("Cancel");
                 buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
             }
             dialogPane.add(buttonBar, BorderLayout.SOUTH);
+
+            //======== contentPanel ========
+            {
+                contentPanel.setLayout(new GridBagLayout());
+                ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 0, 0, 0, 0, 0};
+                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0};
+                ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 1.0E-4};
+
+                //---- LblSupprimer ----
+                LblSupprimer.setText("\u00cates-vous s\u00fbr de vouloir supprimer cet utilisateur ?");
+                contentPanel.add(LblSupprimer, new GridBagConstraints(4, 3, 1, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 0), 0, 0));
+            }
+            dialogPane.add(contentPanel, BorderLayout.NORTH);
         }
-        contentPane.add(dialogPane, BorderLayout.CENTER);
-        pack();
-        setLocationRelativeTo(getOwner());
+        add(dialogPane, BorderLayout.CENTER);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
-    private JPanel contentPanel;
-    private JLabel LblSupprimer;
     private JPanel buttonBar;
     private JButton okButton;
     private JButton cancelButton;
+    private JPanel contentPanel;
+    private JLabel LblSupprimer;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
