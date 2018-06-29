@@ -43,6 +43,10 @@ public class EcranAccueil extends JFrame {
         menuItem2 = new JMenuItem();
         Agenda = new JMenu();
         GestionPersonnel = new JMenu();
+        ecranGestionPersonnel = new EcranGestionPersonnel();
+        ajouterPersonnel = new AjouterPersonnel();
+        reinitialiserMDP = new ReinitialiserMDP();
+        supprimerPersonnel = new SupprimerPersonnel();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -129,6 +133,10 @@ public class EcranAccueil extends JFrame {
     private JMenuItem menuItem2;
     private JMenu Agenda;
     private JMenu GestionPersonnel;
+    private JPanel ecranGestionPersonnel;
+    private JPanel ajouterPersonnel;
+    private JPanel reinitialiserMDP;
+    private JPanel supprimerPersonnel;
     private ConnexionController connexionController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

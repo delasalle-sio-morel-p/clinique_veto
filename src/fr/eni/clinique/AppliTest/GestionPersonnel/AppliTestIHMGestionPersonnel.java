@@ -2,10 +2,7 @@ package fr.eni.clinique.AppliTest.GestionPersonnel;
 
 import javax.swing.*;
 
-import fr.eni.clinique.IHM.AjouterPersonnel;
-import fr.eni.clinique.IHM.EcranGestionPersonnel;
-import fr.eni.clinique.IHM.ReinitialiserMDP;
-import fr.eni.clinique.IHM.SupprimerPersonnel;
+import fr.eni.clinique.IHM.*;
 
 public class AppliTestIHMGestionPersonnel {
     public static void main(String[] args) {
@@ -14,18 +11,20 @@ public class AppliTestIHMGestionPersonnel {
 
             @Override
             public void run() {
+                EcranAccueil ecranAccueil = new EcranAccueil();
+                ecranAccueil.setVisible(true);
 
                 EcranGestionPersonnel gestionPersonnel = new EcranGestionPersonnel();
-                gestionPersonnel.setVisible(true);
+                ecranAccueil.setContentPane(gestionPersonnel);
 
                 AjouterPersonnel addPersonnel = new AjouterPersonnel();
-                addPersonnel.setVisible(true);
+//                ecranAccueil.setContentPane(addPersonnel);
 
                 SupprimerPersonnel suppPersonnel = new SupprimerPersonnel();
-                suppPersonnel.setVisible(true);
+//                ecranAccueil.setContentPane(suppPersonnel);
 
                 ReinitialiserMDP reinitMDP = new ReinitialiserMDP();
-                reinitMDP.setVisible(true);
+//                ecranAccueil.setContentPane(reinitMDP);
 
             }
         });
