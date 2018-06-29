@@ -27,12 +27,14 @@ public class AppliTestDALGestionPersonnel {
             for (Personnel personne :listPersonne) {
                 System.out.println("- " + personne.getNom());
             }
-
-            v2.setNom("TOURNE");
+            v.setNom("JARVIS");
+            v.setPrenom("Edwin");
+            v.setMotPasse("ironman");
+            v1.setNom("TOURNE");
             v2.setPrenom("Sylvain");
-            personnelDAO.update(v2);
-            System.out.println(v2.getCodePersonnel());
-            System.out.println("Personne mise à jour -> nom : "  + v2.getNom());
+            personnelDAO.update(v);
+            System.out.println(v.getCodePersonnel());
+            System.out.println("Personne mise à jour -> nom : "  + v.getNom());
 //@Patrick
 //            personnelDAO.delete(v2);
 //            System.out.println("Veto suppr de la base : " + v2.getNom());
