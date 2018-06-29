@@ -4,6 +4,7 @@ public abstract class Personnel {
 
     private int codePersonnel;
     private String nom;
+    private String prenom;
     private String motPasse;
     private String role;
     private boolean archive;
@@ -24,6 +25,14 @@ public abstract class Personnel {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
     public String getMotPasse() {
@@ -56,19 +65,21 @@ public abstract class Personnel {
         // TODO Auto-generated constructor stub
     }
 
-    public Personnel(int codePersonnel, String nom, String motPasse, String role, boolean archive) {
+    public Personnel(int codePersonnel, String nom, String prenom, String motPasse, String role, boolean archive) {
         super();
         this.codePersonnel = codePersonnel;
         this.nom = nom;
+        this.prenom = prenom;
         this.motPasse = motPasse;
         this.role = role;
         this.archive = archive;
     }
 
 
-    public Personnel(String nom, String motPasse, String role, boolean archive) {
+    public Personnel(String nom, String prenom, String motPasse, String role, boolean archive) {
         super();
         this.nom = nom;
+        this.prenom = prenom;
         this.motPasse = motPasse;
         this.role = role;
         this.archive = archive;
