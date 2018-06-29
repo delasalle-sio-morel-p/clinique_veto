@@ -10,6 +10,7 @@ import java.util.List;
 public class ConnexionController {
     private EcranConnexion ecranConnexion;
     private EcranAccueil ecranAccueil;
+    private JPanel ecranGestionPersonnel;
 
     private int indexListe;
 
@@ -74,6 +75,13 @@ public class ConnexionController {
     }
 
     public void deconnexion() {
+        ecranConnexion = new EcranConnexion(this);
+        ecranAccueil.setVisible(false);
+        ecranConnexion.setVisible(true);
+    }
+
+    public void affichageEcranGestionPersonnel() {
+        ecranGestionPersonnel = new EcranGestionPersonnel();
         ecranConnexion = new EcranConnexion(this);
         ecranAccueil.setVisible(false);
         ecranConnexion.setVisible(true);

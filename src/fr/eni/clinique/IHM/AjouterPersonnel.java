@@ -15,6 +15,10 @@ public class AjouterPersonnel extends JPanel {
     public AjouterPersonnel() {
         initComponents();
     }
+    public AjouterPersonnel(ConnexionController connexionController) {
+        this.connexionController = connexionController;
+        initComponents();
+    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -115,5 +119,6 @@ public class AjouterPersonnel extends JPanel {
     private JPanel buttonBar;
     private JButton okButton;
     private JButton cancelButton;
+    private ConnexionController connexionController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

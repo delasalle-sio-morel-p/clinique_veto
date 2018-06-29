@@ -14,6 +14,10 @@ public class EcranGestionPersonnel extends JPanel {
     public EcranGestionPersonnel() {
         initComponents();
     }
+    public EcranGestionPersonnel(ConnexionController connexionController) {
+        this.connexionController = connexionController;
+        initComponents();
+    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -81,5 +85,6 @@ public class EcranGestionPersonnel extends JPanel {
     private JButton ReinitialiserMDP;
     private JScrollPane scrollPane1;
     private JTable ListeEmployes;
+    private ConnexionController connexionController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
