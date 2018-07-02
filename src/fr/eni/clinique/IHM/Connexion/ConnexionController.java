@@ -24,8 +24,6 @@ public class ConnexionController {
 
     private boolean isPresent;
 
-    private Personnel persoConnected;
-
     //Constructeur
     private ConnexionController() {
         try {
@@ -63,7 +61,6 @@ public class ConnexionController {
 
             if (personne.getNom().equals(txtNom.getText()) && personne.getMotPasse().equals(mdp.getText())) {
                 isPresent = true;
-                persoConnected = personne;
                 break;
             }
         }

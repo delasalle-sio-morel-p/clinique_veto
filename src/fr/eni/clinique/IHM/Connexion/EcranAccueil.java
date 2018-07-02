@@ -4,6 +4,7 @@
 
 package fr.eni.clinique.IHM.Connexion;
 
+import fr.eni.clinique.IHM.Client.GestionClientController;
 import fr.eni.clinique.IHM.Connexion.ConnexionController;
 import fr.eni.clinique.IHM.GestionPersonnel.GestionPersonnelController;
 
@@ -42,6 +43,15 @@ public class EcranAccueil extends JFrame {
         initComponents();
     }
 
+    public EcranAccueil(GestionClientController gestionClientController) {
+        this.gestionClientController = gestionClientController;
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setTitle("Clinique vétérinaire");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        initComponents();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
@@ -51,7 +61,7 @@ public class EcranAccueil extends JFrame {
         menuItemfermer = new JMenuItem();
         menuRDV = new JMenu();
         menuItemPriseRDV = new JMenuItem();
-        menuItem2 = new JMenuItem();
+        menuItemClient = new JMenuItem();
         menuAgenda = new JMenu();
         menuGestionPersonnel = new JMenu();
 
@@ -66,6 +76,7 @@ public class EcranAccueil extends JFrame {
         //======== listener =======
         actionBtnDeconnexion();
         actionMenuGestionPersonnel();
+        actionMenuClient();
 
         //======== menuBar ========
         {
@@ -95,8 +106,8 @@ public class EcranAccueil extends JFrame {
                 menuRDV.add(menuItemPriseRDV);
 
                 //---- menuItem2 ----
-                menuItem2.setText("Gestion des clients");
-                menuRDV.add(menuItem2);
+                menuItemClient.setText("Gestion des clients");
+                menuRDV.add(menuItemClient);
             }
             menuBar.add(menuRDV);
 
@@ -162,6 +173,20 @@ public class EcranAccueil extends JFrame {
         });
     }
 
+    private void actionMenuClient() {
+        menuItemClient.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.affichageEcranClient();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JMenuBar menuBar;
@@ -170,10 +195,11 @@ public class EcranAccueil extends JFrame {
     private JMenuItem menuItemfermer;
     private JMenu menuRDV;
     private JMenuItem menuItemPriseRDV;
-    private JMenuItem menuItem2;
+    private JMenuItem menuItemClient;
     private JMenu menuAgenda;
     private JMenu menuGestionPersonnel;
     private ConnexionController connexionController;
     private GestionPersonnelController gestionPersonnelController;
+    private GestionClientController gestionClientController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
