@@ -5,6 +5,7 @@
 package fr.eni.clinique.IHM.Connexion;
 
 import fr.eni.clinique.IHM.Connexion.ConnexionController;
+import fr.eni.clinique.IHM.GestionPersonnel.GestionPersonnelController;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,6 +27,14 @@ public class EcranAccueil extends JFrame {
     }
     public EcranAccueil(ConnexionController connexionController) {
         this.connexionController = connexionController;
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setTitle("Clinique vétérinaire");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        initComponents();
+    }
+    public EcranAccueil(GestionPersonnelController gestionPersonnelController) {
+        this.gestionPersonnelController = gestionPersonnelController;
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setTitle("Clinique vétérinaire");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -131,7 +140,7 @@ public class EcranAccueil extends JFrame {
             public void menuSelected(MenuEvent e) {
                 try {
                     System.out.println("menuSelected");
-                    connexionController.affichageEcranGestionPersonnel();
+                    gestionPersonnelController.affichageEcranGestionPersonnel();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -165,5 +174,6 @@ public class EcranAccueil extends JFrame {
     private JMenu menuAgenda;
     private JMenu menuGestionPersonnel;
     private ConnexionController connexionController;
+    private GestionPersonnelController gestionPersonnelController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

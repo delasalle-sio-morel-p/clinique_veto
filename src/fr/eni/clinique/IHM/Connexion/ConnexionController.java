@@ -12,7 +12,7 @@ import java.util.List;
 public class ConnexionController {
     private EcranConnexion ecranConnexion;
     private EcranAccueil ecranAccueil;
-    private JPanel ecranGestionPersonnel;
+    //private JPanel ecranGestionPersonnel;
 
     private int indexListe;
 
@@ -69,9 +69,7 @@ public class ConnexionController {
         }
         if (isPresent) {
             System.out.println("ok");
-
-            ecranAccueil = new EcranAccueil(this);
-            ecranAccueil.setVisible(true);
+            callEcranAccueil();
             ecranConnexion.setVisible(false);
         } else
             System.out.println("wrong credentials");
@@ -83,11 +81,7 @@ public class ConnexionController {
         ecranConnexion.setVisible(true);
     }
 
-    public void affichageEcranGestionPersonnel() {
-        if(ecranGestionPersonnel == null)
-            ecranGestionPersonnel = new EcranGestionPersonnel();
-        ecranAccueil.add(ecranGestionPersonnel);
-
-        ecranAccueil.revalidate();
+    public void callEcranAccueil(){
+        GestionPersonnelController.get().affichageEcranAccueil();
     }
 }
