@@ -45,6 +45,6 @@ public class Role {
 
     @Override
     public String toString() {
-        return "Role : " + libelle;
+        return libelle;
     }
 }
