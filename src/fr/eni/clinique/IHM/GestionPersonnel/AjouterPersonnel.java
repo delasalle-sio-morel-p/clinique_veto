@@ -7,6 +7,8 @@ package fr.eni.clinique.IHM.GestionPersonnel;
 import fr.eni.clinique.IHM.Connexion.ConnexionController;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -32,7 +34,7 @@ public class AjouterPersonnel extends JPanel {
         labelPrenom = new JLabel();
         textFieldPrenom = new JTextField();
         labelRole = new JLabel();
-        comboboxRole = new JComboBox();
+        comboboxRole = new JComboBox(gestionPersonnelController.getListeRolesPersonnels().toArray());
         labelMotPasse = new JLabel();
         passwordFieldMDP = new JPasswordField();
         buttonBar = new JPanel();
@@ -42,6 +44,9 @@ public class AjouterPersonnel extends JPanel {
         //======== this ========
 
         setLayout(new BorderLayout());
+
+        //======== listener =======
+        actionBtnOK();
 
         //======== dialogPane ========
         {
@@ -117,6 +122,20 @@ public class AjouterPersonnel extends JPanel {
         }
         add(dialogPane, BorderLayout.CENTER);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+    }
+
+    private void actionBtnOK() {
+        boutonOK.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionPersonnelController.ajouterPersonnel(textboxNom,textFieldPrenom,comboboxRole, passwordFieldMDP);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
