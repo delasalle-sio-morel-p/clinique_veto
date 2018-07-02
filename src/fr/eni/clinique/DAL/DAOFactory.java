@@ -1,15 +1,18 @@
 package fr.eni.clinique.DAL;
 
-import fr.eni.clinique.DAL.JDBC.AnimalDAOJdbcImpl;
-import fr.eni.clinique.DAL.JDBC.EspeceDAOJdbcImpl;
-import fr.eni.clinique.DAL.JDBC.GestionPersonnelDAOJdbcImpl;
-import fr.eni.clinique.DAL.JDBC.RoleDAOJdbcImpl;
+import fr.eni.clinique.DAL.JDBC.*;
 
 public class DAOFactory {
 
     public static PersonnelDAO getPersonnelDAO(){
 
         return new GestionPersonnelDAOJdbcImpl();
+
+    }
+
+    public static ClientDAO getClientDAO(){
+
+        return new ClientDAOJdbcImpl();
 
     }
 
