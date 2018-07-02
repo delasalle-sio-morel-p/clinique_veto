@@ -8,10 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.eni.clinique.BO.Admin;
-import fr.eni.clinique.BO.Personnel;
-import fr.eni.clinique.BO.Secretaire;
-import fr.eni.clinique.BO.Veterinaire;
+import fr.eni.clinique.BO.*;
 import fr.eni.clinique.DAL.DALException;
 import fr.eni.clinique.DAL.PersonnelDAO;
 
@@ -32,14 +29,15 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
     @Override
     public Personnel selectById(int id) throws DALException {
+        Connection cnx;
+        ResultSet rs;
         Personnel personnel = null;
 
-        try (Connection cnx = JDBCTools.getConnection()) {
-
+        try {
+            cnx = JDBCTools.getConnection();
             PreparedStatement rqt = cnx.prepareStatement(SELECT_BY_ID);
             rqt.setInt(1, id);
-
-            ResultSet rs = rqt.executeQuery();
+            rs = rqt.executeQuery();
             if (rs.next()) {
                 personnel = this.personnelBuilder(rs);
 
