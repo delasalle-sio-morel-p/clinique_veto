@@ -35,7 +35,7 @@ public class EcranGestionPersonnel extends JPanel {
         separator2 = new JSeparator();
         boutonReinitialiserMDP = new JButton();
         scrollPane1 = new JScrollPane();
-        modele = new TablePersonnelModel(gestionPersonnelController.get().getListePersonnels());
+        modele = new TablePersonnelModel(gestionPersonnelController.getListePersonnels());
         tableauEmployes = new JTable(modele);
 
         //======== this ========

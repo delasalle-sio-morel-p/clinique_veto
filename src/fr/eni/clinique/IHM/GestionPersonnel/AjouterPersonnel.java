@@ -17,8 +17,8 @@ public class AjouterPersonnel extends JPanel {
     public AjouterPersonnel() {
         initComponents();
     }
-    public AjouterPersonnel(ConnexionController connexionController) {
-        this.connexionController = connexionController;
+    public AjouterPersonnel(GestionPersonnelController gestionPersonnelController) {
+        this.gestionPersonnelController = gestionPersonnelController;
         initComponents();
     }
 
@@ -30,7 +30,7 @@ public class AjouterPersonnel extends JPanel {
         labelNom = new JLabel();
         textboxNom = new JTextField();
         labelRole = new JLabel();
-        comboboxRole = new JComboBox();
+        comboboxRole = new JComboBox(gestionPersonnelController.getListeRolesPersonnels().toArray());
         labelMotPasse = new JLabel();
         textboxMdp = new JTextField();
         buttonBar = new JPanel();
@@ -121,6 +121,6 @@ public class AjouterPersonnel extends JPanel {
     private JPanel buttonBar;
     private JButton boutonOK;
     private JButton boutonAnnuler;
-    private ConnexionController connexionController;
+    private GestionPersonnelController gestionPersonnelController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

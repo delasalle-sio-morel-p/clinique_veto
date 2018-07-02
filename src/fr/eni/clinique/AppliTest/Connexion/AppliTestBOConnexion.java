@@ -1,12 +1,18 @@
 package fr.eni.clinique.AppliTest.Connexion;
 
 import fr.eni.clinique.BO.Admin;
+import fr.eni.clinique.BO.Role;
 import fr.eni.clinique.BO.Secretaire;
 import fr.eni.clinique.BO.Veterinaire;
 
 public class AppliTestBOConnexion {
 
     public static void main(String[] args) {
+
+        Role r1 = new Role("adm","Administrateur");
+        Role r2 = new Role("sec", "Vétérinaire");
+        Role r3 = new Role("vet", "Vétérinaire");
+
 
         Admin a1 = new Admin("BOSAPIN", "Edmond", "test", "adm", false);
         Admin a2 = new Admin("DE CAJOU", "Benoît", "test", "adm", false);

@@ -11,9 +11,9 @@ public class AppliTestBLLGestionPersonnel {
 
     public static void main(String[] args) throws BLLException {
         //Instanciation du jeu d'essai
-        Personnel a1 = new Admin("test","42", "ironman", "adm", false);
-        Personnel s1 = new Secretaire("LEWINSKY", "Monica", "test", "sec", false);
-        Personnel v1 = new Veterinaire("BARLERIN", "Laetitia", "test", "vet", false);
+        Personnel a1 = new Admin("test","42", "toto", "adm", false);
+        Personnel s1 = new Secretaire("DE JEU", "Odette", "test", "sec", false);
+        Personnel v1 = new Veterinaire("MALALANICH", "Melanie", "test", "vet", false);
 
 
         GestionPersonnelManager manager;
@@ -39,9 +39,9 @@ public class AppliTestBLLGestionPersonnel {
 
         //Modification d'un article
         try {
-            ((Admin) a1).setNom("JARVIS");
-            ((Admin) a1).setPrenom("Edwin");
-            ((Admin) a1).setMotPasse("ironman");
+            ((Admin) a1).setNom("BOSAPIN");
+            ((Admin) a1).setPrenom("Edmond");
+            ((Admin) a1).setMotPasse("test");
             manager.updatePersonnel(a1);
             System.out.println("Membre du Personnel après modification  : " + a1.toString() );
         } catch (BLLException e) {

@@ -5,22 +5,28 @@ import java.util.List;
 
 
 import fr.eni.clinique.BO.Personnel;
+import fr.eni.clinique.BO.Role;
 import fr.eni.clinique.BO.Veterinaire;
 import fr.eni.clinique.DAL.DAOFactory;
 import fr.eni.clinique.DAL.DALException;
 import fr.eni.clinique.DAL.PersonnelDAO;
+import fr.eni.clinique.DAL.RoleDAO;
 
 public class GestionPersonnelManager {
 
     private PersonnelDAO daoPersonnels;
+    private RoleDAO daoRoles;
     private List<Personnel> listePersonnels;
+    private List<Role> listeRolesPersonnels;
     private static GestionPersonnelManager instance = null;
 
     private GestionPersonnelManager() throws BLLException {
         daoPersonnels = DAOFactory.getPersonnelDAO();
+        daoRoles = DAOFactory.getRoleDAO();
         // Charger la liste de personnels
         try {
             listePersonnels = daoPersonnels.selectAll();
+            listeRolesPersonnels = daoRoles.selectAll();
         } catch (DALException e) {
             throw new BLLException("Echec du chargement de la liste des personnels - ", e);
         }
@@ -40,6 +46,10 @@ public class GestionPersonnelManager {
 
     public List<Personnel> getListePersonnels() throws BLLException {
         return listePersonnels;
+    }
+
+    public List<Role> getListeRolesPersonnels() throws BLLException {
+        return listeRolesPersonnels;
     }
 
     public void addPersonnel(Personnel personnel) throws BLLException {
