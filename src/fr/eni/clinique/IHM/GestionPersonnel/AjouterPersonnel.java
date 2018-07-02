@@ -29,15 +29,24 @@ public class AjouterPersonnel extends JPanel {
         contentPanel = new JPanel();
         labelNom = new JLabel();
         textboxNom = new JTextField();
+        labelPrenom = new JLabel();
+        textFieldPrenom = new JTextField();
         labelRole = new JLabel();
-        comboboxRole = new JComboBox(gestionPersonnelController.getListeRolesPersonnels().toArray());
+        comboboxRole = new JComboBox();
         labelMotPasse = new JLabel();
-        textboxMdp = new JTextField();
+        passwordFieldMDP = new JPasswordField();
         buttonBar = new JPanel();
         boutonOK = new JButton();
         boutonAnnuler = new JButton();
 
         //======== this ========
+
+        // JFormDesigner evaluation mark
+        setBorder(new javax.swing.border.CompoundBorder(
+            new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
         setLayout(new BorderLayout());
 
@@ -50,9 +59,9 @@ public class AjouterPersonnel extends JPanel {
             {
                 contentPanel.setLayout(new GridBagLayout());
                 ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 0, 0};
+                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0};
                 ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
-                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
+                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 1.0E-4};
 
                 //---- labelNom ----
                 labelNom.setText("Nom");
@@ -63,21 +72,30 @@ public class AjouterPersonnel extends JPanel {
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 0), 0, 0));
 
-                //---- labelRole ----
-                labelRole.setText("R\u00f4le");
-                contentPanel.add(labelRole, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
+                //---- labelPrenom ----
+                labelPrenom.setText("Pr\u00e9nom");
+                contentPanel.add(labelPrenom, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
-                contentPanel.add(comboboxRole, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
+                contentPanel.add(textFieldPrenom, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 0), 0, 0));
+
+                //---- labelRole ----
+                labelRole.setText("R\u00f4le");
+                contentPanel.add(labelRole, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
+                contentPanel.add(comboboxRole, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 0), 0, 0));
 
                 //---- labelMotPasse ----
                 labelMotPasse.setText("Mot de passe");
-                contentPanel.add(labelMotPasse, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0,
+                contentPanel.add(labelMotPasse, new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
-                contentPanel.add(textboxMdp, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
+                contentPanel.add(passwordFieldMDP, new GridBagConstraints(2, 3, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
             }
@@ -114,10 +132,12 @@ public class AjouterPersonnel extends JPanel {
     private JPanel contentPanel;
     private JLabel labelNom;
     private JTextField textboxNom;
+    private JLabel labelPrenom;
+    private JTextField textFieldPrenom;
     private JLabel labelRole;
     private JComboBox comboboxRole;
     private JLabel labelMotPasse;
-    private JTextField textboxMdp;
+    private JPasswordField passwordFieldMDP;
     private JPanel buttonBar;
     private JButton boutonOK;
     private JButton boutonAnnuler;
