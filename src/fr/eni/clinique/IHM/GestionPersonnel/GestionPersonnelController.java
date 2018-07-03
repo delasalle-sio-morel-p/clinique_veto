@@ -65,20 +65,22 @@ public class GestionPersonnelController {
 
     public void ajouter() {
         System.out.println("ajouter");
-        ajouterPersonnel = new AjouterPersonnel(AccueilController.get().getEcranAccueil(),this);
+        ajouterPersonnel = new AjouterPersonnel(AccueilController.get().getEcranAccueil(), this);
         ajouterPersonnel.setVisible(true);
     }
+
     public void supprimer(JTable tablePersonnels) {
         System.out.println("supprimer");
-        supprimerPersonnel = new SupprimerPersonnel(AccueilController.get().getEcranAccueil(),tablePersonnels,this);
+        supprimerPersonnel = new SupprimerPersonnel(AccueilController.get().getEcranAccueil(), tablePersonnels, this);
         supprimerPersonnel.setVisible(true);
     }
 
-    public void reinitialiserMDP() {
+    public void reinitialiserMDP(JTable tablePersonnels) {
         System.out.println("reinitialiserMDP");
-        reinitialiserMDP = new ReinitialiserMDP(AccueilController.get().getEcranAccueil(),this);
+        reinitialiserMDP = new ReinitialiserMDP(AccueilController.get().getEcranAccueil(), tablePersonnels, this);
         reinitialiserMDP.setVisible(true);
     }
+
     public void annuler() {
         if (ajouterPersonnel != null)
             ajouterPersonnel.setVisible(false);
@@ -99,13 +101,13 @@ public class GestionPersonnelController {
 
         switch (role.getLibelle()) {
             case "Administrateur":
-                personne = new Admin(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(),"adm", false);
+                personne = new Admin(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "adm", false);
                 break;
             case "Secrétaire":
-                personne = new Secretaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(),"sec", false);
+                personne = new Secretaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "sec", false);
                 break;
             default:
-                personne = new Veterinaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(),"vet", false);
+                personne = new Veterinaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "vet", false);
                 break;
         }
 
@@ -119,25 +121,45 @@ public class GestionPersonnelController {
         }
     }
 
-    public void supprimerPersonnel(JTable tablePesonnels) {
-        int ligneSelectionne = tablePesonnels.getSelectedRow();
-        if(ligneSelectionne != -1) {
-            String nomSelectionne = (String) tablePesonnels.getValueAt(ligneSelectionne, 0);
-            System.out.println(tablePesonnels.getValueAt(ligneSelectionne, 0));
-
+    public void supprimerPersonnel(JTable tablePersonnels) {
+        int ligneSelectionne = tablePersonnels.getSelectedRow();
+        if (ligneSelectionne != -1) {
+            String nomSelectionne = (String) tablePersonnels.getValueAt(ligneSelectionne, 0);
+            System.out.println(tablePersonnels.getValueAt(ligneSelectionne, 0));
+            personneSelectionne = personneSelectionne(nomSelectionne);
             try {
-                manager.deletePersonnel(personneSelectionne(nomSelectionne));
+                manager.deletePersonnel(personneSelectionne);
                 System.out.println(personneSelectionne + " archivé");
                 supprimerPersonnel.setVisible(false);
             } catch (BLLException e) {
                 e.printStackTrace();
             }
-        }
-        else
+        } else
             System.out.print("Pas de ligne sélectionnée");
     }
 
-    public Personnel personneSelectionne(String nom){
+    public void reinitialiseMDPPersonnel(JTable tablePersonnels, String nouveauMDP) {
+        int ligneSelectionne = tablePersonnels.getSelectedRow();
+        if (ligneSelectionne != -1) {
+            String nomSelectionne = (String) tablePersonnels.getValueAt(ligneSelectionne, 0);
+            System.out.println(nomSelectionne);
+            personneSelectionne = personneSelectionne(nomSelectionne);
+            if (nouveauMDP != null) {
+                personneSelectionne.setMotPasse(nouveauMDP);
+                try {
+                    manager.updatePersonnel(personneSelectionne);
+                    System.out.println("Le mot de passe de " + personneSelectionne + " a été changé");
+                    reinitialiserMDP.setVisible(false);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else
+                System.out.print("Pas de mot de passe");
+        } else
+            System.out.print("Pas de ligne sélectionnée");
+    }
+
+    public Personnel personneSelectionne(String nom) {
         isPresent = false;
         for (Personnel personne : listePersonnels) {
 

@@ -30,13 +30,6 @@ public class SupprimerPersonnel extends JDialog {
         initComponents();
     }
 
-    public SupprimerPersonnel(Frame owner, JPanel contentPanel, GestionPersonnelController gestionPersonnelController) {
-        super(owner);
-        this.contentPanel = contentPanel;
-        this.gestionPersonnelController = gestionPersonnelController;
-        initComponents();
-    }
-
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC

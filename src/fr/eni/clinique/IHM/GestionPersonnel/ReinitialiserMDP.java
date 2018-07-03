@@ -23,11 +23,10 @@ public class ReinitialiserMDP extends JDialog {
         this.gestionPersonnelController = gestionPersonnelController;
         initComponents();
     }
-
-    public ReinitialiserMDP(Frame owner, JPanel contentPanel, GestionPersonnelController gestionPersonnelController) {
+    public ReinitialiserMDP(Frame owner, JTable tablePersonnels, GestionPersonnelController gestionPersonnelController) {
         super(owner);
-        this.contentPanel = contentPanel;
         this.gestionPersonnelController = gestionPersonnelController;
+        this.table = tablePersonnels;
         initComponents();
     }
 
@@ -36,7 +35,7 @@ public class ReinitialiserMDP extends JDialog {
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
         dialogPane = new JPanel();
         contentPanel = new JPanel();
-        LabelNouveauMDP = new JLabel();
+        labelNouveauMDP = new JLabel();
         textboxNouveauMDP = new JTextField();
         buttonBar = new JPanel();
         boutonOK = new JButton();
@@ -47,6 +46,7 @@ public class ReinitialiserMDP extends JDialog {
         contentPane.setLayout(new BorderLayout());
 
         //======== listener =======
+        actionBtnOK();
         actionBtnAnnuler();
 
         //======== dialogPane ========
@@ -59,14 +59,14 @@ public class ReinitialiserMDP extends JDialog {
             {
 
                 //---- LabelNouveauMDP ----
-                LabelNouveauMDP.setText("Nouveau mot de passe : ");
+                labelNouveauMDP.setText("Nouveau mot de passe : ");
 
                 GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
                 contentPanel.setLayout(contentPanelLayout);
                 contentPanelLayout.setHorizontalGroup(
                     contentPanelLayout.createParallelGroup()
                         .addGroup(contentPanelLayout.createSequentialGroup()
-                            .addComponent(LabelNouveauMDP)
+                            .addComponent(labelNouveauMDP)
                             .addGap(5, 5, 5)
                             .addComponent(textboxNouveauMDP, GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                             .addContainerGap())
@@ -76,7 +76,7 @@ public class ReinitialiserMDP extends JDialog {
                         .addGroup(contentPanelLayout.createSequentialGroup()
                             .addGap(25, 25, 25)
                             .addGroup(contentPanelLayout.createParallelGroup()
-                                .addComponent(LabelNouveauMDP, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelNouveauMDP, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(textboxNouveauMDP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
                 );
             }
@@ -109,6 +109,21 @@ public class ReinitialiserMDP extends JDialog {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    private void actionBtnOK() {
+        boutonOK.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionPersonnelController.reinitialiseMDPPersonnel(table, textboxNouveauMDP.getText());
+
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
     private void actionBtnAnnuler() {
         boutonAnnuler.addActionListener(new ActionListener() {
 
@@ -127,11 +142,12 @@ public class ReinitialiserMDP extends JDialog {
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
     private JPanel contentPanel;
-    private JLabel LabelNouveauMDP;
+    private JLabel labelNouveauMDP;
     private JTextField textboxNouveauMDP;
     private JPanel buttonBar;
     private JButton boutonOK;
     private JButton boutonAnnuler;
+    private JTable table;
     private GestionPersonnelController gestionPersonnelController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

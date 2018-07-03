@@ -47,7 +47,7 @@ public class EcranGestionPersonnel extends JPanel {
         //======== listener =======
         actionBtnAjouter();
         actionBtnSupprimer(tableauEmployes);
-        actionBtnReinitialiserMDP();
+        actionBtnReinitialiserMDP(tableauEmployes);
 
         //======== menuGestionPersonnel ========
         {
@@ -113,13 +113,13 @@ public class EcranGestionPersonnel extends JPanel {
         });
     }
 
-    private void actionBtnReinitialiserMDP() {
+    private void actionBtnReinitialiserMDP(JTable tablePersonnels) {
         boutonReinitialiserMDP.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionPersonnelController.reinitialiserMDP();
+                    gestionPersonnelController.reinitialiserMDP(tablePersonnels);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
