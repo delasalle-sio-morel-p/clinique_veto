@@ -60,6 +60,7 @@ public class AjouterPersonnel extends JDialog {
 
         //======== listener =======
         actionBtnOK();
+        actionBtnAnnuler();
 
         //======== dialogPane ========
         {
@@ -162,6 +163,20 @@ public class AjouterPersonnel extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 try {
                     gestionPersonnelController.ajouterPersonnel(textboxNom,textFieldPrenom,comboboxRole, passwordFieldMDP);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnAnnuler() {
+        boutonAnnuler.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionPersonnelController.annuler();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }

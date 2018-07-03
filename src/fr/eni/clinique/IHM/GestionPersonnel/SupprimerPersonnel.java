@@ -5,6 +5,8 @@
 package fr.eni.clinique.IHM.GestionPersonnel;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -13,6 +15,19 @@ import javax.swing.border.*;
  */
 public class SupprimerPersonnel extends JDialog {
     public SupprimerPersonnel() {
+        initComponents();
+    }
+
+    public SupprimerPersonnel(Frame owner, GestionPersonnelController gestionPersonnelController) {
+        super(owner);
+        this.gestionPersonnelController = gestionPersonnelController;
+        initComponents();
+    }
+
+    public SupprimerPersonnel(Frame owner, JPanel contentPanel, GestionPersonnelController gestionPersonnelController) {
+        super(owner);
+        this.contentPanel = contentPanel;
+        this.gestionPersonnelController = gestionPersonnelController;
         initComponents();
     }
 
@@ -30,16 +45,12 @@ public class SupprimerPersonnel extends JDialog {
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
+        //======== listener =======
+        actionBtnAnnuler();
+
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-
-            // JFormDesigner evaluation mark
-            dialogPane.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), dialogPane.getBorder())); dialogPane.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
             dialogPane.setLayout(new BorderLayout());
 
@@ -95,6 +106,20 @@ public class SupprimerPersonnel extends JDialog {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    private void actionBtnAnnuler() {
+        boutonAnnuler.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionPersonnelController.annuler();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
@@ -103,5 +128,6 @@ public class SupprimerPersonnel extends JDialog {
     private JButton boutonAnnuler;
     private JPanel contentPanel;
     private JLabel LblSupprimer;
+    private GestionPersonnelController gestionPersonnelController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

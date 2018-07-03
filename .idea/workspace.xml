@@ -25,27 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConnexionController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/ConnexionController.java">
+      <file leaf-file-name="GestionPersonnelManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionPersonnel/GestionPersonnelManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1222">
-              <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2257#2258#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccueilController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/AccueilController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="44" column="88" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="88" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-646">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -53,8 +37,8 @@
       <file leaf-file-name="EcranGestionPersonnel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/EcranGestionPersonnel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="90" column="49" lean-forward="true" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
+            <state relative-caret-position="338">
+              <caret line="120" column="63" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,44 +46,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GestionPersonnelController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GestionPersonnelController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/GestionPersonnelController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="62" column="32" lean-forward="true" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+            <state relative-caret-position="408">
+              <caret line="76" column="42" lean-forward="true" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1987#1988#0" expanded="true" />
+                <element signature="e#2036#2037#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GestionClientController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/GestionClientController.java">
+      <file leaf-file-name="ReinitialiserMDP.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/ReinitialiserMDP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="222">
+              <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AjouterPersonnel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/AjouterPersonnel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="22" column="39" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="39" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#432#433#0" expanded="true" />
+                <element signature="e#464#465#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EcranAccueil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranAccueil.java">
+      <file leaf-file-name="SupprimerPersonnel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/SupprimerPersonnel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="161" column="40" lean-forward="true" selection-start-line="161" selection-start-column="40" selection-end-line="161" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AjouterClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/AjouterClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="358">
+              <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -160,14 +147,17 @@
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/Client/EcranClient.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/BLL/Connexion/AccueilManager.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionClient/GestionClientManager.java" />
-        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/EcranGestionPersonnel.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/GestionClient/AppliTestIHMGestionClient.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/GestionClientController.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/ConnexionController.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranAccueil.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/GestionPersonnel/AppliTestIHMGestionPersonnel.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/AccueilController.java" />
+        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/AjouterPersonnel.java" />
+        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/SupprimerPersonnel.java" />
+        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/EcranGestionPersonnel.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/GestionPersonnelController.java" />
+        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/ReinitialiserMDP.java" />
       </list>
     </option>
   </component>
@@ -301,37 +291,7 @@
               <item name="clinique_veto" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="clinique" type="462c0819:PsiDirectoryNode" />
-              <item name="BO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clinique_veto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clinique_veto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="clinique" type="462c0819:PsiDirectoryNode" />
-              <item name="DAL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clinique_veto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clinique_veto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="clinique" type="462c0819:PsiDirectoryNode" />
-              <item name="DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clinique_veto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clinique_veto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="clinique" type="462c0819:PsiDirectoryNode" />
               <item name="IHM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clinique_veto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clinique_veto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="clinique" type="462c0819:PsiDirectoryNode" />
-              <item name="IHM" type="462c0819:PsiDirectoryNode" />
-              <item name="Animaux" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="clinique_veto" type="b2602c69:ProjectViewProjectNode" />
@@ -340,14 +300,6 @@
               <item name="clinique" type="462c0819:PsiDirectoryNode" />
               <item name="IHM" type="462c0819:PsiDirectoryNode" />
               <item name="Connexion" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clinique_veto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clinique_veto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="clinique" type="462c0819:PsiDirectoryNode" />
-              <item name="IHM" type="462c0819:PsiDirectoryNode" />
-              <item name="GestionClient" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="clinique_veto" type="b2602c69:ProjectViewProjectNode" />
@@ -526,7 +478,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49832000" />
+    <option name="totallyTimeSpent" value="51157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -542,11 +494,11 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.15447155" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.15447155" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.22429305" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.22429305" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3292683" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
@@ -579,39 +531,40 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3292683" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3292683" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.2673522" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32991204" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.29850745" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32991204" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Capture Tool" order="1" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.29850745" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,8 +579,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/DAL/ClientDAO.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/DAL/ClientDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/DAL/ClientDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/DAL/settings.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -744,13 +695,6 @@
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranAccueil.jfd">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/AjouterPersonnel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="151" column="26" selection-start-line="151" selection-start-column="12" selection-end-line="151" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/JTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -766,17 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -812,20 +745,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Client/EcranClient.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionPersonnel/GestionPersonnelManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionClient/ClientManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -833,9 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -868,9 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="94" column="45" lean-forward="true" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,9 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="57" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -946,10 +860,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/SupprimerPersonnel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionPersonnel/GestionPersonnelManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/EcranGestionPersonnel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="90" column="49" lean-forward="true" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
+        <state relative-caret-position="338">
+          <caret line="120" column="63" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -958,11 +886,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/GestionPersonnelController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="62" column="32" lean-forward="true" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+        <state relative-caret-position="408">
+          <caret line="76" column="42" lean-forward="true" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1987#1988#0" expanded="true" />
+            <element signature="e#2036#2037#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/AjouterPersonnel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="39" />
+          <folding>
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/ReinitialiserMDP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
         </state>
       </provider>
     </entry>

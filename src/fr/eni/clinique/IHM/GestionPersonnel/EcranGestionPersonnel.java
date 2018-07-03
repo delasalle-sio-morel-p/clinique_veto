@@ -45,6 +45,8 @@ public class EcranGestionPersonnel extends JPanel {
 
         //======== listener =======
         actionBtnAjouter();
+        actionBtnSupprimer();
+        actionBtnReinitialiserMDP();
 
         //======== menuGestionPersonnel ========
         {
@@ -89,6 +91,34 @@ public class EcranGestionPersonnel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     gestionPersonnelController.ajouter();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnSupprimer() {
+        boutonSupprimer.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionPersonnelController.supprimer();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnReinitialiserMDP() {
+        boutonReinitialiserMDP.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionPersonnelController.reinitialiserMDP();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }

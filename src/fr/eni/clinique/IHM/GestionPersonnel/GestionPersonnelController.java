@@ -13,6 +13,8 @@ public class GestionPersonnelController {
     private EcranAccueil ecranAccueil;
     private EcranGestionPersonnel ecranGestionPersonnel;
     private AjouterPersonnel ajouterPersonnel;
+    private SupprimerPersonnel supprimerPersonnel;
+    private ReinitialiserMDP reinitialiserMDP;
 
     private GestionPersonnelManager manager;
 
@@ -62,6 +64,25 @@ public class GestionPersonnelController {
         System.out.println("ajouter");
         ajouterPersonnel = new AjouterPersonnel(AccueilController.get().getEcranAccueil(),this);
         ajouterPersonnel.setVisible(true);
+    }
+    public void supprimer() {
+        System.out.println("supprimer");
+        supprimerPersonnel = new SupprimerPersonnel(AccueilController.get().getEcranAccueil(),this);
+        supprimerPersonnel.setVisible(true);
+    }
+
+    public void reinitialiserMDP() {
+        System.out.println("reinitialiserMDP");
+        reinitialiserMDP = new ReinitialiserMDP(AccueilController.get().getEcranAccueil(),this);
+        reinitialiserMDP.setVisible(true);
+    }
+    public void annuler() {
+        if (ajouterPersonnel != null)
+            ajouterPersonnel.setVisible(false);
+        if (supprimerPersonnel != null)
+            supprimerPersonnel.setVisible(false);
+        if (reinitialiserMDP != null)
+            reinitialiserMDP.setVisible(false);
     }
 
     public void ajouterPersonnel(JTextField textboxNom, JTextField textFieldPrenom, JComboBox comboboxRole, JPasswordField passwordFieldMDP) {
