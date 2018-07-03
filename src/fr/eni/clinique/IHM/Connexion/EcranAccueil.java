@@ -34,6 +34,14 @@ public class EcranAccueil extends JFrame {
         this.setLocationRelativeTo(null);
         initComponents();
     }
+    public EcranAccueil(AccueilController accueilController) {
+        this.accueilController = accueilController;
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setTitle("Clinique vétérinaire");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        initComponents();
+    }
     public EcranAccueil(GestionPersonnelController gestionPersonnelController) {
         this.gestionPersonnelController = gestionPersonnelController;
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -152,6 +160,7 @@ public class EcranAccueil extends JFrame {
                 try {
                     System.out.println("menuSelected");
                     gestionPersonnelController.affichageEcranGestionPersonnel();
+//                    accueilController.callEcranGestionPersonnel();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -179,7 +188,7 @@ public class EcranAccueil extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionClientController.affichageEcranClient();
+                    accueilController.callEcranGestionClient();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -199,6 +208,7 @@ public class EcranAccueil extends JFrame {
     private JMenu menuAgenda;
     private JMenu menuGestionPersonnel;
     private ConnexionController connexionController;
+    private AccueilController accueilController;
     private GestionPersonnelController gestionPersonnelController;
     private GestionClientController gestionClientController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables

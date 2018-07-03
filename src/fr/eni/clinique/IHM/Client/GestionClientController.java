@@ -9,7 +9,7 @@ import java.util.List;
 
 public class GestionClientController {
     private EcranAccueil ecranAccueil;
-    private EcranClient ecranClient;
+    private EcranGestionClient ecranGestionClient;
     private AjouterClient ajouterClient;
 
     private GestionClientManager manager;
@@ -44,10 +44,10 @@ public class GestionClientController {
         return instance;
     }
 
-    public void affichageEcranClient() {
-        if (ecranClient == null)
-            ecranClient = new EcranClient(this);
-        ecranAccueil.add(ecranClient);
+    public void affichageEcranGestionClient() {
+        if (ecranGestionClient == null)
+            ecranGestionClient = new EcranGestionClient(this);
+        ecranAccueil.add(ecranGestionClient);
         ecranAccueil.revalidate();
     }
 }

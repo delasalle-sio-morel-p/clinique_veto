@@ -11,12 +11,12 @@ import javax.swing.border.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class EcranClient extends JPanel {
-    public EcranClient() {
+public class EcranGestionClient extends JPanel {
+    public EcranGestionClient() {
         initComponents();
     }
 
-    public EcranClient(GestionClientController gestionClientController) {
+    public EcranGestionClient(GestionClientController gestionClientController) {
         this.gestionClientController = gestionClientController;
         initComponents();
     }

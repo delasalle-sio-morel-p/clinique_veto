@@ -1,6 +1,6 @@
 package fr.eni.clinique.AppliTest.Clients;
 
-import fr.eni.clinique.IHM.Client.EcranClient;
+import fr.eni.clinique.IHM.Client.EcranGestionClient;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 
 
@@ -16,7 +16,7 @@ public class AppliTestIHMClients {
                 EcranAccueil ecranAccueil = new EcranAccueil();
                 ecranAccueil.setVisible(true);
 
-                EcranClient gestionClient = new EcranClient();
+                EcranGestionClient gestionClient = new EcranGestionClient();
                 ecranAccueil.setContentPane(gestionClient);
 
 

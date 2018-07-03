@@ -16,7 +16,7 @@ public class GestionPersonnelController {
     private GestionPersonnelManager manager;
 
     private List<Personnel> listePersonnels;
-    private List<Role> listRolesPersonnels;
+    private List<Role> listeRolesPersonnels;
 
     private static GestionPersonnelController instance;
 
@@ -28,7 +28,7 @@ public class GestionPersonnelController {
 
             //Initialisation du catalogue en mémoire
             listePersonnels = manager.getListePersonnels();
-            listRolesPersonnels = manager.getListeRolesPersonnels();
+            listeRolesPersonnels = manager.getListeRolesPersonnels();
 
         } catch (BLLException e) {
             e.printStackTrace();
@@ -40,7 +40,7 @@ public class GestionPersonnelController {
     }
 
     public List<Role> getListeRolesPersonnels() {
-        return listRolesPersonnels;
+        return listeRolesPersonnels;
     }
 
     //Méthodes
@@ -60,7 +60,7 @@ public class GestionPersonnelController {
         if (ecranGestionPersonnel == null)
             ecranGestionPersonnel = new EcranGestionPersonnel(this);
         ecranAccueil.add(ecranGestionPersonnel);
-        System.out.println(listRolesPersonnels);
+        System.out.println(listeRolesPersonnels);
         ecranAccueil.revalidate();
     }
 

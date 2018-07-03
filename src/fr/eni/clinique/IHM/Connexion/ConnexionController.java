@@ -77,4 +77,8 @@ public class ConnexionController {
     public void callEcranAccueil(){
         GestionPersonnelController.get().affichageEcranAccueil();
     }
+
+//    public void callEcranAccueil(){
+//        AccueilController.get().affichageEcranAccueil();
+//    }
 }
