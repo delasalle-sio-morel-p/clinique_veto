@@ -8,64 +8,38 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-					"$columnSpecs": "0, 0, 0"
-					"$rowSpecs": "0, 0, 0, 0"
-					"$hGap": 5
-					"$vGap": 5
-					"$alignLeft": true
-					"$alignTop": true
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {space :25:25:p, par l:::p {seq {comp labelNom:::p:70:p, space :p:5:p, comp textboxNom:::p:229:p}, seq {comp labelPrenom:::p:70:p, space :p:5:p, comp textFieldPrenom:::::x}, seq {comp labelRole:::p:70:p, space :p:5:p, comp comboboxRole:::::x}, seq {comp labelMotPasse:::p::p, space :p:5:p, comp passwordFieldMDP:::::x}}}}"
+					"$verticalGroup": "par l {seq {par l {comp labelNom:::p:30:p, comp textboxNom:::p::p}, space :5:5:p, par l {comp labelPrenom:::p:30:p, comp textFieldPrenom:::p::p}, space :5:5:p, par l {comp labelRole:::p:30:p, comp comboboxRole:::p::p}, space :5:5:p, par l {comp labelMotPasse:::p:30:p, comp passwordFieldMDP:::p::p}}}"
 				} ) {
 					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelNom"
 						"text": "Nom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textboxNom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 2
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelPrenom"
 						"text": "Prénom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 1
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldPrenom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 2
-						"gridy": 1
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelRole"
 						"text": "Rôle"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 2
-						"gridx": 1
 					} )
 					add( new FormComponent( "javax.swing.JComboBox" ) {
 						name: "comboboxRole"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 2
-						"gridy": 2
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelMotPasse"
 						"text": "Mot de passe"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 3
 					} )
 					add( new FormComponent( "javax.swing.JPasswordField" ) {
 						name: "passwordFieldMDP"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 2
-						"gridy": 3
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "North"

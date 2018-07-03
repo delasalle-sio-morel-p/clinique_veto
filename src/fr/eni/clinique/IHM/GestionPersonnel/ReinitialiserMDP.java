@@ -11,7 +11,7 @@ import javax.swing.border.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class ReinitialiserMDP extends JPanel {
+public class ReinitialiserMDP extends JDialog {
     public ReinitialiserMDP() {
         initComponents();
     }
@@ -28,30 +28,46 @@ public class ReinitialiserMDP extends JPanel {
         boutonAnnuler = new JButton();
 
         //======== this ========
-
-        setLayout(new BorderLayout());
+        Container contentPane = getContentPane();
+        contentPane.setLayout(new BorderLayout());
 
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
+
+            // JFormDesigner evaluation mark
+            dialogPane.setBorder(new javax.swing.border.CompoundBorder(
+                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                    java.awt.Color.red), dialogPane.getBorder())); dialogPane.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+
             dialogPane.setLayout(new BorderLayout());
 
             //======== contentPanel ========
             {
-                contentPanel.setLayout(new GridBagLayout());
-                ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
-                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
 
                 //---- LabelNouveauMDP ----
                 LabelNouveauMDP.setText("Nouveau mot de passe : ");
-                contentPanel.add(LabelNouveauMDP, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 5, 5), 0, 0));
-                contentPanel.add(textboxNouveauMDP, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 5, 5), 0, 0));
+
+                GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
+                contentPanel.setLayout(contentPanelLayout);
+                contentPanelLayout.setHorizontalGroup(
+                    contentPanelLayout.createParallelGroup()
+                        .addGroup(contentPanelLayout.createSequentialGroup()
+                            .addComponent(LabelNouveauMDP)
+                            .addGap(5, 5, 5)
+                            .addComponent(textboxNouveauMDP, GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                            .addContainerGap())
+                );
+                contentPanelLayout.setVerticalGroup(
+                    contentPanelLayout.createParallelGroup()
+                        .addGroup(contentPanelLayout.createSequentialGroup()
+                            .addGap(25, 25, 25)
+                            .addGroup(contentPanelLayout.createParallelGroup()
+                                .addComponent(LabelNouveauMDP, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textboxNouveauMDP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                );
             }
             dialogPane.add(contentPanel, BorderLayout.NORTH);
 
@@ -76,7 +92,9 @@ public class ReinitialiserMDP extends JPanel {
             }
             dialogPane.add(buttonBar, BorderLayout.SOUTH);
         }
-        add(dialogPane, BorderLayout.CENTER);
+        contentPane.add(dialogPane, BorderLayout.CENTER);
+        pack();
+        setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 

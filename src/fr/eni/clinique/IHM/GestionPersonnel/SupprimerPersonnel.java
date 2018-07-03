@@ -11,7 +11,7 @@ import javax.swing.border.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class SupprimerPersonnel extends JPanel {
+public class SupprimerPersonnel extends JDialog {
     public SupprimerPersonnel() {
         initComponents();
     }
@@ -27,11 +27,20 @@ public class SupprimerPersonnel extends JPanel {
         LblSupprimer = new JLabel();
 
         //======== this ========
-        setLayout(new BorderLayout());
+        Container contentPane = getContentPane();
+        contentPane.setLayout(new BorderLayout());
 
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
+
+            // JFormDesigner evaluation mark
+            dialogPane.setBorder(new javax.swing.border.CompoundBorder(
+                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                    java.awt.Color.red), dialogPane.getBorder())); dialogPane.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+
             dialogPane.setLayout(new BorderLayout());
 
             //======== buttonBar ========
@@ -57,21 +66,32 @@ public class SupprimerPersonnel extends JPanel {
 
             //======== contentPanel ========
             {
-                contentPanel.setLayout(new GridBagLayout());
-                ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 0, 0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
-                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 1.0E-4};
 
                 //---- LblSupprimer ----
                 LblSupprimer.setText("\u00cates-vous s\u00fbr de vouloir supprimer cet utilisateur ?");
-                contentPanel.add(LblSupprimer, new GridBagConstraints(4, 3, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 0), 0, 0));
+
+                GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
+                contentPanel.setLayout(contentPanelLayout);
+                contentPanelLayout.setHorizontalGroup(
+                    contentPanelLayout.createParallelGroup()
+                        .addGroup(contentPanelLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(LblSupprimer)
+                            .addContainerGap(79, Short.MAX_VALUE))
+                );
+                contentPanelLayout.setVerticalGroup(
+                    contentPanelLayout.createParallelGroup()
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
+                            .addContainerGap(57, Short.MAX_VALUE)
+                            .addComponent(LblSupprimer)
+                            .addGap(18, 18, 18))
+                );
             }
             dialogPane.add(contentPanel, BorderLayout.NORTH);
         }
-        add(dialogPane, BorderLayout.CENTER);
+        contentPane.add(dialogPane, BorderLayout.CENTER);
+        pack();
+        setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
