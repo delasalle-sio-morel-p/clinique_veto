@@ -92,7 +92,7 @@ public class ResultatRechercheClient extends JDialog {
 
                 //---- buttonRechercher ----
                 buttonRechercher.setText("Rechercher");
-                buttonRechercher.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/search.png")));
+                buttonRechercher.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/search16px.png")));
                 toolBar1.add(buttonRechercher);
             }
             dialogPane.add(toolBar1, BorderLayout.NORTH);

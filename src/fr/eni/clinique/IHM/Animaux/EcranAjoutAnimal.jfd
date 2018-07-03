@@ -79,7 +79,7 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "okButton"
 						"text": "Valider"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/checked.png" )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/check16px.png" )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 1
 						"gridy": 0
@@ -87,7 +87,7 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "cancelButton"
 						"text": "Annuler"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/reply.png" )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/reply16px.png" )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 2
 						"gridy": 0

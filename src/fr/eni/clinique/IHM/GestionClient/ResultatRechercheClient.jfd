@@ -42,7 +42,7 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "buttonRechercher"
 						"text": "Rechercher"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/search.png" )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/search16px.png" )
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "North"
