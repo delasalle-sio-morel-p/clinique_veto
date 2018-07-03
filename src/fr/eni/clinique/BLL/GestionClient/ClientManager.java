@@ -63,7 +63,7 @@ public class ClientManager {
         try {
             daoClient.insert(client);
         } catch (DALException e) {
-            throw new BLLException("Le Client n'a pas pu être inséré dans la base");
+            throw new BLLException("Le GestionClient n'a pas pu être inséré dans la base");
         }
     }
 
@@ -100,7 +100,7 @@ public class ClientManager {
 
     private void verifierPrenomClient(Client client) throws BLLException {
         if (client.getPrenomClient() == null || client.getPrenomClient().trim().isEmpty()) {
-            throw new BLLException("Le Prénom du Client doit être renseigné.");
+            throw new BLLException("Le Prénom du GestionClient doit être renseigné.");
         } else if (client.getPrenomClient().length() > 20) {
             throw new BLLException("Le prénom ne doit pas dépasser 20 caractères");
         }

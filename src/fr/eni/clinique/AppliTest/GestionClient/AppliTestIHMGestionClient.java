@@ -1,6 +1,6 @@
 package fr.eni.clinique.AppliTest.GestionClient;
 
-import fr.eni.clinique.IHM.Client.EcranGestionClient;
+import fr.eni.clinique.IHM.GestionClient.EcranGestionClient;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 
 import javax.swing.*;

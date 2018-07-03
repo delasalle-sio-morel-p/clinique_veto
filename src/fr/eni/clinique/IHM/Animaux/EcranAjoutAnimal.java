@@ -67,7 +67,7 @@ public class EcranAjoutAnimal extends JDialog {
             {
 
                 //---- labelClient ----
-                labelClient.setText("Client :");
+                labelClient.setText("GestionClient :");
 
                 //---- labelCode ----
                 labelCode.setText("Code");

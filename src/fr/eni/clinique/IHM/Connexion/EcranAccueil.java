@@ -4,8 +4,7 @@
 
 package fr.eni.clinique.IHM.Connexion;
 
-import fr.eni.clinique.IHM.Client.GestionClientController;
-import fr.eni.clinique.IHM.Connexion.ConnexionController;
+import fr.eni.clinique.IHM.GestionClient.GestionClientController;
 import fr.eni.clinique.IHM.GestionPersonnel.GestionPersonnelController;
 
 import java.awt.*;

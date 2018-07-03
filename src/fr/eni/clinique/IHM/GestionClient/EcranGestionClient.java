@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Mon Jul 02 14:40:04 CEST 2018
  */
 
-package fr.eni.clinique.IHM.Client;
+package fr.eni.clinique.IHM.GestionClient;
 
 import java.awt.*;
 import javax.swing.*;

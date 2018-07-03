@@ -1,4 +1,4 @@
-package fr.eni.clinique.IHM.Client;
+package fr.eni.clinique.IHM.GestionClient;
 
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.GestionClient.GestionClientManager;
