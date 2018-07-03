@@ -23,6 +23,12 @@ public class SupprimerPersonnel extends JDialog {
         this.gestionPersonnelController = gestionPersonnelController;
         initComponents();
     }
+    public SupprimerPersonnel(Frame owner, JTable tablePersonnels, GestionPersonnelController gestionPersonnelController) {
+        super(owner);
+        this.gestionPersonnelController = gestionPersonnelController;
+        this.table = tablePersonnels;
+        initComponents();
+    }
 
     public SupprimerPersonnel(Frame owner, JPanel contentPanel, GestionPersonnelController gestionPersonnelController) {
         super(owner);
@@ -36,17 +42,19 @@ public class SupprimerPersonnel extends JDialog {
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
         dialogPane = new JPanel();
         buttonBar = new JPanel();
-        boutonOk = new JButton();
+        boutonOK = new JButton();
         boutonAnnuler = new JButton();
         contentPanel = new JPanel();
-        LblSupprimer = new JLabel();
+        lblSupprimer = new JLabel();
 
         //======== this ========
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
         //======== listener =======
+        actionBtnOK();
         actionBtnAnnuler();
+
 
         //======== dialogPane ========
         {
@@ -62,8 +70,8 @@ public class SupprimerPersonnel extends JDialog {
                 ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
                 //---- boutonOk ----
-                boutonOk.setText("OK");
-                buttonBar.add(boutonOk, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                boutonOK.setText("OK");
+                buttonBar.add(boutonOK, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
 
@@ -79,7 +87,7 @@ public class SupprimerPersonnel extends JDialog {
             {
 
                 //---- LblSupprimer ----
-                LblSupprimer.setText("\u00cates-vous s\u00fbr de vouloir supprimer cet utilisateur ?");
+                lblSupprimer.setText("\u00cates-vous s\u00fbr de vouloir supprimer cet utilisateur ?");
 
                 GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
                 contentPanel.setLayout(contentPanelLayout);
@@ -87,14 +95,14 @@ public class SupprimerPersonnel extends JDialog {
                     contentPanelLayout.createParallelGroup()
                         .addGroup(contentPanelLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(LblSupprimer)
+                            .addComponent(lblSupprimer)
                             .addContainerGap(79, Short.MAX_VALUE))
                 );
                 contentPanelLayout.setVerticalGroup(
                     contentPanelLayout.createParallelGroup()
                         .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
                             .addContainerGap(57, Short.MAX_VALUE)
-                            .addComponent(LblSupprimer)
+                            .addComponent(lblSupprimer)
                             .addGap(18, 18, 18))
                 );
             }
@@ -104,6 +112,20 @@ public class SupprimerPersonnel extends JDialog {
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+    }
+
+    private void actionBtnOK() {
+        boutonOK.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionPersonnelController.supprimerPersonnel(table);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
     }
 
     private void actionBtnAnnuler() {
@@ -124,10 +146,11 @@ public class SupprimerPersonnel extends JDialog {
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
     private JPanel buttonBar;
-    private JButton boutonOk;
+    private JButton boutonOK;
     private JButton boutonAnnuler;
     private JPanel contentPanel;
-    private JLabel LblSupprimer;
+    private JLabel lblSupprimer;
+    private JTable table;
     private GestionPersonnelController gestionPersonnelController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

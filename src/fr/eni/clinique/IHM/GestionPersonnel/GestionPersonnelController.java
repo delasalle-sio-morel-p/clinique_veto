@@ -23,6 +23,9 @@ public class GestionPersonnelController {
 
     private static GestionPersonnelController instance;
 
+    private boolean isPresent;
+    private Personnel personneSelectionne;
+
 
     //Constructeur
     private GestionPersonnelController() {
@@ -65,9 +68,9 @@ public class GestionPersonnelController {
         ajouterPersonnel = new AjouterPersonnel(AccueilController.get().getEcranAccueil(),this);
         ajouterPersonnel.setVisible(true);
     }
-    public void supprimer() {
+    public void supprimer(JTable tablePersonnels) {
         System.out.println("supprimer");
-        supprimerPersonnel = new SupprimerPersonnel(AccueilController.get().getEcranAccueil(),this);
+        supprimerPersonnel = new SupprimerPersonnel(AccueilController.get().getEcranAccueil(),tablePersonnels,this);
         supprimerPersonnel.setVisible(true);
     }
 
@@ -108,10 +111,48 @@ public class GestionPersonnelController {
 
         try {
             manager.addPersonnel(personne);
+            System.out.println(personne + " ajouté à la base de donnée");
             ajouterPersonnel.setVisible(false);
 
         } catch (BLLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void supprimerPersonnel(JTable tablePesonnels) {
+        int ligneSelectionne = tablePesonnels.getSelectedRow();
+        if(ligneSelectionne != -1) {
+            String nomSelectionne = (String) tablePesonnels.getValueAt(ligneSelectionne, 0);
+            System.out.println(tablePesonnels.getValueAt(ligneSelectionne, 0));
+
+            try {
+                manager.deletePersonnel(personneSelectionne(nomSelectionne));
+                System.out.println(personneSelectionne + " archivé");
+                supprimerPersonnel.setVisible(false);
+            } catch (BLLException e) {
+                e.printStackTrace();
+            }
+        }
+        else
+            System.out.print("Pas de ligne sélectionnée");
+    }
+
+    public Personnel personneSelectionne(String nom){
+        isPresent = false;
+        for (Personnel personne : listePersonnels) {
+
+            if (personne.getNom().equals(nom)) {
+                isPresent = true;
+                personneSelectionne = personne;
+                break;
+            }
+        }
+        if (isPresent) {
+            System.out.println("Personne présente en base de donnée :");
+            System.out.println(personneSelectionne);
+            return personneSelectionne;
+        } else
+            System.out.println("Personne non présente en base de donnée");
+        return null;
     }
 }

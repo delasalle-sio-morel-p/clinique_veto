@@ -34,6 +34,7 @@ public class EcranGestionPersonnel extends JPanel {
         scrollPane1 = new JScrollPane();
         modele = new TablePersonnelModel(gestionPersonnelController.getListePersonnels());
         tableauEmployes = new JTable(modele);
+        tableauEmployes.setAutoCreateRowSorter(true);
 
         //======== this ========
 
@@ -45,7 +46,7 @@ public class EcranGestionPersonnel extends JPanel {
 
         //======== listener =======
         actionBtnAjouter();
-        actionBtnSupprimer();
+        actionBtnSupprimer(tableauEmployes);
         actionBtnReinitialiserMDP();
 
         //======== menuGestionPersonnel ========
@@ -98,13 +99,13 @@ public class EcranGestionPersonnel extends JPanel {
         });
     }
 
-    private void actionBtnSupprimer() {
+    private void actionBtnSupprimer(JTable tablePersonnels) {
         boutonSupprimer.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionPersonnelController.supprimer();
+                    gestionPersonnelController.supprimer(tablePersonnels);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
