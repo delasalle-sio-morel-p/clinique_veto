@@ -37,16 +37,26 @@ public class AccueilController {
     }
 
     public void callEcranGestionPersonnel() {
+        if (GestionClientController.get().affichageEcranGestionClient() != null) {
+            ecranAccueil.remove(GestionClientController.get().affichageEcranGestionClient());
+            ecranAccueil.repaint();
+            ecranAccueil.revalidate();
+        }
         ecranAccueil.add(GestionPersonnelController.get().affichageEcranGestionPersonnel());
         ecranAccueil.revalidate();
     }
 
     public void callEcranGestionClient() {
+        if (GestionPersonnelController.get().affichageEcranGestionPersonnel() != null) {
+            ecranAccueil.remove(GestionPersonnelController.get().affichageEcranGestionPersonnel());
+            ecranAccueil.repaint();
+            ecranAccueil.revalidate();
+        }
         ecranAccueil.add(GestionClientController.get().affichageEcranGestionClient());
         ecranAccueil.revalidate();
     }
 
-    public EcranAccueil getEcranAccueil(){
+    public EcranAccueil getEcranAccueil() {
         if (ecranAccueil == null)
             ecranAccueil = new EcranAccueil(this);
         return ecranAccueil;
