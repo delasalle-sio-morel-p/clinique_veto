@@ -45,4 +45,10 @@ public class AccueilController {
         ecranAccueil.add(GestionClientController.get().affichageEcranGestionClient());
         ecranAccueil.revalidate();
     }
+
+    public EcranAccueil getEcranAccueil(){
+        if (ecranAccueil == null)
+            ecranAccueil = new EcranAccueil(this);
+        return ecranAccueil;
+    }
 }

@@ -24,6 +24,19 @@ public class AjouterPersonnel extends JDialog {
         initComponents();
     }
 
+    public AjouterPersonnel(Frame owner, GestionPersonnelController gestionPersonnelController) {
+        super(owner);
+        this.gestionPersonnelController = gestionPersonnelController;
+        initComponents();
+    }
+
+    public AjouterPersonnel(Frame owner, JPanel contentPanel, GestionPersonnelController gestionPersonnelController) {
+        super(owner);
+        this.contentPanel = contentPanel;
+        this.gestionPersonnelController = gestionPersonnelController;
+        initComponents();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
@@ -34,7 +47,7 @@ public class AjouterPersonnel extends JDialog {
         labelPrenom = new JLabel();
         textFieldPrenom = new JTextField();
         labelRole = new JLabel();
-        comboboxRole = new JComboBox();
+        comboboxRole = new JComboBox(gestionPersonnelController.getListeRolesPersonnels().toArray());
         labelMotPasse = new JLabel();
         passwordFieldMDP = new JPasswordField();
         buttonBar = new JPanel();
@@ -44,6 +57,9 @@ public class AjouterPersonnel extends JDialog {
         //======== this ========
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
+
+        //======== listener =======
+        actionBtnOK();
 
         //======== dialogPane ========
         {

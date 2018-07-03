@@ -3,6 +3,7 @@ package fr.eni.clinique.IHM.GestionPersonnel;
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.GestionPersonnel.GestionPersonnelManager;
 import fr.eni.clinique.BO.*;
+import fr.eni.clinique.IHM.Connexion.AccueilController;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 
 import javax.swing.*;
@@ -59,10 +60,8 @@ public class GestionPersonnelController {
 
     public void ajouter() {
         System.out.println("ajouter");
-        ajouterPersonnel = new AjouterPersonnel(this);
-        ecranAccueil.add(ajouterPersonnel);
-
-        ecranAccueil.revalidate();
+        ajouterPersonnel = new AjouterPersonnel(AccueilController.get().getEcranAccueil(),this);
+        ajouterPersonnel.setVisible(true);
     }
 
     public void ajouterPersonnel(JTextField textboxNom, JTextField textFieldPrenom, JComboBox comboboxRole, JPasswordField passwordFieldMDP) {
@@ -86,17 +85,12 @@ public class GestionPersonnelController {
                 break;
         }
 
-//        try {
-//            manager.addPersonnel(personne);
-//
-//        } catch (BLLException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            manager.addPersonnel(personne);
+            ajouterPersonnel.setVisible(false);
 
-        ecranAccueil.remove(ajouterPersonnel);
-        ecranAccueil.remove(ecranGestionPersonnel);
-        ecranAccueil.add(ecranGestionPersonnel);
-
-        ecranAccueil.revalidate();
+        } catch (BLLException e) {
+            e.printStackTrace();
+        }
     }
 }
