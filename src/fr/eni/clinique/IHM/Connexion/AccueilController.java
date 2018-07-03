@@ -37,7 +37,6 @@ public class AccueilController {
     }
 
     public void callEcranGestionPersonnel() {
-//        GestionPersonnelController.get().affichageEcranGestionPersonnel();
         ecranAccueil.add(GestionPersonnelController.get().affichageEcranGestionPersonnel());
         ecranAccueil.revalidate();
     }

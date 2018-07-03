@@ -158,7 +158,6 @@ public class EcranAccueil extends JFrame {
             public void menuSelected(MenuEvent e) {
                 try {
                     System.out.println("menuSelected");
-//                    gestionPersonnelController.affichageEcranGestionPersonnel();
                     accueilController.callEcranGestionPersonnel();
                 } catch (Exception e1) {
                     e1.printStackTrace();

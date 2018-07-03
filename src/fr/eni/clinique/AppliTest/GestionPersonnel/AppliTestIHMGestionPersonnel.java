@@ -19,10 +19,10 @@ public class AppliTestIHMGestionPersonnel {
                 ecranAccueil.setVisible(true);
 
                 EcranGestionPersonnel gestionPersonnel = new EcranGestionPersonnel();
-                ecranAccueil.setContentPane(gestionPersonnel);
+//                ecranAccueil.setContentPane(gestionPersonnel);
 
                 AjouterPersonnel addPersonnel = new AjouterPersonnel();
-//                ecranAccueil.setContentPane(addPersonnel);
+                ecranAccueil.setContentPane(addPersonnel);
 
                 SupprimerPersonnel suppPersonnel = new SupprimerPersonnel();
 //                ecranAccueil.setContentPane(suppPersonnel);
