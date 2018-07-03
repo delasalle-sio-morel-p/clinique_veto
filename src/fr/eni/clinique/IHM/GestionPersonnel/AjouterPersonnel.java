@@ -15,7 +15,7 @@ import javax.swing.border.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class AjouterPersonnel extends JPanel {
+public class AjouterPersonnel extends JDialog {
     public AjouterPersonnel() {
         initComponents();
     }
@@ -34,7 +34,7 @@ public class AjouterPersonnel extends JPanel {
         labelPrenom = new JLabel();
         textFieldPrenom = new JTextField();
         labelRole = new JLabel();
-        comboboxRole = new JComboBox(gestionPersonnelController.getListeRolesPersonnels().toArray());
+        comboboxRole = new JComboBox();
         labelMotPasse = new JLabel();
         passwordFieldMDP = new JPasswordField();
         buttonBar = new JPanel();
@@ -42,15 +42,20 @@ public class AjouterPersonnel extends JPanel {
         boutonAnnuler = new JButton();
 
         //======== this ========
-
-        setLayout(new BorderLayout());
-
-        //======== listener =======
-        actionBtnOK();
+        Container contentPane = getContentPane();
+        contentPane.setLayout(new BorderLayout());
 
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
+
+            // JFormDesigner evaluation mark
+            dialogPane.setBorder(new javax.swing.border.CompoundBorder(
+                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                    java.awt.Color.red), dialogPane.getBorder())); dialogPane.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+
             dialogPane.setLayout(new BorderLayout());
 
             //======== contentPanel ========
@@ -120,7 +125,9 @@ public class AjouterPersonnel extends JPanel {
             }
             dialogPane.add(buttonBar, BorderLayout.SOUTH);
         }
-        add(dialogPane, BorderLayout.CENTER);
+        contentPane.add(dialogPane, BorderLayout.CENTER);
+        pack();
+        setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
