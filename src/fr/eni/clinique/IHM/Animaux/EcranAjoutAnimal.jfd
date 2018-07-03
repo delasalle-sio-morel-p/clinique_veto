@@ -8,103 +8,62 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-					"$columnSpecs": "0, 0, 0, 0, 0"
-					"$rowSpecs": "0, 0, 0, 0, 0, 0, 0"
-					"$hGap": 5
-					"$vGap": 5
-					"$alignLeft": true
-					"$alignTop": true
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {par l:::p {comp labelClient:::p:50:p, comp textboxNomClient:::p:303:p, seq {comp labelCode:::p:50:p, space :5:5:p, comp labelCodeValeur:::p:71:p}, seq {comp labelTatouage:::p::p, space :p:5:p, comp textFieldTatouage:::::x}, seq t {par t {seq {comp labelNom:::p:50:p, space :p:5:p, comp textFieldNom:::::x}, seq {comp labelCouleur:::p:50:p, space :p:5:p, comp textFieldCouleur:::::x}, seq {comp labelEspece:::p:50:p, space :p:5:p, comp comboBoxEspece:::::x}}, space :::p, par l:::p {seq {comp labelRace:::p:71:p, space :::p, comp comboBoxRace:::p::p}, comp comboBoxGenre:::::x}}}, space :p:232:p}}"
+					"$verticalGroup": "par l {seq {comp labelClient:::p::p, space :5:5:p, comp textboxNomClient:::p::p, space :5:5:p, par l {comp labelCode:::p::p, comp labelCodeValeur:::p:16:p}, space :5:5:p, par l {comp labelNom:::p:30:p, comp textFieldNom::l:p::p, comp comboBoxGenre::l:p::p}, space :5:5:p, par l {comp labelCouleur:::p:30:p, comp textFieldCouleur:::p::p}, space :5:5:p, par l {comp labelEspece:::p:30:p, par b {comp comboBoxRace::b:p::p, comp labelRace::b:p:30:p}, comp comboBoxEspece::l:p::p}, space :5:5:p, par l {comp labelTatouage:::p:30:p, comp textFieldTatouage:::p::p}}}"
 				} ) {
 					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelClient"
 						"text": "Client :"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textboxNomClient"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 1
-						"gridwidth": 5
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelCode"
 						"text": "Code"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 2
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelCodeValeur"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 2
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelNom"
 						"text": "Nom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 3
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldNom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 3
 					} )
 					add( new FormComponent( "javax.swing.JComboBox" ) {
 						name: "comboBoxGenre"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 2
-						"gridy": 3
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelCouleur"
 						"text": "Couleur"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 4
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldCouleur"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 4
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelEspece"
 						"text": "Espece"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 5
 					} )
 					add( new FormComponent( "javax.swing.JComboBox" ) {
 						name: "comboBoxEspece"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 5
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelRace"
 						"text": "Race"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 2
-						"gridy": 5
 					} )
 					add( new FormComponent( "javax.swing.JComboBox" ) {
 						name: "comboBoxRace"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 3
-						"gridy": 5
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelTatouage"
 						"text": "Tatouage"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 6
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldTatouage"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 6
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "Center"
@@ -145,4 +104,3 @@ new FormModel {
 		} )
 	}
 }
-

@@ -8,89 +8,55 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-					"$columnSpecs": "0, 0"
-					"$rowSpecs": "0, 0, 0, 0, 0, 0, 0, 0, 0"
-					"$hGap": 5
-					"$vGap": 5
-					"$alignLeft": true
-					"$alignTop": true
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq l {par l {comp labelNom:::p:63:p, comp labelPrénom:::p:63:p, comp labelAdresse:::p:63:p, comp labelCodePostal:::p::p, comp Ville:::p:63:p, comp labelCode::l:p:63:p}, space s:::p, par t {comp textFieldAdresse2::t:p:220:p, par l:t::p {comp textFieldNom::l:::x, comp textFieldPrenom::l:::x, comp textFieldAdresse1::l:::x, comp textField5::l:p:220:p, comp textFieldVille::l:::x, comp textFieldCode::l:p:220:p}}, space ::354:x}}"
+					"$verticalGroup": "par l {seq {comp labelCode:::p:30:p, space :5:5:p, comp labelNom:::p:30:p, space :5:5:p, comp labelPrénom:::p:30:p, space :5:5:p, comp labelAdresse:::p:30:p, space :p:40:p, comp labelCodePostal:::p:30:p, space :5:5:p, comp Ville:::p:30:p}, seq {comp textFieldCode:::p::p, space :5:5:p, comp textFieldNom:::p::p, space :5:5:p, comp textFieldPrenom:::p::p, space :5:5:p, comp textFieldAdresse1:::p::p, space :p:5:p, comp textFieldAdresse2:::p::p, space :p:5:p, comp textField5:::p::p, space :5:5:p, comp textFieldVille:::p::p}}"
 				} ) {
 					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelCode"
 						"text": "Code"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldCode"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelNom"
 						"text": "Nom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 1
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldNom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 1
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelPrénom"
 						"text": "Prénom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 2
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldPrenom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 2
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelAdresse"
 						"text": "Adresse"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 3
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldAdresse1"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 3
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldAdresse2"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 4
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelCodePostal"
 						"text": "Code Postal"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 5
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textField5"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 5
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "Ville"
 						"text": "Ville"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 6
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldVille"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 6
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "Center"
