@@ -24,8 +24,9 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
     private static final String UPDATE = "UPDATE Personnels SET Nom=?, Prenom=?, MotPasse=?, Role=?, "
             + "Archive=? WHERE CodePers=?";
-//A FAIRE @Patrick
-//    private static final String DELETE = "DELETE FROM Personnels WHERE CodePers=?";
+
+
+    private static final String DELETE = "UPDATE Personnels SET Archive = 1 where CodePers = ?";
 
     @Override
     public Personnel selectById(int id) throws DALException {
@@ -127,8 +128,17 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
     }
 
     @Override
-    public void delete(Personnel obj) throws DALException {
-
+    public void delete(Personnel p) throws DALException {
+        Connection cnx;
+        PreparedStatement rqt;
+        try{
+            cnx = JDBCTools.getConnection();
+            rqt = cnx.prepareStatement(DELETE);
+            rqt.setInt(1, p.getCodePersonnel());
+            rqt.executeUpdate();
+        }  catch (SQLException e) {
+            throw new DALException("Erreur lors de l'archivage d'une fiche employé = " + p.getCodePersonnel() , e);
+        }
     }
 
     public Personnel creationPersonnel(ResultSet rs) throws SQLException {
@@ -160,7 +170,6 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
         return personne;
     }
-
 
     private void preparerParametres(Personnel employe, PreparedStatement rqt) throws SQLException {
 

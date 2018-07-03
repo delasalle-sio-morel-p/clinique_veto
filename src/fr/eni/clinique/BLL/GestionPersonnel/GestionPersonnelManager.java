@@ -77,6 +77,18 @@ public class GestionPersonnelManager {
 
 
     }
+    public void deletePersonnel(Personnel personnel) throws BLLException {
+
+        validerPersonnel(personnel);
+
+        try {
+            daoPersonnels.delete(personnel);
+        } catch (DALException e) {
+            throw new BLLException("Erreur lors de l'archivage en BDD du personnel.");
+        }
+
+
+    }
 
     public List<Veterinaire> getListeVeto() throws BLLException {
         List<Veterinaire> listeVeterinaires = new ArrayList<>();
