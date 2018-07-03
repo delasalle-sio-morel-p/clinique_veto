@@ -1,10 +1,9 @@
 package fr.eni.clinique.IHM.Client;
 
 import fr.eni.clinique.BLL.BLLException;
-import fr.eni.clinique.BLL.GestionClientManager;
+import fr.eni.clinique.BLL.GestionClient.GestionClientManager;
 import fr.eni.clinique.BO.Client;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
-import fr.eni.clinique.IHM.GestionPersonnel.EcranGestionPersonnel;
 
 import java.util.List;
 

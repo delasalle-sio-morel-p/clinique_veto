@@ -16,6 +16,11 @@ public class EcranClient extends JPanel {
         initComponents();
     }
 
+    public EcranClient(GestionClientController gestionClientController) {
+        this.gestionClientController = gestionClientController;
+        initComponents();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
@@ -262,5 +267,6 @@ public class EcranClient extends JPanel {
     private JButton Supprimer;
     private JButton okButton;
     private JButton cancelButton;
+    private GestionClientController gestionClientController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

@@ -1,9 +1,8 @@
 package fr.eni.clinique.IHM.Connexion;
 
 import fr.eni.clinique.BLL.BLLException;
-import fr.eni.clinique.BLL.ConnexionManager;
+import fr.eni.clinique.BLL.Connexion.ConnexionManager;
 import fr.eni.clinique.BO.Personnel;
-import fr.eni.clinique.IHM.GestionPersonnel.EcranGestionPersonnel;
 import fr.eni.clinique.IHM.GestionPersonnel.GestionPersonnelController;
 
 import javax.swing.*;
@@ -12,9 +11,6 @@ import java.util.List;
 public class ConnexionController {
     private EcranConnexion ecranConnexion;
     private EcranAccueil ecranAccueil;
-    //private JPanel ecranGestionPersonnel;
-
-    private int indexListe;
 
     private ConnexionManager manager;
 

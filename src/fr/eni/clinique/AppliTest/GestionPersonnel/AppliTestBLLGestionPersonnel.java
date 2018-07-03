@@ -1,7 +1,7 @@
 package fr.eni.clinique.AppliTest.GestionPersonnel;
 
 import fr.eni.clinique.BLL.BLLException;
-import fr.eni.clinique.BLL.GestionPersonnelManager;
+import fr.eni.clinique.BLL.GestionPersonnel.GestionPersonnelManager;
 import fr.eni.clinique.BO.Admin;
 import fr.eni.clinique.BO.Personnel;
 import fr.eni.clinique.BO.Secretaire;

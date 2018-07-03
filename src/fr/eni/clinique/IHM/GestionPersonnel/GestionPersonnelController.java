@@ -1,7 +1,7 @@
 package fr.eni.clinique.IHM.GestionPersonnel;
 
 import fr.eni.clinique.BLL.BLLException;
-import fr.eni.clinique.BLL.GestionPersonnelManager;
+import fr.eni.clinique.BLL.GestionPersonnel.GestionPersonnelManager;
 import fr.eni.clinique.BO.*;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 

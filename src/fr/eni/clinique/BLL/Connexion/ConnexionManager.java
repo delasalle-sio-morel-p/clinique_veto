@@ -1,5 +1,6 @@
-package fr.eni.clinique.BLL;
+package fr.eni.clinique.BLL.Connexion;
 
+import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BO.Personnel;
 import fr.eni.clinique.DAL.DALException;
 import fr.eni.clinique.DAL.DAOFactory;

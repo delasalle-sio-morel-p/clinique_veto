@@ -4,9 +4,6 @@
 
 package fr.eni.clinique.IHM.GestionPersonnel;
 
-import fr.eni.clinique.BO.Personnel;
-import fr.eni.clinique.IHM.Connexion.ConnexionController;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

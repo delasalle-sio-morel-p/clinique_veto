@@ -1,9 +1,10 @@
-package fr.eni.clinique.BLL;
+package fr.eni.clinique.BLL.GestionPersonnel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
+import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BO.Personnel;
 import fr.eni.clinique.BO.Role;
 import fr.eni.clinique.BO.Veterinaire;

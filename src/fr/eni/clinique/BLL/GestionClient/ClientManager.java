@@ -1,9 +1,9 @@
-package fr.eni.clinique.BLL;
+package fr.eni.clinique.BLL.GestionClient;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
+import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BO.Client;
 import fr.eni.clinique.DAL.ClientDAO;
 import fr.eni.clinique.DAL.DAOFactory;
