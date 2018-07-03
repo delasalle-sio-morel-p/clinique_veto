@@ -37,10 +37,13 @@ public class AccueilController {
     }
 
     public void callEcranGestionPersonnel() {
-        GestionPersonnelController.get().affichageEcranGestionPersonnel();
+//        GestionPersonnelController.get().affichageEcranGestionPersonnel();
+        ecranAccueil.add(GestionPersonnelController.get().affichageEcranGestionPersonnel());
+        ecranAccueil.revalidate();
     }
 
     public void callEcranGestionClient() {
-        GestionClientController.get().affichageEcranGestionClient();
+        ecranAccueil.add(GestionClientController.get().affichageEcranGestionClient());
+        ecranAccueil.revalidate();
     }
 }

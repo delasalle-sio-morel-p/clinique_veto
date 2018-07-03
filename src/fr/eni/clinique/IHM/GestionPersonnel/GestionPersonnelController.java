@@ -51,17 +51,15 @@ public class GestionPersonnelController {
         return instance;
     }
 
-    public void affichageEcranAccueil() {
-        ecranAccueil = new EcranAccueil(this);
-        ecranAccueil.setVisible(true);
-    }
+//    public void affichageEcranAccueil() {
+//        ecranAccueil = new EcranAccueil(this);
+//        ecranAccueil.setVisible(true);
+//    }
 
-    public void affichageEcranGestionPersonnel() {
+    public EcranGestionPersonnel affichageEcranGestionPersonnel() {
         if (ecranGestionPersonnel == null)
             ecranGestionPersonnel = new EcranGestionPersonnel(this);
-        ecranAccueil.add(ecranGestionPersonnel);
-        System.out.println(listeRolesPersonnels);
-        ecranAccueil.revalidate();
+        return ecranGestionPersonnel;
     }
 
     public void ajouter() {
@@ -105,6 +103,5 @@ public class GestionPersonnelController {
         ecranAccueil.add(ecranGestionPersonnel);
 
         ecranAccueil.revalidate();
-
     }
 }

@@ -44,10 +44,9 @@ public class GestionClientController {
         return instance;
     }
 
-    public void affichageEcranGestionClient() {
+    public EcranGestionClient affichageEcranGestionClient() {
         if (ecranGestionClient == null)
             ecranGestionClient = new EcranGestionClient(this);
-        ecranAccueil.add(ecranGestionClient);
-        ecranAccueil.revalidate();
+        return ecranGestionClient;
     }
 }
