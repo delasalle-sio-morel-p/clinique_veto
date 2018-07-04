@@ -9,8 +9,8 @@ new FormModel {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq {par l {comp labelNom:::p:63:p, comp labelPrénom:::p:63:p, comp labelAdresse::l:p:63:p, seq {space :::p, par l {par l {comp labelCodePostal::l:p::p, comp Ville::t:p:63:p}, comp buttonBar::l:p:425:p, seq l {par l {comp labelTelephone::l:p::p, comp labelAssurance::l:p::p, comp labelMail::l:p::p}, space :p:39:p, par l:::p {comp textFieldAssurance::::161:x, comp textFieldAdresse1::l:::x, comp textFieldPrenom::l:::x, comp textFieldNom::l:::x, comp textFieldAdresse2::l:::x, comp textFieldCodePostal::l:::x, comp textFieldVille::t::161:x, comp textFieldTelephone::t::161:x, comp textFieldMail::t::161:x}}}}}, space ::64:x}}"
-					"$verticalGroup": "par l {seq {space :p:35:p, par l {seq {comp labelNom:::p:30:p, space :5:5:p, comp labelPrénom:::p:30:p, space :5:5:p, comp labelAdresse:::p:30:p, space :p:42:p, comp labelCodePostal:::p:30:p, space :::p, comp Ville:::p:30:p, space :::p, comp labelTelephone:::p::p}, seq {comp textFieldNom:::p::p, space :5:5:p, comp textFieldPrenom:::p::p, space :5:5:p, comp textFieldAdresse1:::p::p, space :::p, comp textFieldAdresse2:::p::p, space :::p, comp textFieldCodePostal:::p::p, space :::p, comp textFieldVille:::p::p, space :::p, comp textFieldTelephone:::p::p}}, space :::p, par l {comp labelAssurance:::p::p, comp textFieldAssurance::l:p::p}, space :::p, par l {comp labelMail:::p::p, comp textFieldMail::l:p::p}, space :::x, comp buttonBar:::p::p, space :::p}}"
+					"$horizontalGroup": "par l {seq {par l {seq {space :::p, comp buttonBar:::p:425:p}, seq l {par l {comp labelNom::l:p:63:p, comp labelPrénom::l:p:63:p, comp labelAdresse::l:p:63:p, comp labelCodePostal::l:p::p, comp Ville::l:p:69:p, comp labelTelephone::l:p:70:p, comp labelAssurance::l:p::p, seq l {space :::p, comp labelMail:::p::p}}, space :p:26:p, par l:::p {comp textFieldAdresse2::l::170:x, comp textFieldCodePostal::l::170:x, comp textFieldAdresse1::::170:x, comp textFieldPrenom::l::170:x, comp textFieldNom::l::170:x, comp textFieldVille::::170:x, comp textFieldNumTel::::170:x, comp textFieldAssurance::l::170:x, comp textFieldEmail::::170:x}}}, space ::64:x}}"
+					"$verticalGroup": "par l {seq {space :p:35:p, par b {comp labelNom::b:p:30:p, comp textFieldNom::b:p::p}, space :5:5:p, par b {comp labelPrénom::b:p:30:p, comp textFieldPrenom::b:p::p}, space :5:5:p, par b {comp labelAdresse::b:p:30:p, comp textFieldAdresse1::b:p::p}, space :::p, comp textFieldAdresse2:::p::p, space :p:3:p, par b {comp labelCodePostal::b:p:30:p, comp textFieldCodePostal::b:p::p}, space :::p, par b {comp Ville::b:p:30:p, comp textFieldVille::b:p::p}, space :::p, par b {comp labelTelephone::b:p::p, comp textFieldNumTel::b:p::p}, space :p:9:p, par b {comp labelAssurance::b:p::p, comp textFieldAssurance::b:p::p}, space :::p, par b {comp textFieldEmail::b:p::p, comp labelMail::b:p::p}, space :::x, comp buttonBar:::p::p, space :::p}}"
 				} ) {
 					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
@@ -32,24 +32,6 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "Ville"
 						"text": "Ville"
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldAdresse2"
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldCodePostal"
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldVille"
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldAdresse1"
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldPrenom"
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldNom"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
 						"$columnSpecs": "0:1.0, 80, 80"
@@ -80,22 +62,40 @@ new FormModel {
 						name: "labelTelephone"
 						"text": "N°Téléphone"
 					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldTelephone"
-					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelAssurance"
 						"text": "Assurance"
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldAssurance"
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelMail"
 						"text": "Email"
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldMail"
+						name: "textFieldNom"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldPrenom"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldAdresse1"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldAdresse2"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldCodePostal"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldVille"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldNumTel"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldAssurance"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldEmail"
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "Center"
