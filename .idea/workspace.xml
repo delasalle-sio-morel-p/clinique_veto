@@ -17,44 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GestionPersonnelController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/GestionPersonnelController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EcranGestionPersonnel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/EcranGestionPersonnel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1396">
-              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="36" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#376#377#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
-                <marker date="1530696189646" expanded="true" signature="647:1244" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1530696189646" expanded="true" signature="4927:5631" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="EcranGestionClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/EcranGestionClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="304" column="11" lean-forward="true" selection-end-line="366" />
-              <folding>
-                <element signature="e#373#374#0" expanded="true" />
-                <element signature="e#405#406#0" expanded="true" />
-                <marker date="1530698316263" expanded="true" signature="18747:18882" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-              </folding>
+            <state relative-caret-position="5525">
+              <caret line="333" column="5" selection-start-line="333" selection-start-column="5" selection-end-line="333" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AjoutAnimal.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Animaux/AjoutAnimal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -62,66 +38,10 @@
       <file leaf-file-name="GestionClientController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/GestionClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="894">
-              <caret line="86" selection-end-line="87" selection-end-column="1" />
+            <state relative-caret-position="1122">
+              <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1156#1157#0" expanded="true" />
-                <element signature="e#1191#1192#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SupprimerClient.jfd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/SupprimerClient.jfd">
-          <provider selected="true" editor-type-id="JFormDesigner" />
-        </entry>
-      </file>
-      <file leaf-file-name="SupprimerClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/SupprimerClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding>
-                <marker date="1530696162866" expanded="true" signature="537:4488" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1530696162866" expanded="false" signature="4500:4925" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResultatRechercheClient.jfd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/ResultatRechercheClient.jfd">
-          <provider selected="true" editor-type-id="JFormDesigner" />
-        </entry>
-      </file>
-      <file leaf-file-name="ResultatRechercheClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/ResultatRechercheClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-              <folding>
-                <marker date="1530704416812" expanded="true" signature="641:3567" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1530704416812" expanded="true" signature="3579:4137" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SupprimerAnimal.jfd" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Animaux/SupprimerAnimal.jfd">
-          <provider selected="true" editor-type-id="JFormDesigner" />
-        </entry>
-      </file>
-      <file leaf-file-name="SupprimerAnimal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Animaux/SupprimerAnimal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding>
-                <marker date="1530704571262" expanded="false" signature="531:4483" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1530704571262" expanded="false" signature="4495:4920" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
               </folding>
             </state>
           </provider>
@@ -215,29 +135,14 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="359" />
     <option name="width" value="1237" />
-    <option name="height" value="820" />
+    <option name="height" value="860" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="clinique_veto" type="cbb8eebc:String" user="clinique_veto" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="clinique_veto" type="cbb8eebc:String" user="clinique_veto" />
-              <item name="lib" type="cbb8eebc:String" user="lib" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -331,13 +236,6 @@
               <item name="clinique_veto" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="clinique" type="462c0819:PsiDirectoryNode" />
-              <item name="BO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clinique_veto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clinique_veto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="clinique" type="462c0819:PsiDirectoryNode" />
               <item name="DAL" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -391,7 +289,22 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="clinique_veto" type="cbb8eebc:String" user="clinique_veto" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="clinique_veto" type="cbb8eebc:String" user="clinique_veto" />
+              <item name="lib" type="cbb8eebc:String" user="lib" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -560,15 +473,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68383000" />
+    <option name="totallyTimeSpent" value="68974000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="359" y="0" width="1237" height="860" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3292683" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32825485" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -576,11 +489,11 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.15447155" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1565097" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.19215938" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.3704333" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -589,12 +502,12 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="bottom" id="JFormDesigner Error Log" order="7" weight="0.3292683" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -612,7 +525,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="JFormDesigner Error Log" order="7" weight="0.3292683" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3292683" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3292683" />
       <window_info anchor="right" id="Maven Projects" order="4" />
@@ -620,33 +533,33 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32991204" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.29850745" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Capture Tool" order="1" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -913,81 +826,52 @@
             <element signature="imports" expanded="true" />
             <element signature="e#376#377#0" expanded="true" />
             <element signature="e#408#409#0" expanded="true" />
-            <marker date="1530696189646" expanded="true" signature="647:1244" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1530696189646" expanded="true" signature="4927:5631" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/GestionClientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="894">
-          <caret line="86" selection-end-line="87" selection-end-column="1" />
+        <state relative-caret-position="1122">
+          <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1156#1157#0" expanded="true" />
-            <element signature="e#1191#1192#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/EcranGestionClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="304" column="11" lean-forward="true" selection-end-line="366" />
-          <folding>
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-            <marker date="1530698316263" expanded="true" signature="18747:18882" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
+        <state relative-caret-position="5525">
+          <caret line="333" column="5" selection-start-line="333" selection-start-column="5" selection-end-line="333" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/ResultatRechercheClient.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/ResultatRechercheClient.jfd" />
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/ResultatRechercheClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <marker date="1530704416812" expanded="true" signature="641:3567" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1530704416812" expanded="true" signature="3579:4137" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Animaux/EcranAjoutAnimal.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Animaux/EcranAjoutAnimal.jfd" />
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/SupprimerClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <marker date="1530696162866" expanded="true" signature="537:4488" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1530696162866" expanded="false" signature="4500:4925" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/SupprimerClient.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/SupprimerClient.jfd" />
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Animaux/SupprimerAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <marker date="1530704571262" expanded="false" signature="531:4483" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1530704571262" expanded="false" signature="4495:4920" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Animaux/SupprimerAnimal.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Animaux/SupprimerAnimal.jfd" />
   </component>
   <component name="masterDetails">
     <states>

@@ -15,7 +15,8 @@ public class GestionClientController {
     private EcranGestionClient ecranGestionClient;
     private ResultatRechercheClient rechercherClient;
     private AjouterClient ajouterClient;
-    private AjoutAnimal ecranAjoutAnimal;
+    private AjoutAnimal ajoutAnimal;
+    private SupprimerClient supprimerClient;
 
     private GestionClientManager manager;
 
@@ -69,13 +70,13 @@ public class GestionClientController {
 
     public void afficherSupprimerClient() {
         System.out.println("rechercher client");
-//        supprimerClient = new AjouterClient(AccueilController.get().getEcranAccueil(), this);
-//        supprimerClient.setVisible(true);
+        supprimerClient = new SupprimerClient(AccueilController.get().getEcranAccueil(), this);
+        supprimerClient.setVisible(true);
     }
 
     public void affichageEcranAjoutAnimal() {
-        ecranAjoutAnimal = new AjoutAnimal(AccueilController.get().getEcranAccueil(), this);
-        ecranAjoutAnimal.setVisible(true);
+        ajoutAnimal = new AjoutAnimal(AccueilController.get().getEcranAccueil(), this);
+        ajoutAnimal.setVisible(true);
     }
 
     public void affichageSupprimerAnimal(JTable tableAnimaux) {
