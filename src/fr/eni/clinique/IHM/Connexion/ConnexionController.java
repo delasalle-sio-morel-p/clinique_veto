@@ -55,7 +55,7 @@ public class ConnexionController {
         isPresent = false;
         for (Personnel personne : listePersonnels) {
 
-            if (personne.getNom().equals(txtNom.getText()) && personne.getMotPasse().equals(mdp.getText())) {
+            if (personne.getNom().equals(txtNom.getText().toUpperCase().trim()) && personne.getMotPasse().equals(mdp.getText())) {
                 isPresent = true;
                 break;
             }
