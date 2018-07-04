@@ -173,7 +173,7 @@ public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
 
     private void preparerParametres(Personnel employe, PreparedStatement rqt) throws SQLException {
 
-        rqt.setString(1, employe.getNom());
+        rqt.setString(1, employe.getNom().toUpperCase());
         rqt.setString(2, employe.getPrenom());
         rqt.setString(3, employe.getMotPasse());
         rqt.setString(4, employe.getRole());
