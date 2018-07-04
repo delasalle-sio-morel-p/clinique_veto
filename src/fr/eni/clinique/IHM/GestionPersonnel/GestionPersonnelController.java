@@ -181,10 +181,10 @@ public class GestionPersonnelController {
 
     public void refreshTable(JTable table){
         modele = new TablePersonnelModel(getListePersonnels());
-        modele.fireTableDataChanged();
         table.setModel(modele);
         ecranAccueil.remove(affichageEcranGestionPersonnel());
         ecranAccueil.add(affichageEcranGestionPersonnel());
+        modele.fireTableDataChanged();
         ecranAccueil.repaint();
         ecranAccueil.revalidate();
     }
