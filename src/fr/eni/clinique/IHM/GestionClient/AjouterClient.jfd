@@ -9,91 +9,89 @@ new FormModel {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq l {par l {comp labelNom:::p:63:p, comp labelPrénom:::p:63:p, comp labelAdresse:::p:63:p, comp labelCodePostal:::p::p, comp Ville:::p:63:p, comp labelCode::l:p:63:p}, space s:::p, par t {comp textFieldAdresse2::t:p:220:p, par l:t::p {comp textFieldNom::l:::x, comp textFieldPrenom::l:::x, comp textFieldAdresse1::l:::x, comp textField5::l:p:220:p, comp textFieldVille::l:::x, comp textFieldCode::l:p:220:p}}, space ::354:x}}"
-					"$verticalGroup": "par l {seq {comp labelCode:::p:30:p, space :5:5:p, comp labelNom:::p:30:p, space :5:5:p, comp labelPrénom:::p:30:p, space :5:5:p, comp labelAdresse:::p:30:p, space :p:40:p, comp labelCodePostal:::p:30:p, space :5:5:p, comp Ville:::p:30:p}, seq {comp textFieldCode:::p::p, space :5:5:p, comp textFieldNom:::p::p, space :5:5:p, comp textFieldPrenom:::p::p, space :5:5:p, comp textFieldAdresse1:::p::p, space :p:5:p, comp textFieldAdresse2:::p::p, space :p:5:p, comp textField5:::p::p, space :5:5:p, comp textFieldVille:::p::p}}"
+					"$horizontalGroup": "par l {seq {par l {seq l {par l {comp labelNom:::p:63:p, comp labelPrénom:::p:63:p, comp labelCodePostal:::p::p, comp Ville:::p:63:p, comp labelCode::l:p:63:p, comp labelAdresse::l:p:63:p}, space s:::p, par t:::p {comp textFieldCodePostal::::161:x, comp textFieldAdresse2::l::161:x, comp textField1::l::161:x, comp textField2::l::161:x, comp textField4::l::161:x, comp textField3::l::161:x, comp textFieldVille::::161:x}}, seq l {space :::p, comp buttonBar:::p:425:p}}, space :::x}}"
+					"$verticalGroup": "par l {seq {par b {comp labelCode::b:p:30:p, comp textField4::b:p::p}, space :5:5:p, par b {comp labelNom::b:p:30:p, comp textField3::b:p::p}, space :5:5:p, par b {comp labelPrénom::b:p:30:p, comp textField2::b:p::p}, space :5:5:p, par b {comp labelAdresse::b:p:30:p, comp textField1::b:p::p}, space :::x, comp textFieldAdresse2:::p::p, space :::p, par b {comp labelCodePostal::b:p:30:p, comp textFieldCodePostal::b:p::p}, space :5:5:p, par b {comp Ville::b:p:30:p, comp textFieldVille::b:p::p}, space :::p, comp buttonBar:::p::p, space :::p}}"
 				} ) {
 					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelCode"
 						"text": "Code"
 					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldCode"
-					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelNom"
 						"text": "Nom"
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldNom"
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelPrénom"
 						"text": "Prénom"
 					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldPrenom"
-					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelAdresse"
 						"text": "Adresse"
 					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldAdresse1"
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldAdresse2"
-					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelCodePostal"
 						"text": "Code Postal"
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textField5"
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "Ville"
 						"text": "Ville"
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldAdresse2"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldCodePostal"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "textFieldVille"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textField1"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textField2"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textField3"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textField4"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+						"$columnSpecs": "0:1.0, 80, 80"
+						"$rowSpecs": "0"
+						"$hGap": 5
+						"$vGap": 5
+					} ) {
+						name: "buttonBar"
+						"border": new javax.swing.border.EmptyBorder( 12, 0, 0, 0 )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "okButton"
+							"text": "Valider"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/check16px.png" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 0
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "cancelButton"
+							"text": "Annuler"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/reply16px.png" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 2
+							"gridy": 0
+						} )
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "Center"
-				} )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-					"$columnSpecs": "0:1.0, 80, 80"
-					"$rowSpecs": "0"
-					"$hGap": 5
-					"$vGap": 5
-				} ) {
-					name: "buttonBar"
-					"border": new javax.swing.border.EmptyBorder( 12, 0, 0, 0 )
-					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "okButton"
-						"text": "Valider"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/check16px.png" )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 0
-					} )
-					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "cancelButton"
-						"text": "Annuler"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/reply16px.png" )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 2
-						"gridy": 0
-					} )
-				}, new FormLayoutConstraints( class java.lang.String ) {
-					"value": "North"
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "Center"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 695, 460 )
+			"size": new java.awt.Dimension( 465, 370 )
 		} )
 	}
 }
