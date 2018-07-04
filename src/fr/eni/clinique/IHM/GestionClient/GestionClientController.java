@@ -4,6 +4,7 @@ import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.GestionClient.GestionClientManager;
 import fr.eni.clinique.BO.Client;
 import fr.eni.clinique.IHM.Animaux.AjouterAnimal;
+import fr.eni.clinique.IHM.Animaux.SupprimerAnimal;
 import fr.eni.clinique.IHM.Connexion.AccueilController;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 
@@ -86,9 +87,13 @@ public class GestionClientController {
     }
 
     public void affichageSupprimerAnimal(JTable tableAnimaux) {
+//        supprimerAnimal = new SupprimerAnimal(AccueilController.get().getEcranAccueil(), this);
+//        supprimerAnimal.setVisible(true);
     }
 
     public void affichageModifierAnimal(JTable tableAnimaux) {
+//        supprimerAnimal = new SupprimerAnimal(AccueilController.get().getEcranAccueil(), this);
+//        supprimerAnimal.setVisible(true);
     }
 
 
