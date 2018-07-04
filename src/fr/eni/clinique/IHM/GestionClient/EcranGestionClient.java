@@ -5,6 +5,8 @@
 package fr.eni.clinique.IHM.GestionClient;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -28,7 +30,7 @@ public class EcranGestionClient extends JPanel {
         contentPanel = new JPanel();
         labelCode = new JLabel();
         scrollPane1 = new JScrollPane();
-        table1 = new JTable();
+        tableAnimaux = new JTable();
         labelNom = new JLabel();
         labelPrenom = new JLabel();
         label4 = new JLabel();
@@ -44,12 +46,12 @@ public class EcranGestionClient extends JPanel {
         textFieldPrenom = new JTextField();
         textFieldNom = new JTextField();
         textFieldCode = new JTextField();
-        buttonBar = new JPanel();
-        buttonRechercher = new JButton();
-        buttonAjouter = new JButton();
-        Supprimer = new JButton();
-        okButton = new JButton();
-        cancelButton = new JButton();
+        panelButtonBar = new JPanel();
+        boutonRechercher = new JButton();
+        boutonAjouter = new JButton();
+        boutonSupprimer = new JButton();
+        boutonOK = new JButton();
+        boutonAnnuler = new JButton();
 
         //======== this ========
 
@@ -68,7 +70,7 @@ public class EcranGestionClient extends JPanel {
 
                 //======== scrollPane1 ========
                 {
-                    scrollPane1.setViewportView(table1);
+                    scrollPane1.setViewportView(tableAnimaux);
                 }
 
                 //---- labelNom ----
@@ -182,62 +184,76 @@ public class EcranGestionClient extends JPanel {
 
             //======== buttonBar ========
             {
-                buttonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
+                panelButtonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
 
                 //---- buttonRechercher ----
-                buttonRechercher.setText("Rechercher");
-                buttonRechercher.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/search16px.png")));
+                boutonRechercher.setText("Rechercher");
+                boutonRechercher.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/search16px.png")));
 
                 //---- buttonAjouter ----
-                buttonAjouter.setText("Ajouter");
-                buttonAjouter.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add16px.png")));
+                boutonAjouter.setText("Ajouter");
+                boutonAjouter.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add16px.png")));
 
                 //---- Supprimer ----
-                Supprimer.setText("Supprimer");
-                Supprimer.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete16px.png")));
+                boutonSupprimer.setText("Supprimer");
+                boutonSupprimer.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete16px.png")));
 
                 //---- okButton ----
-                okButton.setText("Valider");
-                okButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/check16px.png")));
+                boutonOK.setText("Valider");
+                boutonOK.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/check16px.png")));
 
                 //---- cancelButton ----
-                cancelButton.setText("Annuler");
-                cancelButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/reply16px.png")));
+                boutonAnnuler.setText("Annuler");
+                boutonAnnuler.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/reply16px.png")));
 
-                GroupLayout buttonBarLayout = new GroupLayout(buttonBar);
-                buttonBar.setLayout(buttonBarLayout);
+                GroupLayout buttonBarLayout = new GroupLayout(panelButtonBar);
+                panelButtonBar.setLayout(buttonBarLayout);
                 buttonBarLayout.setHorizontalGroup(
                     buttonBarLayout.createParallelGroup()
                         .addGroup(buttonBarLayout.createSequentialGroup()
-                            .addComponent(buttonRechercher)
+                            .addComponent(boutonRechercher)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                            .addComponent(buttonAjouter, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(boutonAjouter, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(Supprimer)
+                            .addComponent(boutonSupprimer)
                             .addGap(89, 89, 89)
-                            .addComponent(okButton)
+                            .addComponent(boutonOK)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cancelButton)
+                            .addComponent(boutonAnnuler)
                             .addGap(86, 86, 86))
                 );
                 buttonBarLayout.setVerticalGroup(
                     buttonBarLayout.createParallelGroup()
                         .addGroup(buttonBarLayout.createSequentialGroup()
                             .addGroup(buttonBarLayout.createParallelGroup()
-                                .addComponent(buttonRechercher)
+                                .addComponent(boutonRechercher)
                                 .addGroup(buttonBarLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(cancelButton)
-                                    .addComponent(okButton)
-                                    .addComponent(buttonAjouter)
-                                    .addComponent(Supprimer)))
+                                    .addComponent(boutonAnnuler)
+                                    .addComponent(boutonOK)
+                                    .addComponent(boutonAjouter)
+                                    .addComponent(boutonSupprimer)))
                             .addGap(12, 12, 12))
                 );
             }
-            dialogPane.add(buttonBar, BorderLayout.NORTH);
+            dialogPane.add(panelButtonBar, BorderLayout.NORTH);
         }
         add(dialogPane, BorderLayout.CENTER);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
+
+//    private void actionBtnRechercher() {
+//        boutonAjouter.addActionListener(new ActionListener() {
+//
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                try {
+//                    gestionPersonnelController.ajouter(tablePersonnels);
+//                } catch (Exception e1) {
+//                    e1.printStackTrace();
+//                }
+//            }
+//        });
+//    }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
@@ -245,7 +261,7 @@ public class EcranGestionClient extends JPanel {
     private JPanel contentPanel;
     private JLabel labelCode;
     private JScrollPane scrollPane1;
-    private JTable table1;
+    private JTable tableAnimaux;
     private JLabel labelNom;
     private JLabel labelPrenom;
     private JLabel label4;
@@ -261,12 +277,12 @@ public class EcranGestionClient extends JPanel {
     private JTextField textFieldPrenom;
     private JTextField textFieldNom;
     private JTextField textFieldCode;
-    private JPanel buttonBar;
-    private JButton buttonRechercher;
-    private JButton buttonAjouter;
-    private JButton Supprimer;
-    private JButton okButton;
-    private JButton cancelButton;
+    private JPanel panelButtonBar;
+    private JButton boutonRechercher;
+    private JButton boutonAjouter;
+    private JButton boutonSupprimer;
+    private JButton boutonOK;
+    private JButton boutonAnnuler;
     private GestionClientController gestionClientController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
