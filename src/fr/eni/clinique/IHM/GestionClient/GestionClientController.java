@@ -3,7 +3,7 @@ package fr.eni.clinique.IHM.GestionClient;
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.GestionClient.GestionClientManager;
 import fr.eni.clinique.BO.Client;
-import fr.eni.clinique.IHM.Animaux.AjoutAnimal;
+import fr.eni.clinique.IHM.Animaux.AjouterAnimal;
 import fr.eni.clinique.IHM.Connexion.AccueilController;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 
@@ -15,7 +15,7 @@ public class GestionClientController {
     private EcranGestionClient ecranGestionClient;
     private ResultatRechercheClient rechercherClient;
     private AjouterClient ajouterClient;
-    private AjoutAnimal ajoutAnimal;
+    private AjouterAnimal ajoutAnimal;
     private SupprimerClient supprimerClient;
 
     private GestionClientManager manager;
@@ -75,7 +75,7 @@ public class GestionClientController {
     }
 
     public void affichageEcranAjoutAnimal() {
-        ajoutAnimal = new AjoutAnimal(AccueilController.get().getEcranAccueil(), this);
+        ajoutAnimal = new AjouterAnimal(AccueilController.get().getEcranAccueil(), this);
         ajoutAnimal.setVisible(true);
     }
 
