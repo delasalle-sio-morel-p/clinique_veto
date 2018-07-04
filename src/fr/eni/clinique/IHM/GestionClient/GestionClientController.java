@@ -115,16 +115,16 @@ public class GestionClientController {
         System.out.println(ville);
         Client client = null;
 
-        client = new Client(nom, prenom, adresse1, codePostal, ville, "adm", false);
-        break;
-
-        try {
-            manager.addPersonnel(personne);
-            System.out.println(personne + " ajouté à la base de donnée");
-            ajouterPersonnel.setVisible(false);
-        } catch (BLLException e) {
-            e.printStackTrace();
-        }
+//        client = new Client(nom, prenom, adresse1, codePostal, ville, "adm", false);
+//        break;
+//
+//        try {
+//            manager.addPersonnel(personne);
+//            System.out.println(personne + " ajouté à la base de donnée");
+//            ajouterPersonnel.setVisible(false);
+//        } catch (BLLException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void affichageEcranAjoutAnimal() {
