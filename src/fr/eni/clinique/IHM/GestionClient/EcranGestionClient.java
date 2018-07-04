@@ -27,23 +27,23 @@ public class EcranGestionClient extends JPanel {
         dialogPane = new JPanel();
         contentPanel = new JPanel();
         labelCode = new JLabel();
-        textFieldCode = new JTextField();
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
         labelNom = new JLabel();
-        textField2 = new JTextField();
         labelPrenom = new JLabel();
-        textField3 = new JTextField();
         label4 = new JLabel();
-        textFieldAdresse1 = new JTextField();
-        textFieldAdresse2 = new JTextField();
         labelCodePostal = new JLabel();
-        textFieldCodePostal = new JTextField();
         labelVille = new JLabel();
-        textFieldVille = new JTextField();
         buttonAjouterAnimal = new JButton();
         buttonSupprimerAnimal = new JButton();
         buttonEditerAnimal = new JButton();
+        textFieldCodePostal = new JTextField();
+        textFieldVille = new JTextField();
+        textFieldAdresse2 = new JTextField();
+        textFieldAdresse1 = new JTextField();
+        textFieldPrenom = new JTextField();
+        textFieldNom = new JTextField();
+        textFieldCode = new JTextField();
         buttonBar = new JPanel();
         buttonRechercher = new JButton();
         buttonAjouter = new JButton();
@@ -88,98 +88,97 @@ public class EcranGestionClient extends JPanel {
 
                 //---- buttonAjouterAnimal ----
                 buttonAjouterAnimal.setText("Ajouter");
-                buttonAjouterAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add.png")));
+                buttonAjouterAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add16px.png")));
 
                 //---- buttonSupprimerAnimal ----
                 buttonSupprimerAnimal.setText("Supprimer");
-                buttonSupprimerAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete.png")));
+                buttonSupprimerAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete16px.png")));
 
                 //---- buttonEditerAnimal ----
                 buttonEditerAnimal.setText("Editer");
-                buttonEditerAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/edit.png")));
+                buttonEditerAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/edit16px.png")));
 
                 GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
                 contentPanel.setLayout(contentPanelLayout);
                 contentPanelLayout.setHorizontalGroup(
-                        contentPanelLayout.createParallelGroup()
+                    contentPanelLayout.createParallelGroup()
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
+                            .addGroup(contentPanelLayout.createParallelGroup()
+                                .addComponent(labelCodePostal, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE)
                                 .addGroup(contentPanelLayout.createSequentialGroup()
-                                        .addGroup(contentPanelLayout.createParallelGroup()
-                                                .addGroup(contentPanelLayout.createSequentialGroup()
-                                                        .addGroup(contentPanelLayout.createParallelGroup()
-                                                                .addComponent(labelCode, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(labelNom, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-                                                        .addGap(30, 30, 30)
-                                                        .addGroup(contentPanelLayout.createParallelGroup()
-                                                                .addComponent(textFieldCode, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-                                                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)))
-                                                .addGroup(contentPanelLayout.createSequentialGroup()
-                                                        .addComponent(labelPrenom, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(30, 30, 30)
-                                                        .addComponent(textField3, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE))
-                                                .addGroup(contentPanelLayout.createSequentialGroup()
-                                                        .addGroup(contentPanelLayout.createParallelGroup()
-                                                                .addComponent(label4, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(labelCodePostal)
-                                                                .addComponent(labelVille, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-                                                        .addGap(30, 30, 30)
-                                                        .addGroup(contentPanelLayout.createParallelGroup()
-                                                                .addComponent(textFieldVille, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-                                                                .addComponent(textFieldCodePostal, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-                                                                .addComponent(textFieldAdresse2, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-                                                                .addComponent(textFieldAdresse1, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE))))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                                .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 349, GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(contentPanelLayout.createSequentialGroup()
-                                                        .addComponent(buttonAjouterAnimal)
-                                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(buttonSupprimerAnimal)
-                                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(buttonEditerAnimal)
-                                                        .addGap(2, 2, 2)))
-                                        .addGap(72, 72, 72))
+                                    .addGroup(contentPanelLayout.createParallelGroup()
+                                        .addComponent(labelVille, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(labelNom, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(labelPrenom, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(label4, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(labelCode, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(5, 5, 5)))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addGroup(contentPanelLayout.createSequentialGroup()
+                                    .addComponent(buttonAjouterAnimal)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(buttonSupprimerAnimal)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(buttonEditerAnimal))
+                                .addGroup(contentPanelLayout.createSequentialGroup()
+                                    .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(textFieldCodePostal, GroupLayout.Alignment.TRAILING)
+                                        .addComponent(textFieldVille)
+                                        .addComponent(textFieldAdresse2)
+                                        .addComponent(textFieldAdresse1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                                        .addComponent(textFieldPrenom, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                                        .addComponent(textFieldNom, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                                        .addComponent(textFieldCode, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
+                                    .addGap(18, 18, 18)
+                                    .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 366, GroupLayout.PREFERRED_SIZE)))
+                            .addGap(87, 87, 87))
                 );
                 contentPanelLayout.setVerticalGroup(
-                        contentPanelLayout.createParallelGroup()
+                    contentPanelLayout.createParallelGroup()
+                        .addGroup(contentPanelLayout.createSequentialGroup()
+                            .addGroup(contentPanelLayout.createParallelGroup()
                                 .addGroup(contentPanelLayout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                    .addContainerGap()
+                                    .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 285, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(contentPanelLayout.createSequentialGroup()
+                                    .addGroup(contentPanelLayout.createParallelGroup()
+                                        .addGroup(contentPanelLayout.createSequentialGroup()
+                                            .addGap(12, 12, 12)
+                                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                                 .addComponent(labelCode, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(textFieldCode, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(textFieldCode, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(contentPanelLayout.createSequentialGroup()
+                                            .addGap(47, 47, 47)
+                                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                                 .addComponent(labelNom, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(textFieldNom, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(5, 5, 5)
+                                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                                 .addComponent(labelPrenom, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(textFieldPrenom, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(5, 5, 5)
+                                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                                 .addComponent(label4, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(textFieldAdresse1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(textFieldAdresse2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                        .addGap(9, 9, 9)
-                                        .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                                .addComponent(labelCodePostal, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(textFieldCodePostal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                                .addComponent(labelVille, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(textFieldVille, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(contentPanelLayout.createSequentialGroup()
-                                        .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 318, GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                                .addComponent(buttonAjouterAnimal)
-                                                .addComponent(buttonSupprimerAnimal)
-                                                .addComponent(buttonEditerAnimal))
-                                        .addGap(0, 104, Short.MAX_VALUE))
+                                                .addComponent(textFieldAdresse1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(textFieldAdresse2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(14, 14, 14)
+                                    .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(labelCodePostal, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textFieldCodePostal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(5, 5, 5)
+                                    .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(labelVille, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textFieldVille, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(buttonEditerAnimal)
+                                .addComponent(buttonSupprimerAnimal)
+                                .addComponent(buttonAjouterAnimal)))
                 );
             }
-            dialogPane.add(contentPanel, BorderLayout.WEST);
+            dialogPane.add(contentPanel, BorderLayout.CENTER);
 
             //======== buttonBar ========
             {
@@ -187,50 +186,51 @@ public class EcranGestionClient extends JPanel {
 
                 //---- buttonRechercher ----
                 buttonRechercher.setText("Rechercher");
-                buttonRechercher.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/search.png")));
+                buttonRechercher.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/search16px.png")));
 
                 //---- buttonAjouter ----
                 buttonAjouter.setText("Ajouter");
-                buttonAjouter.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add.png")));
+                buttonAjouter.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add16px.png")));
 
                 //---- Supprimer ----
                 Supprimer.setText("Supprimer");
-                Supprimer.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete.png")));
+                Supprimer.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete16px.png")));
 
                 //---- okButton ----
                 okButton.setText("Valider");
-                okButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/checked.png")));
+                okButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/check16px.png")));
 
                 //---- cancelButton ----
                 cancelButton.setText("Annuler");
-                cancelButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/reply.png")));
+                cancelButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/reply16px.png")));
 
                 GroupLayout buttonBarLayout = new GroupLayout(buttonBar);
                 buttonBar.setLayout(buttonBarLayout);
                 buttonBarLayout.setHorizontalGroup(
-                        buttonBarLayout.createParallelGroup()
-                                .addGroup(buttonBarLayout.createSequentialGroup()
-                                        .addComponent(buttonRechercher)
-                                        .addGap(80, 80, 80)
-                                        .addComponent(buttonAjouter, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Supprimer)
-                                        .addGap(52, 52, 52)
-                                        .addComponent(okButton, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cancelButton, GroupLayout.PREFERRED_SIZE, 109, GroupLayout.PREFERRED_SIZE)
-                                        .addGap(63, 63, 63))
+                    buttonBarLayout.createParallelGroup()
+                        .addGroup(buttonBarLayout.createSequentialGroup()
+                            .addComponent(buttonRechercher)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                            .addComponent(buttonAjouter, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(Supprimer)
+                            .addGap(89, 89, 89)
+                            .addComponent(okButton)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cancelButton)
+                            .addGap(86, 86, 86))
                 );
                 buttonBarLayout.setVerticalGroup(
-                        buttonBarLayout.createParallelGroup()
-                                .addGroup(buttonBarLayout.createSequentialGroup()
-                                        .addGroup(buttonBarLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                                .addComponent(buttonRechercher)
-                                                .addComponent(cancelButton)
-                                                .addComponent(okButton)
-                                                .addComponent(buttonAjouter)
-                                                .addComponent(Supprimer))
-                                        .addGap(12, 12, 12))
+                    buttonBarLayout.createParallelGroup()
+                        .addGroup(buttonBarLayout.createSequentialGroup()
+                            .addGroup(buttonBarLayout.createParallelGroup()
+                                .addComponent(buttonRechercher)
+                                .addGroup(buttonBarLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cancelButton)
+                                    .addComponent(okButton)
+                                    .addComponent(buttonAjouter)
+                                    .addComponent(Supprimer)))
+                            .addGap(12, 12, 12))
                 );
             }
             dialogPane.add(buttonBar, BorderLayout.NORTH);
@@ -244,23 +244,23 @@ public class EcranGestionClient extends JPanel {
     private JPanel dialogPane;
     private JPanel contentPanel;
     private JLabel labelCode;
-    private JTextField textFieldCode;
     private JScrollPane scrollPane1;
     private JTable table1;
     private JLabel labelNom;
-    private JTextField textField2;
     private JLabel labelPrenom;
-    private JTextField textField3;
     private JLabel label4;
-    private JTextField textFieldAdresse1;
-    private JTextField textFieldAdresse2;
     private JLabel labelCodePostal;
-    private JTextField textFieldCodePostal;
     private JLabel labelVille;
-    private JTextField textFieldVille;
     private JButton buttonAjouterAnimal;
     private JButton buttonSupprimerAnimal;
     private JButton buttonEditerAnimal;
+    private JTextField textFieldCodePostal;
+    private JTextField textFieldVille;
+    private JTextField textFieldAdresse2;
+    private JTextField textFieldAdresse1;
+    private JTextField textFieldPrenom;
+    private JTextField textFieldNom;
+    private JTextField textFieldCode;
     private JPanel buttonBar;
     private JButton buttonRechercher;
     private JButton buttonAjouter;

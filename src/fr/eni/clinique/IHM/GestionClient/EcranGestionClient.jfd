@@ -8,165 +8,110 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-					"$columnSpecs": "0, 0, 0, 0, 0, 0"
-					"$rowSpecs": "0, 0, 0, 0, 0, 0, 0, 0, 0"
-					"$hGap": 5
-					"$vGap": 5
-					"$alignLeft": true
-					"$alignTop": true
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq t {par l {comp labelCodePostal::t:p:68:p, seq {par l {comp labelVille::l:p:63:p, comp labelNom:::p:63:p, comp labelPrenom:::p:63:p, comp label4:::p:63:p, comp labelCode:::p:63:p}, space :p:5:p}}, space ::10:x, par t {seq {comp buttonAjouterAnimal:::p::p, space :::p, comp buttonSupprimerAnimal:::p::p, space :::p, comp buttonEditerAnimal:::p::p}, seq {par l:::p {comp textFieldCodePostal::t:::x, comp textFieldVille::l:::x, comp textFieldAdresse2:::::x, comp textFieldAdresse1::t::227:x, comp textFieldPrenom::t::227:x, comp textFieldNom::t::227:x, comp textFieldCode::t::227:x}, space s:::p, comp scrollPane1:::p:366:p}}, space :p:87:p}}"
+					"$verticalGroup": "par l {seq {par l {seq l {space :::p, comp scrollPane1:::p:285:p}, seq {par l {seq l {space :p:12:p, par b {comp labelCode::b:p:30:p, comp textFieldCode::b:p::p}}, seq l {space :p:47:p, par b {comp labelNom::b:p:30:p, comp textFieldNom::b:p::p}, space :5:5:p, par b {comp labelPrenom::b:p:30:p, comp textFieldPrenom::b:p::p}, space :5:5:p, par b {comp label4::b:p:30:p, comp textFieldAdresse1::b:p::p}}}, space :::p, comp textFieldAdresse2:::p::p, space :p:14:p, par b {comp labelCodePostal::b:p:30:p, comp textFieldCodePostal::b:p::p}, space :p:5:p, par b {comp labelVille::b:p:30:p, comp textFieldVille::b:p::p}}}, space :::p, par b {comp buttonEditerAnimal::b:p::p, comp buttonSupprimerAnimal::b:p::p, comp buttonAjouterAnimal::b:p::p}}}"
 				} ) {
 					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelCode"
 						"text": "Code"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 1
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldCode"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 1
 					} )
 					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 						name: "scrollPane1"
 						add( new FormComponent( "javax.swing.JTable" ) {
 							name: "table1"
 						} )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 3
-						"gridy": 1
-						"gridwidth": 3
-						"gridheight": 6
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelNom"
 						"text": "Nom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 2
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textField2"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 2
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelPrenom"
 						"text": "Prénom"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 3
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textField3"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 3
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "label4"
 						"text": "Adresse"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 4
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldAdresse1"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 4
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldAdresse2"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 5
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelCodePostal"
 						"text": "Code Postal"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 6
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldCodePostal"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 6
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "labelVille"
 						"text": "Ville"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridy": 7
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldVille"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
-						"gridy": 7
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "buttonAjouterAnimal"
 						"text": "Ajouter"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 3
-						"gridy": 7
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/add16px.png" )
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "buttonSupprimerAnimal"
 						"text": "Supprimer"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 4
-						"gridy": 7
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/delete16px.png" )
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "buttonEditerAnimal"
 						"text": "Editer"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 5
-						"gridy": 7
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/edit16px.png" )
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldCodePostal"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldVille"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldAdresse2"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldAdresse1"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldPrenom"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldNom"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textFieldCode"
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "Center"
 				} )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-					"$columnSpecs": "0, 0:1.0, 0, 80, 80"
-					"$rowSpecs": "0"
-					"$hGap": 5
-					"$vGap": 5
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {comp buttonRechercher:::p::p, space ::96:x, comp buttonAjouter:::p:103:p, space u:::p, comp Supprimer:::p::p, space :p:89:p, comp okButton:::p::p, space :::p, comp cancelButton:::p::p, space :p:86:p}}"
+					"$verticalGroup": "par l {seq {par l {comp buttonRechercher:::p::p, par b:l {comp cancelButton::b:p::p, comp okButton::b:p::p, comp buttonAjouter::b:p::p, comp Supprimer::b:p::p}}, space :p:12:p}}"
 				} ) {
 					name: "buttonBar"
 					"border": new javax.swing.border.EmptyBorder( 12, 0, 0, 0 )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "buttonRechercher"
 						"text": "Rechercher"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/search16px.png" )
+					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "buttonAjouter"
 						"text": "Ajouter"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 1
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/add16px.png" )
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "Supprimer"
 						"text": "Supprimer"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 2
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/delete16px.png" )
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "okButton"
 						"text": "Valider"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 3
-						"gridy": 0
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/check16px.png" )
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "cancelButton"
 						"text": "Annuler"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 4
-						"gridy": 0
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/reply16px.png" )
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "North"
