@@ -9,49 +9,48 @@ new FormModel {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {comp scrollPane1::l::675:x}"
-					"$verticalGroup": "par l {seq l {comp scrollPane1:::p:339:p, space :0:0:x}}"
+					"$horizontalGroup": "par l {seq l {space :p:27:p, comp labelSupprimerAnimal:::p:314:p, space ::29:x}}"
+					"$verticalGroup": "par l {seq t {space ::35:x, comp labelSupprimerAnimal:::p::p, space :p:34:p}}"
 				} ) {
 					name: "contentPanel"
-					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-						name: "scrollPane1"
-						add( new FormComponent( "javax.swing.JTable" ) {
-							name: "table1"
-						} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labelSupprimerAnimal"
+						"text": "Êtes-vous sûr de vouloir supprimer cet animal ?"
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "Center"
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-					"$columnSpecs": "0:1.0, 80"
+					"$columnSpecs": "0:1.0, 80, 80"
 					"$rowSpecs": "0"
 					"$hGap": 5
 					"$vGap": 5
 				} ) {
 					name: "buttonBar"
 					"border": new javax.swing.border.EmptyBorder( 12, 0, 0, 0 )
-				}, new FormLayoutConstraints( class java.lang.String ) {
-					"value": "South"
-				} )
-				add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
-					name: "toolBar1"
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "textFieldRechercher"
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "okButton"
+						"text": "OK"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 0
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "buttonRechercher"
-						"text": "Rechercher"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/search16px.png" )
+						name: "cancelButton"
+						"text": "Cancel"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 0
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
-					"value": "North"
+					"value": "South"
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "Center"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 715, 455 )
+			"size": new java.awt.Dimension( 410, 190 )
 		} )
 	}
 }

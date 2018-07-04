@@ -79,9 +79,6 @@ public class ResultatRechercheClient extends JDialog {
 
             //======== toolBar1 ========
             {
-
-                //---- textFieldRechercher ----
-                textFieldRechercher.setText("Rechercher");
                 toolBar1.add(textFieldRechercher);
 
                 //---- buttonRechercher ----
