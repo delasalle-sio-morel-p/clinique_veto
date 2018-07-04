@@ -42,6 +42,9 @@ public class ResultatRechercheClient extends JDialog {
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
+        //======== listener =======
+        actionBtnRechercherClient();
+
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
@@ -106,13 +109,13 @@ public class ResultatRechercheClient extends JDialog {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
-    private void actionBtnSupprimerClient() {
+    private void actionBtnRechercherClient() {
         boutonRechercher.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionClientController.rechercherClient();
+                    gestionClientController.rechercherClient(textFieldRechercher.getText());
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }

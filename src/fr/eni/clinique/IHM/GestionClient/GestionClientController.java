@@ -3,6 +3,7 @@ package fr.eni.clinique.IHM.GestionClient;
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.GestionClient.GestionClientManager;
 import fr.eni.clinique.BO.Client;
+import fr.eni.clinique.BO.Personnel;
 import fr.eni.clinique.IHM.Animaux.AjouterAnimal;
 import fr.eni.clinique.IHM.Animaux.SupprimerAnimal;
 import fr.eni.clinique.IHM.Connexion.AccueilController;
@@ -18,6 +19,8 @@ public class GestionClientController {
     private AjouterClient ajouterClient;
     private AjouterAnimal ajoutAnimal;
     private SupprimerClient supprimerClient;
+    private boolean isPresent;
+    private Client clientSelectionne;
 
     private GestionClientManager manager;
 
@@ -75,10 +78,26 @@ public class GestionClientController {
         supprimerClient.setVisible(true);
     }
 
-    public void rechercherClient() {
-        System.out.println("rechercher client");
-        rechercherClient = new ResultatRechercheClient(AccueilController.get().getEcranAccueil(), this);
-        rechercherClient.setVisible(true);
+    public void rechercherClient(String nom) {
+        System.out.println(clientSelectionne(nom));
+    }
+
+    public Client clientSelectionne(String nom) {
+        isPresent = false;
+        for (Client client : listeClients) {
+            if (client.getNomClient().startsWith(nom.toUpperCase())) {
+                isPresent = true;
+                clientSelectionne = client;
+                break;
+            }
+        }
+        if (isPresent) {
+            System.out.println("Personne présente en base de donnée :");
+            System.out.println(clientSelectionne);
+            return clientSelectionne;
+        } else
+            System.out.println("Personne non présente en base de donnée");
+        return null;
     }
 
     public void affichageEcranAjoutAnimal() {
