@@ -9,8 +9,8 @@ new FormModel {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {comp scrollPane1::l::675:x}"
-					"$verticalGroup": "par l {seq l {comp scrollPane1:::p:339:p, space :0:0:x}}"
+					"$horizontalGroup": "par l {comp scrollPane1::::675:x, seq t {space :0:562:x, comp boutonSelectionner:::p::p}}"
+					"$verticalGroup": "par l {seq l {comp scrollPane1:::p:273:p, space ::17:x, comp boutonSelectionner:::p::p, space :::p}}"
 				} ) {
 					name: "contentPanel"
 					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
@@ -18,6 +18,11 @@ new FormModel {
 						add( new FormComponent( "javax.swing.JTable" ) {
 							name: "table1"
 						} )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "boutonSelectionner"
+						"text": "Sélectionner"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/fr/eni/clinique/IHM/resources/check16px.png" )
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "Center"

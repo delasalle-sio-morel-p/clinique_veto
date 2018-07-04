@@ -32,6 +32,7 @@ public class ResultatRechercheClient extends JDialog {
         contentPanel = new JPanel();
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
+        boutonSelectionner = new JButton();
         buttonBar = new JPanel();
         toolBar1 = new JToolBar();
         textFieldRechercher = new JTextField();
@@ -55,17 +56,26 @@ public class ResultatRechercheClient extends JDialog {
                     scrollPane1.setViewportView(table1);
                 }
 
+                //---- boutonSelectionner ----
+                boutonSelectionner.setText("S\u00e9lectionner");
+                boutonSelectionner.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/check16px.png")));
+
                 GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
                 contentPanel.setLayout(contentPanelLayout);
                 contentPanelLayout.setHorizontalGroup(
                     contentPanelLayout.createParallelGroup()
                         .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
+                            .addGap(0, 562, Short.MAX_VALUE)
+                            .addComponent(boutonSelectionner))
                 );
                 contentPanelLayout.setVerticalGroup(
                     contentPanelLayout.createParallelGroup()
                         .addGroup(contentPanelLayout.createSequentialGroup()
-                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 339, GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 273, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                            .addComponent(boutonSelectionner)
+                            .addContainerGap())
                 );
             }
             dialogPane.add(contentPanel, BorderLayout.CENTER);
@@ -116,6 +126,7 @@ public class ResultatRechercheClient extends JDialog {
     private JPanel contentPanel;
     private JScrollPane scrollPane1;
     private JTable table1;
+    private JButton boutonSelectionner;
     private JPanel buttonBar;
     private JToolBar toolBar1;
     private JTextField textFieldRechercher;
