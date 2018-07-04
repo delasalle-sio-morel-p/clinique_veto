@@ -5,6 +5,8 @@
 package fr.eni.clinique.IHM.GestionClient;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -33,7 +35,7 @@ public class ResultatRechercheClient extends JDialog {
         buttonBar = new JPanel();
         toolBar1 = new JToolBar();
         textFieldRechercher = new JTextField();
-        buttonRechercher = new JButton();
+        boutonRechercher = new JButton();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -82,9 +84,9 @@ public class ResultatRechercheClient extends JDialog {
                 toolBar1.add(textFieldRechercher);
 
                 //---- buttonRechercher ----
-                buttonRechercher.setText("Rechercher");
-                buttonRechercher.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/search16px.png")));
-                toolBar1.add(buttonRechercher);
+                boutonRechercher.setText("Rechercher");
+                boutonRechercher.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/search16px.png")));
+                toolBar1.add(boutonRechercher);
             }
             dialogPane.add(toolBar1, BorderLayout.NORTH);
         }
@@ -92,6 +94,20 @@ public class ResultatRechercheClient extends JDialog {
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+    }
+
+    private void actionBtnSupprimerClient() {
+        boutonRechercher.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.rechercherClient();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
@@ -103,7 +119,7 @@ public class ResultatRechercheClient extends JDialog {
     private JPanel buttonBar;
     private JToolBar toolBar1;
     private JTextField textFieldRechercher;
-    private JButton buttonRechercher;
+    private JButton boutonRechercher;
     private GestionClientController gestionClientController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

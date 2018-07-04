@@ -74,6 +74,12 @@ public class GestionClientController {
         supprimerClient.setVisible(true);
     }
 
+    public void rechercherClient() {
+        System.out.println("rechercher client");
+        rechercherClient = new ResultatRechercheClient(AccueilController.get().getEcranAccueil(), this);
+        rechercherClient.setVisible(true);
+    }
+
     public void affichageEcranAjoutAnimal() {
         ajoutAnimal = new AjouterAnimal(AccueilController.get().getEcranAccueil(), this);
         ajoutAnimal.setVisible(true);
