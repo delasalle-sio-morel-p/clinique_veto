@@ -45,7 +45,7 @@ public class EcranGestionPersonnel extends JPanel {
         ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
 
         //======== listener =======
-        actionBtnAjouter();
+        actionBtnAjouter(tableauEmployes);
         actionBtnSupprimer(tableauEmployes);
         actionBtnReinitialiserMDP(tableauEmployes);
 
@@ -85,13 +85,13 @@ public class EcranGestionPersonnel extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
-    private void actionBtnAjouter() {
+    private void actionBtnAjouter(JTable tablePersonnels) {
         boutonAjouter.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionPersonnelController.ajouter();
+                    gestionPersonnelController.ajouter(tablePersonnels);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }

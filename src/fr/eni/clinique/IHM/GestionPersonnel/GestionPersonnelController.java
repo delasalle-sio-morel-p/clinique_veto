@@ -25,6 +25,7 @@ public class GestionPersonnelController {
 
     private boolean isPresent;
     private Personnel personneSelectionne;
+    private TablePersonnelModel modele;
 
 
     //Constructeur
@@ -63,9 +64,9 @@ public class GestionPersonnelController {
         return ecranGestionPersonnel;
     }
 
-    public void ajouter() {
+    public void ajouter(JTable tablePersonnels) {
         System.out.println("ajouter");
-        ajouterPersonnel = new AjouterPersonnel(AccueilController.get().getEcranAccueil(), this);
+        ajouterPersonnel = new AjouterPersonnel(AccueilController.get().getEcranAccueil(), tablePersonnels, this);
         ajouterPersonnel.setVisible(true);
     }
 
@@ -90,7 +91,7 @@ public class GestionPersonnelController {
             reinitialiserMDP.setVisible(false);
     }
 
-    public void ajouterPersonnel(JTextField textboxNom, JTextField textFieldPrenom, JComboBox comboboxRole, JPasswordField passwordFieldMDP) {
+    public void ajouterPersonnel(JTable tablePersonnels, JTextField textboxNom, JTextField textFieldPrenom, JComboBox comboboxRole, JPasswordField passwordFieldMDP) {
         System.out.println("ajouterPersonnel");
         System.out.println(textboxNom.getText());
         System.out.println(textFieldPrenom.getText());
@@ -115,7 +116,6 @@ public class GestionPersonnelController {
             manager.addPersonnel(personne);
             System.out.println(personne + " ajouté à la base de donnée");
             ajouterPersonnel.setVisible(false);
-
         } catch (BLLException e) {
             e.printStackTrace();
         }
@@ -150,6 +150,7 @@ public class GestionPersonnelController {
                     manager.updatePersonnel(personneSelectionne);
                     System.out.println("Le mot de passe de " + personneSelectionne + " a été changé");
                     reinitialiserMDP.setVisible(false);
+                    refreshTable(tablePersonnels);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -176,5 +177,15 @@ public class GestionPersonnelController {
         } else
             System.out.println("Personne non présente en base de donnée");
         return null;
+    }
+
+    public void refreshTable(JTable table){
+        modele = new TablePersonnelModel(getListePersonnels());
+        modele.fireTableDataChanged();
+        table.setModel(modele);
+        ecranAccueil.remove(affichageEcranGestionPersonnel());
+        ecranAccueil.add(affichageEcranGestionPersonnel());
+        ecranAccueil.repaint();
+        ecranAccueil.revalidate();
     }
 }

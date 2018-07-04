@@ -30,9 +30,8 @@ public class AjouterPersonnel extends JDialog {
         initComponents();
     }
 
-    public AjouterPersonnel(Frame owner, JPanel contentPanel, GestionPersonnelController gestionPersonnelController) {
+    public AjouterPersonnel(Frame owner, JTable tablePersonnels, GestionPersonnelController gestionPersonnelController) {
         super(owner);
-        this.contentPanel = contentPanel;
         this.gestionPersonnelController = gestionPersonnelController;
         initComponents();
     }
@@ -162,7 +161,7 @@ public class AjouterPersonnel extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionPersonnelController.ajouterPersonnel(textboxNom,textFieldPrenom,comboboxRole, passwordFieldMDP);
+                    gestionPersonnelController.ajouterPersonnel(table, textboxNom,textFieldPrenom,comboboxRole, passwordFieldMDP);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -199,6 +198,7 @@ public class AjouterPersonnel extends JDialog {
     private JPanel buttonBar;
     private JButton boutonOK;
     private JButton boutonAnnuler;
+    private JTable table;
     private GestionPersonnelController gestionPersonnelController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
