@@ -64,19 +64,19 @@ public class GestionPersonnelController {
         return ecranGestionPersonnel;
     }
 
-    public void ajouter(JTable tablePersonnels) {
+    public void afficherAjouterPersonnel(JTable tablePersonnels) {
         System.out.println("ajouter");
         ajouterPersonnel = new AjouterPersonnel(AccueilController.get().getEcranAccueil(), tablePersonnels, this);
         ajouterPersonnel.setVisible(true);
     }
 
-    public void supprimer(JTable tablePersonnels) {
+    public void afficherSupprimerPersonnel(JTable tablePersonnels) {
         System.out.println("supprimer");
         supprimerPersonnel = new SupprimerPersonnel(AccueilController.get().getEcranAccueil(), tablePersonnels, this);
         supprimerPersonnel.setVisible(true);
     }
 
-    public void reinitialiserMDP(JTable tablePersonnels) {
+    public void afficherReinitialiserMDPPersonnel(JTable tablePersonnels) {
         System.out.println("reinitialiserMDP");
         reinitialiserMDP = new ReinitialiserMDP(AccueilController.get().getEcranAccueil(), tablePersonnels, this);
         reinitialiserMDP.setVisible(true);

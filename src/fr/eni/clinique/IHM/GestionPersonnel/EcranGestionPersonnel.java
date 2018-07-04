@@ -91,7 +91,7 @@ public class EcranGestionPersonnel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionPersonnelController.ajouter(tablePersonnels);
+                    gestionPersonnelController.afficherAjouterPersonnel(tablePersonnels);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -105,7 +105,7 @@ public class EcranGestionPersonnel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionPersonnelController.supprimer(tablePersonnels);
+                    gestionPersonnelController.afficherSupprimerPersonnel(tablePersonnels);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -119,7 +119,7 @@ public class EcranGestionPersonnel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionPersonnelController.reinitialiserMDP(tablePersonnels);
+                    gestionPersonnelController.afficherReinitialiserMDPPersonnel(tablePersonnels);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
