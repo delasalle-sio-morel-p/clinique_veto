@@ -81,6 +81,12 @@ public class GestionClientController {
     public void rechercherClient(String nom) {
         System.out.println(clientSelectionne(nom));
     }
+    public void annuler() {
+        if (ajouterClient != null)
+            ajouterClient.setVisible(false);
+        if (supprimerClient != null)
+            supprimerClient.setVisible(false);
+    }
 
     public Client clientSelectionne(String nom) {
         isPresent = false;
@@ -99,6 +105,36 @@ public class GestionClientController {
             System.out.println("Personne non présente en base de donnée");
         return null;
     }
+
+//    public void ajouterClient(JTable tablePersonnels, JTextField textboxNom, JTextField textFieldPrenom, JComboBox comboboxRole, JPasswordField passwordFieldMDP) {
+//        System.out.println("ajouterClient");
+//        System.out.println(textboxNom.getText());
+//        System.out.println(textFieldPrenom.getText());
+//        System.out.println(comboboxRole.getSelectedItem());
+//        System.out.println(passwordFieldMDP.getText());
+//        Role role = (Role) comboboxRole.getSelectedItem();
+//        Personnel personne = null;
+//
+//        switch (role.getLibelle()) {
+//            case "Administrateur":
+//                personne = new Admin(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "adm", false);
+//                break;
+//            case "Secrétaire":
+//                personne = new Secretaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "sec", false);
+//                break;
+//            default:
+//                personne = new Veterinaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "vet", false);
+//                break;
+//        }
+//
+//        try {
+//            manager.addPersonnel(personne);
+//            System.out.println(personne + " ajouté à la base de donnée");
+//            ajouterPersonnel.setVisible(false);
+//        } catch (BLLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void affichageEcranAjoutAnimal() {
         ajoutAnimal = new AjouterAnimal(AccueilController.get().getEcranAccueil(), this);

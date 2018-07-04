@@ -5,6 +5,8 @@
 package fr.eni.clinique.IHM.GestionClient;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -42,8 +44,8 @@ public class AjouterClient extends JDialog {
         textField3 = new JTextField();
         textField4 = new JTextField();
         buttonBar = new JPanel();
-        okButton = new JButton();
-        cancelButton = new JButton();
+        boutonOK = new JButton();
+        boutonAnnuler = new JButton();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -84,16 +86,16 @@ public class AjouterClient extends JDialog {
                     ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
                     //---- okButton ----
-                    okButton.setText("Valider");
-                    okButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/check16px.png")));
-                    buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                    boutonOK.setText("Valider");
+                    boutonOK.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/check16px.png")));
+                    buttonBar.add(boutonOK, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                         GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                         new Insets(0, 0, 0, 5), 0, 0));
 
                     //---- cancelButton ----
-                    cancelButton.setText("Annuler");
-                    cancelButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/reply16px.png")));
-                    buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                    boutonAnnuler.setText("Annuler");
+                    boutonAnnuler.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/reply16px.png")));
+                    buttonBar.add(boutonAnnuler, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                         GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                         new Insets(0, 0, 0, 0), 0, 0));
                 }
@@ -167,6 +169,34 @@ public class AjouterClient extends JDialog {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    private void actionBtnOK() {
+        boutonOK.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+//                    gestionClientController.ajouterClient();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnAnnuler() {
+        boutonAnnuler.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.annuler();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
@@ -185,8 +215,8 @@ public class AjouterClient extends JDialog {
     private JTextField textField3;
     private JTextField textField4;
     private JPanel buttonBar;
-    private JButton okButton;
-    private JButton cancelButton;
+    private JButton boutonOK;
+    private JButton boutonAnnuler;
     private GestionClientController gestionClientController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
