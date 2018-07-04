@@ -29,18 +29,18 @@ public class AjouterClient extends JDialog {
         dialogPane = new JPanel();
         contentPanel = new JPanel();
         labelCode = new JLabel();
-        textFieldCode = new JTextField();
         labelNom = new JLabel();
-        textFieldNom = new JTextField();
         labelPrénom = new JLabel();
-        textFieldPrenom = new JTextField();
         labelAdresse = new JLabel();
-        textFieldAdresse1 = new JTextField();
-        textFieldAdresse2 = new JTextField();
         labelCodePostal = new JLabel();
-        textField5 = new JTextField();
         Ville = new JLabel();
+        textFieldAdresse2 = new JTextField();
+        textFieldCodePostal = new JTextField();
         textFieldVille = new JTextField();
+        textField1 = new JTextField();
+        textField2 = new JTextField();
+        textField3 = new JTextField();
+        textField4 = new JTextField();
         buttonBar = new JPanel();
         okButton = new JButton();
         cancelButton = new JButton();
@@ -76,84 +76,90 @@ public class AjouterClient extends JDialog {
                 //---- Ville ----
                 Ville.setText("Ville");
 
+                //======== buttonBar ========
+                {
+                    buttonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
+                    buttonBar.setLayout(new GridBagLayout());
+                    ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
+                    ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
+
+                    //---- okButton ----
+                    okButton.setText("Valider");
+                    okButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/check16px.png")));
+                    buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                        new Insets(0, 0, 0, 5), 0, 0));
+
+                    //---- cancelButton ----
+                    cancelButton.setText("Annuler");
+                    cancelButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/reply16px.png")));
+                    buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                        new Insets(0, 0, 0, 0), 0, 0));
+                }
+
                 GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
                 contentPanel.setLayout(contentPanelLayout);
                 contentPanelLayout.setHorizontalGroup(
                     contentPanelLayout.createParallelGroup()
                         .addGroup(contentPanelLayout.createSequentialGroup()
                             .addGroup(contentPanelLayout.createParallelGroup()
-                                .addComponent(labelNom, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(labelPrénom, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(labelAdresse, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(labelCodePostal)
-                                .addComponent(Ville, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(labelCode, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                .addComponent(textFieldAdresse2, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
-                                .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(textFieldNom)
-                                    .addComponent(textFieldPrenom)
-                                    .addComponent(textFieldAdresse1)
-                                    .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textFieldVille)
-                                    .addComponent(textFieldCode, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)))
-                            .addContainerGap(354, Short.MAX_VALUE))
+                                .addGroup(contentPanelLayout.createSequentialGroup()
+                                    .addGroup(contentPanelLayout.createParallelGroup()
+                                        .addComponent(labelNom, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(labelPrénom, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(labelCodePostal)
+                                        .addComponent(Ville, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(labelCode, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(labelAdresse, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(textFieldCodePostal, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                                        .addComponent(textFieldAdresse2, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                                        .addComponent(textField1, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                                        .addComponent(textField2, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                                        .addComponent(textField4, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                                        .addComponent(textField3, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                                        .addComponent(textFieldVille, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)))
+                                .addGroup(contentPanelLayout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(buttonBar, GroupLayout.PREFERRED_SIZE, 425, GroupLayout.PREFERRED_SIZE)))
+                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
                 contentPanelLayout.setVerticalGroup(
                     contentPanelLayout.createParallelGroup()
                         .addGroup(contentPanelLayout.createSequentialGroup()
-                            .addComponent(labelCode, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(labelCode, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                             .addGap(5, 5, 5)
-                            .addComponent(labelNom, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(labelNom, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                             .addGap(5, 5, 5)
-                            .addComponent(labelPrénom, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(labelPrénom, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                             .addGap(5, 5, 5)
-                            .addComponent(labelAdresse, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(labelCodePostal, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                            .addGap(5, 5, 5)
-                            .addComponent(Ville, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(contentPanelLayout.createSequentialGroup()
-                            .addComponent(textFieldCode, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(5, 5, 5)
-                            .addComponent(textFieldNom, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(5, 5, 5)
-                            .addComponent(textFieldPrenom, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(5, 5, 5)
-                            .addComponent(textFieldAdresse1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(5, 5, 5)
+                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(labelAdresse, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(textFieldAdresse2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(labelCodePostal, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textFieldCodePostal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                             .addGap(5, 5, 5)
-                            .addComponent(textField5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(5, 5, 5)
-                            .addComponent(textFieldVille, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(Ville, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textFieldVille, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(buttonBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
                 );
             }
             dialogPane.add(contentPanel, BorderLayout.CENTER);
-
-            //======== buttonBar ========
-            {
-                buttonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
-                buttonBar.setLayout(new GridBagLayout());
-                ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
-                ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
-
-                //---- okButton ----
-                okButton.setText("Valider");
-                okButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/check16px.png")));
-                buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 5), 0, 0));
-
-                //---- cancelButton ----
-                cancelButton.setText("Annuler");
-                cancelButton.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/reply16px.png")));
-                buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 0), 0, 0));
-            }
-            dialogPane.add(buttonBar, BorderLayout.NORTH);
         }
         contentPane.add(dialogPane, BorderLayout.CENTER);
         pack();
@@ -166,18 +172,18 @@ public class AjouterClient extends JDialog {
     private JPanel dialogPane;
     private JPanel contentPanel;
     private JLabel labelCode;
-    private JTextField textFieldCode;
     private JLabel labelNom;
-    private JTextField textFieldNom;
     private JLabel labelPrénom;
-    private JTextField textFieldPrenom;
     private JLabel labelAdresse;
-    private JTextField textFieldAdresse1;
-    private JTextField textFieldAdresse2;
     private JLabel labelCodePostal;
-    private JTextField textField5;
     private JLabel Ville;
+    private JTextField textFieldAdresse2;
+    private JTextField textFieldCodePostal;
     private JTextField textFieldVille;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField textField4;
     private JPanel buttonBar;
     private JButton okButton;
     private JButton cancelButton;
