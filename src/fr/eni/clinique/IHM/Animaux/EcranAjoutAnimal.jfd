@@ -9,8 +9,8 @@ new FormModel {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq {par l:::p {comp labelClient:::p:50:p, comp textboxNomClient:::p:303:p, seq {comp labelCode:::p:50:p, space :5:5:p, comp labelCodeValeur:::p:71:p}, seq {comp labelTatouage:::p::p, space :p:5:p, comp textFieldTatouage:::::x}, seq t {par t {seq {comp labelNom:::p:50:p, space :p:5:p, comp textFieldNom:::::x}, seq {comp labelCouleur:::p:50:p, space :p:5:p, comp textFieldCouleur:::::x}, seq {comp labelEspece:::p:50:p, space :p:5:p, comp comboBoxEspece:::::x}}, space :::p, par l:::p {seq {comp labelRace:::p:71:p, space :::p, comp comboBoxRace:::p::p}, comp comboBoxGenre:::::x}}}, space :p:232:p}}"
-					"$verticalGroup": "par l {seq {comp labelClient:::p::p, space :5:5:p, comp textboxNomClient:::p::p, space :5:5:p, par l {comp labelCode:::p::p, comp labelCodeValeur:::p:16:p}, space :5:5:p, par l {comp labelNom:::p:30:p, comp textFieldNom::l:p::p, comp comboBoxGenre::l:p::p}, space :5:5:p, par l {comp labelCouleur:::p:30:p, comp textFieldCouleur:::p::p}, space :5:5:p, par l {comp labelEspece:::p:30:p, par b {comp comboBoxRace::b:p::p, comp labelRace::b:p:30:p}, comp comboBoxEspece::l:p::p}, space :5:5:p, par l {comp labelTatouage:::p:30:p, comp textFieldTatouage:::p::p}}}"
+					"$horizontalGroup": "par l {seq {par t {seq t {comp labelClient:::p:50:p, space u:::p, comp textboxNomClient:::p:297:p}, seq t {comp labelTatouage:::p:56:p, space :::p, comp textFieldTatouage:::::x}, seq l {par l {par l:l {comp labelCode:::p:50:p, comp labelCouleur::t:p:50:p, comp labelNom::t:p:50:p}, comp labelEspece::l:p:56:p}, space :::p, par l {seq {comp comboBoxEspece:::::x, space u:::p, comp labelRace:::p:71:p, space :::p, comp comboBoxRace:::p:120:p}, seq {comp labelCodeValeur:::p:71:p, space :0:0:x}, comp textFieldCouleur:::::x, seq {comp textFieldNom:::p:87:p, space :::p, comp comboBoxGenre:::::x}}}}, space :p:176:p}}"
+					"$verticalGroup": "par l {seq {par b {comp labelClient::b:p::p, comp textboxNomClient::b:p::p}, space :::p, par l {comp labelCode:::p::p, comp labelCodeValeur:::p:16:p}, space :::p, par b {comp textFieldNom::b:p::p, comp labelNom::b:p:30:p, comp comboBoxGenre::b:p::p}, space :::p, par b {comp labelCouleur::b:p:30:p, comp textFieldCouleur::b:p::p}, space :::p, par b {comp comboBoxRace::b:p::p, comp labelRace::b:p:30:p, comp labelEspece::b:p:30:p, comp comboBoxEspece::b:p::p}, space :::p, par b {comp labelTatouage::b:p:30:p, comp textFieldTatouage::b:p::p}, space :p:23:p}}"
 				} ) {
 					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
@@ -66,7 +66,7 @@ new FormModel {
 						name: "textFieldTatouage"
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
-					"value": "Center"
+					"value": "West"
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
 					"$columnSpecs": "0:1.0, 80, 80"
