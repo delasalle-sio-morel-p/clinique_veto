@@ -13,13 +13,13 @@ import javax.swing.border.*;
 /**
  * @author Mathieu BOURVIC
  */
-public class EcranAjoutAnimal extends JDialog {
-    public EcranAjoutAnimal(Frame owner) {
+public class AjoutAnimal extends JDialog {
+    public AjoutAnimal(Frame owner) {
         super(owner);
         initComponents();
     }
 
-    public EcranAjoutAnimal(Frame owner, GestionClientController gestionClientController) {
+    public AjoutAnimal(Frame owner, GestionClientController gestionClientController) {
         super(owner);
         this.gestionClientController = gestionClientController;
         initComponents();
@@ -56,13 +56,6 @@ public class EcranAjoutAnimal extends JDialog {
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-
-            // JFormDesigner evaluation mark
-            dialogPane.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), dialogPane.getBorder())); dialogPane.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
             dialogPane.setLayout(new BorderLayout());
 

@@ -3,14 +3,19 @@ package fr.eni.clinique.IHM.GestionClient;
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.GestionClient.GestionClientManager;
 import fr.eni.clinique.BO.Client;
+import fr.eni.clinique.IHM.Animaux.AjoutAnimal;
+import fr.eni.clinique.IHM.Connexion.AccueilController;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 
+import javax.swing.*;
 import java.util.List;
 
 public class GestionClientController {
     private EcranAccueil ecranAccueil;
     private EcranGestionClient ecranGestionClient;
+    private ResultatRechercheClient rechercherClient;
     private AjouterClient ajouterClient;
+    private AjoutAnimal ecranAjoutAnimal;
 
     private GestionClientManager manager;
 
@@ -49,4 +54,35 @@ public class GestionClientController {
             ecranGestionClient = new EcranGestionClient(this);
         return ecranGestionClient;
     }
+
+    public void afficherRechercherClient() {
+        System.out.println("rechercher client");
+        rechercherClient = new ResultatRechercheClient(AccueilController.get().getEcranAccueil(), this);
+        rechercherClient.setVisible(true);
+    }
+
+    public void afficherAjouterClient() {
+        System.out.println("rechercher client");
+        ajouterClient = new AjouterClient(AccueilController.get().getEcranAccueil(), this);
+        ajouterClient.setVisible(true);
+    }
+
+    public void afficherSupprimerClient() {
+        System.out.println("rechercher client");
+//        supprimerClient = new AjouterClient(AccueilController.get().getEcranAccueil(), this);
+//        supprimerClient.setVisible(true);
+    }
+
+    public void affichageEcranAjoutAnimal() {
+        ecranAjoutAnimal = new AjoutAnimal(AccueilController.get().getEcranAccueil(), this);
+        ecranAjoutAnimal.setVisible(true);
+    }
+
+    public void affichageSupprimerAnimal(JTable tableAnimaux) {
+    }
+
+    public void affichageModifierAnimal(JTable tableAnimaux) {
+    }
+
+
 }

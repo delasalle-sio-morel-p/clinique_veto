@@ -36,9 +36,9 @@ public class EcranGestionClient extends JPanel {
         label4 = new JLabel();
         labelCodePostal = new JLabel();
         labelVille = new JLabel();
-        buttonAjouterAnimal = new JButton();
-        buttonSupprimerAnimal = new JButton();
-        buttonEditerAnimal = new JButton();
+        boutonAjouterAnimal = new JButton();
+        boutonSupprimerAnimal = new JButton();
+        boutonModifierAnimal = new JButton();
         textFieldCodePostal = new JTextField();
         textFieldVille = new JTextField();
         textFieldAdresse2 = new JTextField();
@@ -47,15 +47,23 @@ public class EcranGestionClient extends JPanel {
         textFieldNom = new JTextField();
         textFieldCode = new JTextField();
         panelButtonBar = new JPanel();
-        boutonRechercher = new JButton();
-        boutonAjouter = new JButton();
-        boutonSupprimer = new JButton();
+        boutonRechercherClient = new JButton();
+        boutonAjouterClient = new JButton();
+        boutonSupprimerClient = new JButton();
         boutonOK = new JButton();
         boutonAnnuler = new JButton();
 
         //======== this ========
 
         setLayout(new BorderLayout());
+
+        //======== listener =======
+        actionBtnRechercherClient();
+        actionBtnAjouterClient();
+        actionBtnSupprimerClient();
+        actionBtnAjouterAnimal();
+        actionBtnSupprimerAnimal();
+        actionBtnModifierAnimal();
 
         //======== dialogPane ========
         {
@@ -89,16 +97,16 @@ public class EcranGestionClient extends JPanel {
                 labelVille.setText("Ville");
 
                 //---- buttonAjouterAnimal ----
-                buttonAjouterAnimal.setText("Ajouter");
-                buttonAjouterAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add16px.png")));
+                boutonAjouterAnimal.setText("Ajouter");
+                boutonAjouterAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add16px.png")));
 
                 //---- buttonSupprimerAnimal ----
-                buttonSupprimerAnimal.setText("Supprimer");
-                buttonSupprimerAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete16px.png")));
+                boutonSupprimerAnimal.setText("Supprimer");
+                boutonSupprimerAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete16px.png")));
 
                 //---- buttonEditerAnimal ----
-                buttonEditerAnimal.setText("Editer");
-                buttonEditerAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/edit16px.png")));
+                boutonModifierAnimal.setText("Editer");
+                boutonModifierAnimal.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/edit16px.png")));
 
                 GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
                 contentPanel.setLayout(contentPanelLayout);
@@ -118,11 +126,11 @@ public class EcranGestionClient extends JPanel {
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                             .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addGroup(contentPanelLayout.createSequentialGroup()
-                                    .addComponent(buttonAjouterAnimal)
+                                    .addComponent(boutonAjouterAnimal)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(buttonSupprimerAnimal)
+                                    .addComponent(boutonSupprimerAnimal)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(buttonEditerAnimal))
+                                    .addComponent(boutonModifierAnimal))
                                 .addGroup(contentPanelLayout.createSequentialGroup()
                                     .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                         .addComponent(textFieldCodePostal, GroupLayout.Alignment.TRAILING)
@@ -175,9 +183,9 @@ public class EcranGestionClient extends JPanel {
                                         .addComponent(textFieldVille, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(buttonEditerAnimal)
-                                .addComponent(buttonSupprimerAnimal)
-                                .addComponent(buttonAjouterAnimal)))
+                                .addComponent(boutonModifierAnimal)
+                                .addComponent(boutonSupprimerAnimal)
+                                .addComponent(boutonAjouterAnimal)))
                 );
             }
             dialogPane.add(contentPanel, BorderLayout.CENTER);
@@ -187,16 +195,16 @@ public class EcranGestionClient extends JPanel {
                 panelButtonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
 
                 //---- buttonRechercher ----
-                boutonRechercher.setText("Rechercher");
-                boutonRechercher.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/search16px.png")));
+                boutonRechercherClient.setText("Rechercher");
+                boutonRechercherClient.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/search16px.png")));
 
                 //---- buttonAjouter ----
-                boutonAjouter.setText("Ajouter");
-                boutonAjouter.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add16px.png")));
+                boutonAjouterClient.setText("Ajouter");
+                boutonAjouterClient.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/add16px.png")));
 
                 //---- Supprimer ----
-                boutonSupprimer.setText("Supprimer");
-                boutonSupprimer.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete16px.png")));
+                boutonSupprimerClient.setText("Supprimer");
+                boutonSupprimerClient.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/delete16px.png")));
 
                 //---- okButton ----
                 boutonOK.setText("Valider");
@@ -211,11 +219,11 @@ public class EcranGestionClient extends JPanel {
                 buttonBarLayout.setHorizontalGroup(
                     buttonBarLayout.createParallelGroup()
                         .addGroup(buttonBarLayout.createSequentialGroup()
-                            .addComponent(boutonRechercher)
+                            .addComponent(boutonRechercherClient)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                            .addComponent(boutonAjouter, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(boutonAjouterClient, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(boutonSupprimer)
+                            .addComponent(boutonSupprimerClient)
                             .addGap(89, 89, 89)
                             .addComponent(boutonOK)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -226,12 +234,12 @@ public class EcranGestionClient extends JPanel {
                     buttonBarLayout.createParallelGroup()
                         .addGroup(buttonBarLayout.createSequentialGroup()
                             .addGroup(buttonBarLayout.createParallelGroup()
-                                .addComponent(boutonRechercher)
+                                .addComponent(boutonRechercherClient)
                                 .addGroup(buttonBarLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(boutonAnnuler)
                                     .addComponent(boutonOK)
-                                    .addComponent(boutonAjouter)
-                                    .addComponent(boutonSupprimer)))
+                                    .addComponent(boutonAjouterClient)
+                                    .addComponent(boutonSupprimerClient)))
                             .addGap(12, 12, 12))
                 );
             }
@@ -241,19 +249,89 @@ public class EcranGestionClient extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
-//    private void actionBtnRechercher() {
-//        boutonAjouter.addActionListener(new ActionListener() {
-//
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                try {
-//                    gestionPersonnelController.ajouter(tablePersonnels);
-//                } catch (Exception e1) {
-//                    e1.printStackTrace();
-//                }
-//            }
-//        });
-//    }
+    private void actionBtnRechercherClient() {
+        boutonRechercherClient.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.afficherRechercherClient();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnAjouterClient() {
+        boutonAjouterClient.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.afficherAjouterClient();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnSupprimerClient() {
+        boutonSupprimerClient.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.afficherSupprimerClient();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnAjouterAnimal() {
+        boutonAjouterAnimal.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.affichageEcranAjoutAnimal();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnSupprimerAnimal() {
+        boutonSupprimerAnimal.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.affichageSupprimerAnimal(tableAnimaux);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnModifierAnimal() {
+        boutonModifierAnimal.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.affichageModifierAnimal(tableAnimaux);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
@@ -267,9 +345,9 @@ public class EcranGestionClient extends JPanel {
     private JLabel label4;
     private JLabel labelCodePostal;
     private JLabel labelVille;
-    private JButton buttonAjouterAnimal;
-    private JButton buttonSupprimerAnimal;
-    private JButton buttonEditerAnimal;
+    private JButton boutonAjouterAnimal;
+    private JButton boutonSupprimerAnimal;
+    private JButton boutonModifierAnimal;
     private JTextField textFieldCodePostal;
     private JTextField textFieldVille;
     private JTextField textFieldAdresse2;
@@ -278,9 +356,9 @@ public class EcranGestionClient extends JPanel {
     private JTextField textFieldNom;
     private JTextField textFieldCode;
     private JPanel panelButtonBar;
-    private JButton boutonRechercher;
-    private JButton boutonAjouter;
-    private JButton boutonSupprimer;
+    private JButton boutonRechercherClient;
+    private JButton boutonAjouterClient;
+    private JButton boutonSupprimerClient;
     private JButton boutonOK;
     private JButton boutonAnnuler;
     private GestionClientController gestionClientController;
