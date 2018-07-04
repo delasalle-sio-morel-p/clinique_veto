@@ -17,8 +17,9 @@ public class ResultatRechercheClient extends JDialog {
         initComponents();
     }
 
-    public ResultatRechercheClient(Dialog owner) {
+    public ResultatRechercheClient(Frame owner, GestionClientController gestionClientController) {
         super(owner);
+        this.gestionClientController = gestionClientController;
         initComponents();
     }
 
@@ -41,13 +42,6 @@ public class ResultatRechercheClient extends JDialog {
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-
-            // JFormDesigner evaluation mark
-            dialogPane.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), dialogPane.getBorder())); dialogPane.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
             dialogPane.setLayout(new BorderLayout());
 
@@ -113,5 +107,6 @@ public class ResultatRechercheClient extends JDialog {
     private JToolBar toolBar1;
     private JTextField textFieldRechercher;
     private JButton buttonRechercher;
+    private GestionClientController gestionClientController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
