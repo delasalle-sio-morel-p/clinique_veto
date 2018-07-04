@@ -199,7 +199,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "GestionClient : " + nomClient;
+        return nomClient;
     }
 
 }
