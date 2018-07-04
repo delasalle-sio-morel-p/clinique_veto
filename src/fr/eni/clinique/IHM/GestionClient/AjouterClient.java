@@ -41,13 +41,17 @@ public class AjouterClient extends JDialog {
         textFieldAdresse1 = new JTextField();
         textFieldPrenom = new JTextField();
         textFieldNom = new JTextField();
-        buttonBar = new JPanel();
+        panelButtonBar = new JPanel();
         boutonOK = new JButton();
         boutonAnnuler = new JButton();
 
         //======== this ========
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
+
+        //======== listener =======
+        actionBtnOK();
+        actionBtnAnnuler();
 
         //======== dialogPane ========
         {
@@ -75,22 +79,22 @@ public class AjouterClient extends JDialog {
 
                 //======== buttonBar ========
                 {
-                    buttonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
-                    buttonBar.setLayout(new GridBagLayout());
-                    ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
-                    ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
+                    panelButtonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
+                    panelButtonBar.setLayout(new GridBagLayout());
+                    ((GridBagLayout)panelButtonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
+                    ((GridBagLayout)panelButtonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
                     //---- boutonOK ----
                     boutonOK.setText("Valider");
                     boutonOK.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/check16px.png")));
-                    buttonBar.add(boutonOK, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                    panelButtonBar.add(boutonOK, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                         GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                         new Insets(0, 0, 0, 5), 0, 0));
 
                     //---- boutonAnnuler ----
                     boutonAnnuler.setText("Annuler");
                     boutonAnnuler.setIcon(new ImageIcon(getClass().getResource("/fr/eni/clinique/IHM/resources/reply16px.png")));
-                    buttonBar.add(boutonAnnuler, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                    panelButtonBar.add(boutonAnnuler, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                         GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                         new Insets(0, 0, 0, 0), 0, 0));
                 }
@@ -118,7 +122,7 @@ public class AjouterClient extends JDialog {
                                         .addComponent(textFieldVille, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)))
                                 .addGroup(contentPanelLayout.createSequentialGroup()
                                     .addContainerGap()
-                                    .addComponent(buttonBar, GroupLayout.PREFERRED_SIZE, 425, GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(panelButtonBar, GroupLayout.PREFERRED_SIZE, 425, GroupLayout.PREFERRED_SIZE)))
                             .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
                 contentPanelLayout.setVerticalGroup(
@@ -147,7 +151,7 @@ public class AjouterClient extends JDialog {
                                 .addComponent(Ville, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(textFieldVille, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(buttonBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panelButtonBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addContainerGap())
                 );
             }
@@ -165,7 +169,7 @@ public class AjouterClient extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-//                    gestionClientController.ajouterClient();
+                    gestionClientController.ajouterClient(textFieldNom.getText(), textFieldPrenom.getText(), textFieldAdresse1.getText(), textFieldCodePostal.getText(), textFieldVille.getText());
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -202,7 +206,7 @@ public class AjouterClient extends JDialog {
     private JTextField textFieldAdresse1;
     private JTextField textFieldPrenom;
     private JTextField textFieldNom;
-    private JPanel buttonBar;
+    private JPanel panelButtonBar;
     private JButton boutonOK;
     private JButton boutonAnnuler;
     private GestionClientController gestionClientController;

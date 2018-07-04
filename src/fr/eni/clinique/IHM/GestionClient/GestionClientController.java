@@ -106,35 +106,26 @@ public class GestionClientController {
         return null;
     }
 
-//    public void ajouterClient(JTable tablePersonnels, JTextField textboxNom, JTextField textFieldPrenom, JComboBox comboboxRole, JPasswordField passwordFieldMDP) {
-//        System.out.println("ajouterClient");
-//        System.out.println(textboxNom.getText());
-//        System.out.println(textFieldPrenom.getText());
-//        System.out.println(comboboxRole.getSelectedItem());
-//        System.out.println(passwordFieldMDP.getText());
-//        Role role = (Role) comboboxRole.getSelectedItem();
-//        Personnel personne = null;
-//
-//        switch (role.getLibelle()) {
-//            case "Administrateur":
-//                personne = new Admin(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "adm", false);
-//                break;
-//            case "Secrétaire":
-//                personne = new Secretaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "sec", false);
-//                break;
-//            default:
-//                personne = new Veterinaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "vet", false);
-//                break;
-//        }
-//
-//        try {
-//            manager.addPersonnel(personne);
-//            System.out.println(personne + " ajouté à la base de donnée");
-//            ajouterPersonnel.setVisible(false);
-//        } catch (BLLException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public void ajouterClient(String nom, String prenom, String adresse1, String codePostal, String ville) {
+        System.out.println("ajouterClient");
+        System.out.println(nom);
+        System.out.println(prenom);
+        System.out.println(adresse1);
+        System.out.println(codePostal);
+        System.out.println(ville);
+        Client client = null;
+
+        client = new Client(nom, prenom, adresse1, codePostal, ville, "adm", false);
+        break;
+
+        try {
+            manager.addPersonnel(personne);
+            System.out.println(personne + " ajouté à la base de donnée");
+            ajouterPersonnel.setVisible(false);
+        } catch (BLLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void affichageEcranAjoutAnimal() {
         ajoutAnimal = new AjouterAnimal(AccueilController.get().getEcranAccueil(), this);
