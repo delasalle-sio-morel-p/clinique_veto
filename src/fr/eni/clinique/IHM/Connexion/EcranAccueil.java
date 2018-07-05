@@ -82,6 +82,7 @@ public class EcranAccueil extends JFrame {
 
         //======== listener =======
         actionBtnDeconnexion();
+        actionBtnFermer();
         actionMenuGestionPersonnel();
         actionMenuClient();
 
@@ -143,7 +144,21 @@ public class EcranAccueil extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    connexionController.deconnexion();
+                    accueilController.deconnexion();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnFermer(){
+        menuItemfermer.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    accueilController.fermerApplication();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -193,6 +208,11 @@ public class EcranAccueil extends JFrame {
             }
         });
     }
+
+
+
+
+
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC

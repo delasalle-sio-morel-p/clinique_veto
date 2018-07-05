@@ -6,6 +6,8 @@ import fr.eni.clinique.IHM.GestionClient.GestionClientController;
 import fr.eni.clinique.IHM.GestionPersonnel.EcranGestionPersonnel;
 import fr.eni.clinique.IHM.GestionPersonnel.GestionPersonnelController;
 
+import java.awt.event.WindowEvent;
+
 public class AccueilController {
     private EcranConnexion ecranConnexion;
     private EcranAccueil ecranAccueil;
@@ -60,5 +62,16 @@ public class AccueilController {
         if (ecranAccueil == null)
             ecranAccueil = new EcranAccueil(this);
         return ecranAccueil;
+    }
+
+    public void deconnexion() {
+        AccueilController.get().getEcranAccueil().setVisible(false);
+        ecranConnexion = new EcranConnexion(ConnexionController.get());
+        ecranConnexion.setVisible(true);
+    }
+
+    public void fermerApplication() {
+        ecranAccueil = new EcranAccueil(this);
+        ecranAccueil.dispatchEvent(new WindowEvent(ecranAccueil, WindowEvent.WINDOW_CLOSING));
     }
 }
