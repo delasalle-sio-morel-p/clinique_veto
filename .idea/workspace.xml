@@ -16,7 +16,44 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ConnexionController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/ConnexionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccueilController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/AccueilController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EcranAccueil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranAccueil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="146" column="45" selection-start-line="146" selection-start-column="45" selection-end-line="146" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EcranConnexion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranConnexion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="563">
+              <caret line="94" column="40" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -73,10 +110,8 @@
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/BLL/Connexion/AccueilManager.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionClient/GestionClientManager.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/GestionClient/AppliTestIHMGestionClient.java" />
-        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranAccueil.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/AppliTest/GestionPersonnel/AppliTestIHMGestionPersonnel.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/TablePersonnelModel.java" />
-        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/ConnexionController.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/SupprimerPersonnel.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/ReinitialiserMDP.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/AccueilController.java" />
@@ -90,6 +125,9 @@
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/EcranGestionClient.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/SupprimerClient.java" />
         <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionClient/GestionClientController.java" />
+        <option value="$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionClient/ClientManager.java" />
+        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/ConnexionController.java" />
+        <option value="$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranAccueil.java" />
       </list>
     </option>
   </component>
@@ -450,10 +488,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74321000" />
+    <option name="totallyTimeSpent" value="74990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -465,11 +504,11 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.15718158" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.15718158" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.25578406" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.25578406" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3292683" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
@@ -477,7 +516,7 @@
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39972898" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -547,7 +586,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -637,13 +676,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Client/EcranClient.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionClient/ClientManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionClient/GestionClientManager.java" />
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/Connexion/AccueilManager.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -680,13 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranConnexion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="94" column="45" lean-forward="true" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionPersonnel/GestionPersonnelManager.java" />
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/DAL/DAO.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -703,24 +728,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/DAL/JDBC/GestionPersonnelDAOJdbcImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/ConnexionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/GestionPersonnel/ReinitialiserMDP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="117" column="62" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranAccueil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="145" column="44" selection-start-line="145" selection-start-column="44" selection-end-line="145" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -729,13 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1634">
           <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/AccueilController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -824,6 +828,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="123" column="50" selection-start-line="123" selection-start-column="50" selection-end-line="123" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/BLL/GestionClient/ClientManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="45" selection-start-line="45" selection-start-column="2" selection-end-line="46" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranConnexion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="94" column="40" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/AccueilController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/EcranAccueil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="146" column="45" selection-start-line="146" selection-start-column="45" selection-end-line="146" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/eni/clinique/IHM/Connexion/ConnexionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>

@@ -144,7 +144,7 @@ public class EcranAccueil extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    accueilController.deconnexion();
+                    ConnexionController.get().deconnexion();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }

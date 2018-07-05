@@ -69,9 +69,8 @@ public class ConnexionController {
     }
 
     public void deconnexion() {
-        ecranConnexion = new EcranConnexion(this);
-        ecranAccueil = new EcranAccueil(this);
-        ecranAccueil.setVisible(false);
+        AccueilController.get().getEcranAccueil().setVisible(false);
+        ecranConnexion = new EcranConnexion(ConnexionController.get());
         ecranConnexion.setVisible(true);
     }
 

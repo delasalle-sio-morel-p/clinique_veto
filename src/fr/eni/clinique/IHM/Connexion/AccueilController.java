@@ -64,12 +64,6 @@ public class AccueilController {
         return ecranAccueil;
     }
 
-    public void deconnexion() {
-        AccueilController.get().getEcranAccueil().setVisible(false);
-        ecranConnexion = new EcranConnexion(ConnexionController.get());
-        ecranConnexion.setVisible(true);
-    }
-
     public void fermerApplication() {
         ecranAccueil = new EcranAccueil(this);
         ecranAccueil.dispatchEvent(new WindowEvent(ecranAccueil, WindowEvent.WINDOW_CLOSING));
