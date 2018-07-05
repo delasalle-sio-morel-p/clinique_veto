@@ -43,7 +43,9 @@ public class ClientManager {
     public void addClient(Client client) throws BLLException {
 
         try {
-            client.setNomClient(client.getNomClient().toUpperCase());
+//            client.setNomClient(client.getNomClient().toUpperCase());
+//            client.setVille(client.getVille().toUpperCase());
+
             client.setVille(client.getVille().toUpperCase());
             daoClients.insert(client);
             listeClients.add(client);

@@ -18,8 +18,6 @@ public class GestionClientController {
     private AjouterClient ajouterClient;
     private AjouterAnimal ajoutAnimal;
     private SupprimerClient supprimerClient;
-    private boolean isPresent;
-    private Client clientSelectionne;
     private TableClientModel modele;
 
     private ClientManager manager;
@@ -79,13 +77,13 @@ public class GestionClientController {
         supprimerClient.setVisible(true);
     }
 
-    public TableClientModel rechercherClient(String nom) {
+    public void rechercherClient(String nom, JTable table) {
         listeClientsSelectionne = new ArrayList<>();
-        listeClientsSelectionne.add(clientSelectionne(nom));
-        modele = new TableClientModel(getListeClients());
-        System.out.println(clientSelectionne(nom));
+        listeClientsSelectionne = listeClientSelectionne(nom);
+        modele = new TableClientModel(listeClientsSelectionne);
+        table.setModel(modele);
+        modele.fireTableDataChanged();
         System.out.println(listeClientsSelectionne);
-        return modele;
     }
     public void annuler() {
         if (ajouterClient != null)
@@ -94,19 +92,17 @@ public class GestionClientController {
             supprimerClient.setVisible(false);
     }
 
-    public Client clientSelectionne(String nom) {
-        isPresent = false;
+    public ArrayList<Client> listeClientSelectionne(String nom) {
+        listeClientsSelectionne = new ArrayList<>();
         for (Client client : listeClients) {
             if (client.getNomClient().startsWith(nom.toUpperCase())) {
-                isPresent = true;
-                clientSelectionne = client;
-                break;
+                listeClientsSelectionne.add(client);
             }
         }
-        if (isPresent) {
-            System.out.println("Personne présente en base de donnée :");
-            System.out.println(clientSelectionne);
-            return clientSelectionne;
+        if (! listeClientsSelectionne.isEmpty()) {
+            System.out.println("Personne(s) présente(s) en base de donnée :");
+            System.out.println(listeClientsSelectionne);
+            return listeClientsSelectionne;
         } else
             System.out.println("Personne non présente en base de donnée");
         return null;
@@ -149,6 +145,5 @@ public class GestionClientController {
 //        supprimerAnimal = new SupprimerAnimal(AccueilController.get().getEcranAccueil(), this);
 //        supprimerAnimal.setVisible(true);
     }
-
 
 }

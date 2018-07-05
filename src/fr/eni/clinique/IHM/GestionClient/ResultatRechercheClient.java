@@ -25,6 +25,13 @@ public class ResultatRechercheClient extends JDialog {
         initComponents();
     }
 
+    public ResultatRechercheClient(Frame owner, JTable tableClients, GestionClientController gestionClientController) {
+        super(owner);
+        this.gestionClientController = gestionClientController;
+        this.tableClients = tableClients;
+        initComponents();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
@@ -115,8 +122,7 @@ public class ResultatRechercheClient extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionClientController.rechercherClient(textFieldRechercher.getText());
-
+                    gestionClientController.rechercherClient(textFieldRechercher.getText(), tableClients);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
