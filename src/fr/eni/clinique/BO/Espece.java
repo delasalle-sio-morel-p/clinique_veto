@@ -39,7 +39,7 @@ public class Espece {
 
     @Override
     public String toString() {
-        return getEspece();
+        return espece + " " + races;
     }
 
 
