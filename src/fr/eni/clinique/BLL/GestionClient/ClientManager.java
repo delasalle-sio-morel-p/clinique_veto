@@ -61,6 +61,8 @@ public class ClientManager {
         this.validerClient(client);
 
         try {
+            client.setNomClient(client.getNomClient().toUpperCase());
+            client.setVille(client.getVille().toUpperCase());
             daoClient.insert(client);
         } catch (DALException e) {
             throw new BLLException("Le GestionClient n'a pas pu être inséré dans la base");
@@ -71,6 +73,8 @@ public class ClientManager {
         this.validerClient(client);
 
         try {
+            client.setNomClient(client.getNomClient().toUpperCase());
+            client.setVille(client.getVille().toUpperCase());
             daoClient.update(client);
         } catch (DALException e) {
             throw new BLLException("Les informations n'ont pas pu être mise à jour");

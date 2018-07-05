@@ -58,7 +58,9 @@ public class GestionPersonnelManager {
         validerPersonnel(personnel);
 
         try {
+            personnel.setNom(personnel.getNom().toUpperCase());
             daoPersonnels.insert(personnel);
+            listePersonnels.add(personnel);
         } catch (DALException e) {
             throw new BLLException("Erreur lors de l'insertion en BDD du personnel.");
         }
@@ -70,6 +72,7 @@ public class GestionPersonnelManager {
         validerPersonnel(personnel);
 
         try {
+            personnel.setNom(personnel.getNom().toUpperCase());
             daoPersonnels.update(personnel);
         } catch (DALException e) {
             throw new BLLException("Erreur lors de la mise à jour en BDD du personnel.");
@@ -83,6 +86,7 @@ public class GestionPersonnelManager {
 
         try {
             daoPersonnels.delete(personnel);
+            listePersonnels.remove(personnel);
         } catch (DALException e) {
             throw new BLLException("Erreur lors de l'archivage en BDD du personnel.");
         }

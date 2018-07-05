@@ -116,7 +116,7 @@ public class GestionPersonnelController {
             manager.addPersonnel(personneAjoute);
             System.out.println(personneAjoute + " ajouté à la base de donnée");
             ajouterPersonnel.setVisible(false);
-            refreshTable(tablePersonnels, personneAjoute);
+            refreshTable(tablePersonnels);
         } catch (BLLException e) {
             e.printStackTrace();
         }
@@ -132,7 +132,7 @@ public class GestionPersonnelController {
                 manager.deletePersonnel(personneSelectionne);
                 System.out.println(personneSelectionne + " archivé");
                 supprimerPersonnel.setVisible(false);
-                refreshTable(tablePersonnels, personneSelectionne);
+                refreshTable(tablePersonnels);
             } catch (BLLException e) {
                 e.printStackTrace();
             }
@@ -185,18 +185,6 @@ public class GestionPersonnelController {
         System.out.println(getListePersonnels());
         System.out.println(listePersonnels);
         modele = new TablePersonnelModel(getListePersonnels());
-        table.setModel(modele);
-        modele.fireTableDataChanged();
-    }
-    public void refreshTable(JTable table, Personnel personnel){
-        System.out.println(listePersonnels);
-        System.out.println(personnel);
-        if(listePersonnels.contains(personnel))
-            listePersonnels.remove(personnel);
-        else
-            listePersonnels.add(personnel);
-        System.out.println(listePersonnels);
-        modele = new TablePersonnelModel(listePersonnels);
         table.setModel(modele);
         modele.fireTableDataChanged();
     }

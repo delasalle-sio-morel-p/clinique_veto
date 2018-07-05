@@ -202,12 +202,12 @@ public class ClientDAOJdbcImpl implements ClientDAO {
     }
 
     private void preparerParametres(Client client, PreparedStatement rqt) throws SQLException {
-        rqt.setString(1, client.getNomClient().toUpperCase());
+        rqt.setString(1, client.getNomClient());
         rqt.setString(2, client.getPrenomClient());
         rqt.setString(3, client.getAdresse1());
         rqt.setString(4, client.getAdresse2());
         rqt.setString(5, client.getCodePostal());
-        rqt.setString(6, client.getVille().toUpperCase());
+        rqt.setString(6, client.getVille());
         rqt.setString(7, client.getNumTel());
         rqt.setString(8, client.getAssurance());
         rqt.setString(9, client.getEmail());
