@@ -31,8 +31,8 @@ public class AccueilController {
         return instance;
     }
 
-    public void affichageEcranAccueil(String role) {
-        ecranAccueil = new EcranAccueil(this, role);
+    public void affichageEcranAccueil() {
+        ecranAccueil = new EcranAccueil(this);
         ecranAccueil.setVisible(true);
     }
 
