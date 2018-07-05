@@ -25,10 +25,16 @@ public class ResultatRechercheClient extends JDialog {
         initComponents();
     }
 
-    public ResultatRechercheClient(Frame owner, JTable tableClients, GestionClientController gestionClientController) {
+    public ResultatRechercheClient(Frame owner, JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille, GestionClientController gestionClientController) {
         super(owner);
         this.gestionClientController = gestionClientController;
-        this.tableClients = tableClients;
+        this.textFieldCode = textFieldCode;
+        this.textFieldNom = textFieldNom;
+        this.textFieldPrenom = textFieldPrenom;
+        this.textFieldAdresse1 = textFieldAdresse1;
+        this.textFieldAdresse2 = textFieldAdresse2;
+        this.textFieldCodePostal = textFieldCodePostal;
+        this.textFieldVille = textFieldVille;
         initComponents();
     }
 
@@ -51,6 +57,7 @@ public class ResultatRechercheClient extends JDialog {
 
         //======== listener =======
         actionBtnRechercherClient();
+        actionBtnSelectionnerClient();
 
         //======== dialogPane ========
         {
@@ -130,6 +137,20 @@ public class ResultatRechercheClient extends JDialog {
         });
     }
 
+    private void actionBtnSelectionnerClient() {
+        boutonSelectionner.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.selectionnerClient(tableClients, textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
@@ -141,6 +162,13 @@ public class ResultatRechercheClient extends JDialog {
     private JToolBar toolBar1;
     private JTextField textFieldRechercher;
     private JButton boutonRechercher;
+    private JTextField textFieldCodePostal;
+    private JTextField textFieldVille;
+    private JTextField textFieldAdresse2;
+    private JTextField textFieldAdresse1;
+    private JTextField textFieldPrenom;
+    private JTextField textFieldNom;
+    private JTextField textFieldCode;
     private GestionClientController gestionClientController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

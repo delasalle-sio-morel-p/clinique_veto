@@ -198,7 +198,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return nomClient;
+        return nomClient + " " + prenomClient;
     }
 
 }

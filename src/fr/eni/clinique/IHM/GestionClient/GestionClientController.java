@@ -24,6 +24,8 @@ public class GestionClientController {
 
     private List<Client> listeClients;
     private ArrayList<Client> listeClientsSelectionne;
+    private Client clientSelectionne;
+    private  boolean isPresent;
 
     private static GestionClientController instance;
 
@@ -59,9 +61,9 @@ public class GestionClientController {
         return ecranGestionClient;
     }
 
-    public void afficherRechercherClient() {
+    public void afficherRechercherClient(JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille) {
         System.out.println("rechercher client");
-        rechercherClient = new ResultatRechercheClient(AccueilController.get().getEcranAccueil(), this);
+        rechercherClient = new ResultatRechercheClient(AccueilController.get().getEcranAccueil(), textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille, this);
         rechercherClient.setVisible(true);
     }
 
@@ -79,11 +81,35 @@ public class GestionClientController {
 
     public void rechercherClient(String nom, JTable table) {
         listeClientsSelectionne = new ArrayList<>();
-        listeClientsSelectionne = listeClientSelectionne(nom);
+        listeClientsSelectionne = selectionListeClients(nom);
         modele = new TableClientModel(listeClientsSelectionne);
         table.setModel(modele);
         modele.fireTableDataChanged();
         System.out.println(listeClientsSelectionne);
+    }
+
+    public Client selectionnerClient( JTable tableClients, JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille) {
+        clientSelectionne = new Client();
+        int ligneSelectionne = tableClients.getSelectedRow();
+        System.out.println("selectionner client");
+        if (ligneSelectionne != -1) {
+            String nomSelectionne = (String) tableClients.getValueAt(ligneSelectionne, 0);
+            String prenomSelectionne = (String) tableClients.getValueAt(ligneSelectionne, 1);
+            System.out.println(nomSelectionne + " " + prenomSelectionne);
+
+            clientSelectionne = selectionClient(nomSelectionne, prenomSelectionne);
+            textFieldCode.setText(String.valueOf(clientSelectionne.getCodeClient()));
+            textFieldNom.setText(clientSelectionne.getNomClient());
+            textFieldPrenom.setText(clientSelectionne.getPrenomClient());
+            textFieldAdresse1.setText(clientSelectionne.getAdresse1());
+            textFieldAdresse2.setText(clientSelectionne.getAdresse2());
+            textFieldCodePostal.setText(clientSelectionne.getCodePostal());
+            textFieldVille.setText(clientSelectionne.getVille());
+            System.out.println(clientSelectionne);
+            rechercherClient.setVisible(false);
+            return clientSelectionne;
+        }
+        return clientSelectionne;
     }
     public void annuler() {
         if (ajouterClient != null)
@@ -92,7 +118,7 @@ public class GestionClientController {
             supprimerClient.setVisible(false);
     }
 
-    public ArrayList<Client> listeClientSelectionne(String nom) {
+    public ArrayList<Client> selectionListeClients(String nom) {
         listeClientsSelectionne = new ArrayList<>();
         for (Client client : listeClients) {
             if (client.getNomClient().startsWith(nom.toUpperCase())) {
@@ -105,6 +131,25 @@ public class GestionClientController {
             return listeClientsSelectionne;
         } else
             System.out.println("Personne non présente en base de donnée");
+        return null;
+    }
+
+    public Client selectionClient(String nom, String prenom) {
+        isPresent = false;
+        for (Client client : listeClients) {
+
+            if (client.getNomClient().equals(nom) && client.getPrenomClient().equals(prenom)) {
+                isPresent = true;
+                clientSelectionne = client;
+                break;
+            }
+        }
+        if (isPresent) {
+            System.out.println("Client présent en base de donnée :");
+            System.out.println(clientSelectionne);
+            return clientSelectionne;
+        } else
+            System.out.println("Client non présent en base de donnée");
         return null;
     }
 

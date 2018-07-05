@@ -40,12 +40,19 @@ public class EcranGestionClient extends JPanel {
         boutonSupprimerAnimal = new JButton();
         boutonModifierAnimal = new JButton();
         textFieldCodePostal = new JTextField();
+        textFieldCodePostal.setEditable(false);
         textFieldVille = new JTextField();
+        textFieldVille.setEditable(false);
         textFieldAdresse2 = new JTextField();
+        textFieldAdresse2.setEditable(false);
         textFieldAdresse1 = new JTextField();
+        textFieldAdresse1.setEditable(false);
         textFieldPrenom = new JTextField();
+        textFieldPrenom.setEditable(false);
         textFieldNom = new JTextField();
+        textFieldNom.setEditable(false);
         textFieldCode = new JTextField();
+        textFieldCode.setEditable(false);
         panelButtonBar = new JPanel();
         boutonRechercherClient = new JButton();
         boutonAjouterClient = new JButton();
@@ -255,7 +262,7 @@ public class EcranGestionClient extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionClientController.afficherRechercherClient();
+                    gestionClientController.afficherRechercherClient(textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
