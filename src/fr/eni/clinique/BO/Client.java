@@ -160,21 +160,6 @@ public class Client {
         this.archive = archive;
     }
 
-    public Client(String nomClient, String prenomClient, String adresse1, String codePostal,
-                  String ville, String numTel, String assurance, String email, boolean archive) {
-        super();
-        this.nomClient = nomClient;
-        this.prenomClient = prenomClient;
-        this.adresse1 = adresse1;
-        this.codePostal = codePostal;
-        this.ville = ville;
-        this.numTel = numTel;
-        this.assurance = assurance;
-        this.email = email;
-        this.archive = archive;
-    }
-
-
     public Client(String nomClient, String prenomClient, String adresse1, String adresse2, String codePostal,
                   String ville, String numTel, String assurance, String email, boolean archive, List<Animal> listeAnimaux) {
         super();

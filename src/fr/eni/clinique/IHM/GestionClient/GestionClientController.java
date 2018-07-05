@@ -8,6 +8,7 @@ import fr.eni.clinique.IHM.Animaux.AjouterAnimal;
 import fr.eni.clinique.IHM.Animaux.SupprimerAnimal;
 import fr.eni.clinique.IHM.Connexion.AccueilController;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
+import fr.eni.clinique.IHM.GestionPersonnel.TablePersonnelModel;
 
 import javax.swing.*;
 import java.util.List;
@@ -21,6 +22,7 @@ public class GestionClientController {
     private SupprimerClient supprimerClient;
     private boolean isPresent;
     private Client clientSelectionne;
+    private TablePersonnelModel modele;
 
     private GestionClientManager manager;
 
@@ -79,6 +81,7 @@ public class GestionClientController {
     }
 
     public void rechercherClient(String nom) {
+//        modele = new TablePersonnelModel(getListeClients());
         System.out.println(clientSelectionne(nom));
     }
     public void annuler() {
@@ -106,25 +109,27 @@ public class GestionClientController {
         return null;
     }
 
-    public void ajouterClient(String nom, String prenom, String adresse1, String codePostal, String ville) {
+    public void ajouterClient(String nom, String prenom, String adresse1, String adresse2, String codePostal, String ville, String noTel, String assurance, String email) {
         System.out.println("ajouterClient");
         System.out.println(nom);
         System.out.println(prenom);
         System.out.println(adresse1);
         System.out.println(codePostal);
         System.out.println(ville);
+        System.out.println(noTel);
+        System.out.println(assurance);
+        System.out.println(email);
         Client client = null;
 
-//        client = new Client(nom, prenom, adresse1, codePostal, ville, "adm", false);
-//        break;
-//
-//        try {
-//            manager.addPersonnel(personne);
-//            System.out.println(personne + " ajouté à la base de donnée");
-//            ajouterPersonnel.setVisible(false);
-//        } catch (BLLException e) {
-//            e.printStackTrace();
-//        }
+        client = new Client(nom, prenom, adresse1, adresse2, codePostal, ville, noTel, assurance, email,  false);
+
+        try {
+            manager.addClient(client);
+            System.out.println(client + " ajouté à la base de donnée");
+            ajouterClient.setVisible(false);
+        } catch (BLLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void affichageEcranAjoutAnimal() {

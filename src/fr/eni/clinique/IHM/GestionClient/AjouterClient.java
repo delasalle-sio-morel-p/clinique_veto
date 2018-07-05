@@ -55,6 +55,10 @@ public class AjouterClient extends JDialog {
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
+        //======== listener =======
+        actionBtnOK();
+        actionBtnAnnuler();
+
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
@@ -198,7 +202,7 @@ public class AjouterClient extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionClientController.ajouterClient(textFieldNom.getText(), textFieldPrenom.getText(), textFieldAdresse1.getText(), textFieldCodePostal.getText(), textFieldVille.getText());
+                    gestionClientController.ajouterClient(textFieldNom.getText(), textFieldPrenom.getText(), textFieldAdresse1.getText(), textFieldAdresse2.getText(), textFieldCodePostal.getText(), textFieldVille.getText(), textFieldNumTel.getText(), textFieldAssurance.getText(), textFieldEmail.getText());
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
