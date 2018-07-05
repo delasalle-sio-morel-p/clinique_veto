@@ -29,7 +29,7 @@ public class GestionClientController {
     private List<Client> listeClients;
     private ArrayList<Client> listeClientsSelectionne;
     private Client clientSelectionne;
-    private  boolean isPresent;
+    private boolean isPresent;
 
     private AjouterAnimal ajouterAnimal;
     private SupprimerAnimal supprimerAnimal;
@@ -99,9 +99,9 @@ public class GestionClientController {
         ajouterClient.setVisible(true);
     }
 
-    public void afficherSupprimerClient() {
+    public void afficherSupprimerClient(JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille) {
         System.out.println("rechercher client");
-        supprimerClient = new SupprimerClient(AccueilController.get().getEcranAccueil(), this);
+        supprimerClient = new SupprimerClient(AccueilController.get().getEcranAccueil(), textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille, this);
         supprimerClient.setVisible(true);
     }
 
@@ -114,7 +114,7 @@ public class GestionClientController {
         System.out.println(listeClientsSelectionne);
     }
 
-    public Client selectionnerClient( JTable tableClients, JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille) {
+    public Client selectionnerClient(JTable tableClients, JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille) {
         clientSelectionne = new Client();
         int ligneSelectionne = tableClients.getSelectedRow();
         System.out.println("selectionner client");
@@ -137,6 +137,7 @@ public class GestionClientController {
         }
         return clientSelectionne;
     }
+
     public void annuler() {
         if (ajouterClient != null)
             ajouterClient.setVisible(false);
@@ -151,7 +152,7 @@ public class GestionClientController {
                 listeClientsSelectionne.add(client);
             }
         }
-        if (! listeClientsSelectionne.isEmpty()) {
+        if (!listeClientsSelectionne.isEmpty()) {
             System.out.println("Personne(s) présente(s) en base de donnée :");
             System.out.println(listeClientsSelectionne);
             return listeClientsSelectionne;
@@ -191,7 +192,7 @@ public class GestionClientController {
         System.out.println(email);
         Client client = null;
 
-        client = new Client(nom, prenom, adresse1, adresse2, codePostal, ville, noTel, assurance, email,  false);
+        client = new Client(nom, prenom, adresse1, adresse2, codePostal, ville, noTel, assurance, email, false);
 
         try {
             manager.addClient(client);
@@ -200,6 +201,41 @@ public class GestionClientController {
         } catch (BLLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void supprimerClient(JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille) {
+        System.out.println("supprimerClient");
+        System.out.println(textFieldNom.getText());
+        System.out.println(textFieldPrenom.getText());
+        Client clientSupprime = null;
+        String nom = textFieldNom.getText();
+        String prenom = textFieldPrenom.getText();
+
+        for (Client client : listeClients) {
+
+            if (client.getNomClient().equals(nom) && client.getPrenomClient().equals(prenom)) {
+                isPresent = true;
+                clientSupprime = client;
+                break;
+            }
+        }
+        if (isPresent) {
+            try {
+                manager.deleteClient(clientSupprime);
+                System.out.println(clientSupprime + " archivé");
+                supprimerClient.setVisible(false);
+                textFieldCode.setText(null);
+                textFieldNom.setText(null);
+                textFieldPrenom.setText(null);
+                textFieldAdresse1.setText(null);
+                textFieldAdresse2.setText(null);
+                textFieldCodePostal.setText(null);
+                textFieldVille.setText(null);
+            } catch (BLLException e) {
+                e.printStackTrace();
+            }
+        } else
+            System.out.print("Pas de client sélectionné");
     }
 
     public void affichageEcranAjoutAnimal() {

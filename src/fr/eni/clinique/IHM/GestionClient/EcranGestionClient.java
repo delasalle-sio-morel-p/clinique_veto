@@ -290,7 +290,7 @@ public class EcranGestionClient extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionClientController.afficherSupprimerClient();
+                    gestionClientController.afficherSupprimerClient(textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }

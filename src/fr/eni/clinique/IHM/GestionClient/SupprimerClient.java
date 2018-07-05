@@ -5,6 +5,8 @@
 package fr.eni.clinique.IHM.GestionClient;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
@@ -24,6 +26,19 @@ public class SupprimerClient extends JDialog {
         initComponents();
     }
 
+    public SupprimerClient(Frame owner, JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille, GestionClientController gestionClientController) {
+        super(owner);
+        this.gestionClientController = gestionClientController;
+        this.textFieldCode = textFieldCode;
+        this.textFieldNom = textFieldNom;
+        this.textFieldPrenom = textFieldPrenom;
+        this.textFieldAdresse1 = textFieldAdresse1;
+        this.textFieldAdresse2 = textFieldAdresse2;
+        this.textFieldCodePostal = textFieldCodePostal;
+        this.textFieldVille = textFieldVille;
+        initComponents();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
@@ -31,12 +46,16 @@ public class SupprimerClient extends JDialog {
         contentPanel = new JPanel();
         labelSupprimerClient = new JLabel();
         buttonBar = new JPanel();
-        okButton = new JButton();
-        cancelButton = new JButton();
+        boutonOK = new JButton();
+        boutonAnnuler = new JButton();
 
         //======== this ========
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
+
+        //======== listener =======
+        actionBtnOK();
+        actionBtnAnnuler();
 
         //======== dialogPane ========
         {
@@ -77,14 +96,14 @@ public class SupprimerClient extends JDialog {
                 ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
                 //---- okButton ----
-                okButton.setText("OK");
-                buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                boutonOK.setText("OK");
+                buttonBar.add(boutonOK, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- cancelButton ----
-                cancelButton.setText("Cancel");
-                buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                boutonAnnuler.setText("Annuler");
+                buttonBar.add(boutonAnnuler, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
             }
@@ -96,14 +115,49 @@ public class SupprimerClient extends JDialog {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    private void actionBtnOK() {
+        boutonOK.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.supprimerClient(textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille);;
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnAnnuler() {
+        boutonAnnuler.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.annuler();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
     private JPanel contentPanel;
     private JLabel labelSupprimerClient;
     private JPanel buttonBar;
-    private JButton okButton;
-    private JButton cancelButton;
+    private JButton boutonOK;
+    private JButton boutonAnnuler;
+    private JTextField textFieldCodePostal;
+    private JTextField textFieldVille;
+    private JTextField textFieldAdresse2;
+    private JTextField textFieldAdresse1;
+    private JTextField textFieldPrenom;
+    private JTextField textFieldNom;
+    private JTextField textFieldCode;
     private GestionClientController gestionClientController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
