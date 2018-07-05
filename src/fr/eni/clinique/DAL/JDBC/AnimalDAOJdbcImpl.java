@@ -35,7 +35,7 @@ public class AnimalDAOJdbcImpl implements AnimalDAO {
             + " WHERE CodeAnimal=?";
 
 
-    private static final String DELETE_ANIMAL = "DELETE FROM ANIMAUX WHERE CodeAnimal=?";
+    private static final String DELETE_ANIMAL = "UPDATE ANIMAUX SET Archive = 1 where CodeAnimal = ?";
 
     @Override
     public Animal selectById(int id) throws DALException {

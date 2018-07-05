@@ -86,6 +86,20 @@ public class AnimalManager {
         }
     }
 
+    public void deleteAnimal(Animal animal) throws BLLException {
+
+        validerAnimal(animal);
+
+        try {
+            daoAnimal.delete(animal);
+            //listePersonnels.remove(personnel);
+        } catch (DALException e) {
+            throw new BLLException("Erreur lors de l'archivage en BDD du personnel.");
+        }
+
+
+    }
+
     /* ******* METHODE DE VERIFICATION ******* */
 
     /**
