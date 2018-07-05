@@ -35,7 +35,7 @@ public class ClientDAOJdbcImpl implements ClientDAO {
     public static final String UPDATE = " UPDATE CLIENTS SET NomClient=?, PrenomClient=?, Adresse1=?, Adresse2=?, CodePostal=?, Ville=?, "
             + "NumTel=?, Assurance=?, Email=?, Remarque=?, Archive=? WHERE CodeClient=?";
 
-    public static final String DELETE = "DELETE FROM CLIENTS WHERE CodeClient=?";
+    public static final String DELETE = "UPDATE CLIENTS SET Archive = 1 where CodeClient = ?";
 
     @Override
     public Client selectById(int id) throws DALException {

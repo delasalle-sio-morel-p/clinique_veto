@@ -46,6 +46,7 @@ public class ClientManager {
             client.setNomClient(client.getNomClient().toUpperCase());
             client.setVille(client.getVille().toUpperCase());
             daoClients.insert(client);
+            listeClients.add(client);
         } catch (DALException e) {
             throw new BLLException("Erreur lors de l'insertion en BDD du client.");
         }
@@ -60,6 +61,20 @@ public class ClientManager {
         } catch (DALException e) {
             throw new BLLException("Erreur lors de la mise à jour en BDD du client.");
         }
+    }
+
+    public void deleteClient(Client client) throws BLLException {
+
+        validerClient(client);
+
+        try {
+            daoClients.delete(client);
+            listeClients.remove(client);
+        } catch (DALException e) {
+            throw new BLLException("Erreur lors de l'archivage en BDD du personnel.");
+        }
+
+
     }
 
     private void validerClient(Client client) throws BLLException {
