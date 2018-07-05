@@ -98,24 +98,25 @@ public class GestionPersonnelController {
         System.out.println(comboboxRole.getSelectedItem());
         System.out.println(passwordFieldMDP.getText());
         Role role = (Role) comboboxRole.getSelectedItem();
-        Personnel personne = null;
+        Personnel personneAjoute = null;
 
         switch (role.getLibelle()) {
             case "Administrateur":
-                personne = new Admin(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "adm", false);
+                personneAjoute = new Admin(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "adm", false);
                 break;
             case "Secrétaire":
-                personne = new Secretaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "sec", false);
+                personneAjoute = new Secretaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "sec", false);
                 break;
             default:
-                personne = new Veterinaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "vet", false);
+                personneAjoute = new Veterinaire(textboxNom.getText(), textFieldPrenom.getText(), passwordFieldMDP.getText(), "vet", false);
                 break;
         }
 
         try {
-            manager.addPersonnel(personne);
-            System.out.println(personne + " ajouté à la base de donnée");
+            manager.addPersonnel(personneAjoute);
+            System.out.println(personneAjoute + " ajouté à la base de donnée");
             ajouterPersonnel.setVisible(false);
+            refreshTable(tablePersonnels, personneAjoute);
         } catch (BLLException e) {
             e.printStackTrace();
         }
@@ -131,6 +132,7 @@ public class GestionPersonnelController {
                 manager.deletePersonnel(personneSelectionne);
                 System.out.println(personneSelectionne + " archivé");
                 supprimerPersonnel.setVisible(false);
+                refreshTable(tablePersonnels, personneSelectionne);
             } catch (BLLException e) {
                 e.printStackTrace();
             }
@@ -180,12 +182,22 @@ public class GestionPersonnelController {
     }
 
     public void refreshTable(JTable table){
+        System.out.println(getListePersonnels());
+        System.out.println(listePersonnels);
         modele = new TablePersonnelModel(getListePersonnels());
         table.setModel(modele);
-        ecranAccueil.remove(affichageEcranGestionPersonnel());
-        ecranAccueil.add(affichageEcranGestionPersonnel());
         modele.fireTableDataChanged();
-        ecranAccueil.repaint();
-        ecranAccueil.revalidate();
+    }
+    public void refreshTable(JTable table, Personnel personnel){
+        System.out.println(listePersonnels);
+        System.out.println(personnel);
+        if(listePersonnels.contains(personnel))
+            listePersonnels.remove(personnel);
+        else
+            listePersonnels.add(personnel);
+        System.out.println(listePersonnels);
+        modele = new TablePersonnelModel(listePersonnels);
+        table.setModel(modele);
+        modele.fireTableDataChanged();
     }
 }

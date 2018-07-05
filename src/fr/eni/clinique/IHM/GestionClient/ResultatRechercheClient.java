@@ -31,7 +31,7 @@ public class ResultatRechercheClient extends JDialog {
         dialogPane = new JPanel();
         contentPanel = new JPanel();
         scrollPane1 = new JScrollPane();
-        table1 = new JTable();
+        tableClients = new JTable();
         boutonSelectionner = new JButton();
         buttonBar = new JPanel();
         toolBar1 = new JToolBar();
@@ -56,7 +56,7 @@ public class ResultatRechercheClient extends JDialog {
 
                 //======== scrollPane1 ========
                 {
-                    scrollPane1.setViewportView(table1);
+                    scrollPane1.setViewportView(tableClients);
                 }
 
                 //---- boutonSelectionner ----
@@ -116,6 +116,7 @@ public class ResultatRechercheClient extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 try {
                     gestionClientController.rechercherClient(textFieldRechercher.getText());
+
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -128,7 +129,7 @@ public class ResultatRechercheClient extends JDialog {
     private JPanel dialogPane;
     private JPanel contentPanel;
     private JScrollPane scrollPane1;
-    private JTable table1;
+    private JTable tableClients;
     private JButton boutonSelectionner;
     private JPanel buttonBar;
     private JToolBar toolBar1;

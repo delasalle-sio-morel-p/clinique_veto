@@ -33,6 +33,7 @@ public class AjouterPersonnel extends JDialog {
     public AjouterPersonnel(Frame owner, JTable tablePersonnels, GestionPersonnelController gestionPersonnelController) {
         super(owner);
         this.gestionPersonnelController = gestionPersonnelController;
+        this.table = tablePersonnels;
         initComponents();
     }
 

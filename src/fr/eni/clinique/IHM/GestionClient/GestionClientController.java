@@ -3,7 +3,6 @@ package fr.eni.clinique.IHM.GestionClient;
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.GestionClient.GestionClientManager;
 import fr.eni.clinique.BO.Client;
-import fr.eni.clinique.BO.Personnel;
 import fr.eni.clinique.IHM.Animaux.AjouterAnimal;
 import fr.eni.clinique.IHM.Animaux.SupprimerAnimal;
 import fr.eni.clinique.IHM.Connexion.AccueilController;
@@ -11,6 +10,7 @@ import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 import fr.eni.clinique.IHM.GestionPersonnel.TablePersonnelModel;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GestionClientController {
@@ -22,11 +22,12 @@ public class GestionClientController {
     private SupprimerClient supprimerClient;
     private boolean isPresent;
     private Client clientSelectionne;
-    private TablePersonnelModel modele;
+    private TableClientModel modele;
 
     private GestionClientManager manager;
 
     private List<Client> listeClients;
+    private ArrayList<Client> listeClientsSelectionne;
 
     private static GestionClientController instance;
 
@@ -80,9 +81,13 @@ public class GestionClientController {
         supprimerClient.setVisible(true);
     }
 
-    public void rechercherClient(String nom) {
-//        modele = new TablePersonnelModel(getListeClients());
+    public TableClientModel rechercherClient(String nom) {
+        listeClientsSelectionne = new ArrayList<>();
+        listeClientsSelectionne.add(clientSelectionne(nom));
+        modele = new TableClientModel(getListeClients());
         System.out.println(clientSelectionne(nom));
+        System.out.println(listeClientsSelectionne);
+        return modele;
     }
     public void annuler() {
         if (ajouterClient != null)
