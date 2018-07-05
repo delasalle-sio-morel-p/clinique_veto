@@ -43,6 +43,8 @@ public class GestionClientManager {
     public void addClient(Client client) throws BLLException {
 
         try {
+            client.setNomClient(client.getNomClient().toUpperCase());
+            client.setVille(client.getVille().toUpperCase());
             daoClients.insert(client);
         } catch (DALException e) {
             throw new BLLException("Erreur lors de l'insertion en BDD du client.");
@@ -52,6 +54,8 @@ public class GestionClientManager {
 
     public void updateClient(Client client) throws BLLException {
         try {
+            client.setNomClient(client.getNomClient().toUpperCase());
+            client.setVille(client.getVille().toUpperCase());
             daoClients.update(client);
         } catch (DALException e) {
             throw new BLLException("Erreur lors de la mise à jour en BDD du client.");
