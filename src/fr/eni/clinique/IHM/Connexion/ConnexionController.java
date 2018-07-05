@@ -47,7 +47,7 @@ public class ConnexionController {
 
 
     public void connexion(JTextField txtNom, JPasswordField mdp) throws BLLException {
-//        GestionPersonnelManager.verificationMotPasse();
+//        PersonnelManager.verificationMotPasse();
         System.out.println("Tentative de connexion");
         System.out.println(txtNom.getText());
         System.out.println(mdp.getText());

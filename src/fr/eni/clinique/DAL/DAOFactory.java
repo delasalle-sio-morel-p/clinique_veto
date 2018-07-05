@@ -6,7 +6,7 @@ public class DAOFactory {
 
     public static PersonnelDAO getPersonnelDAO(){
 
-        return new GestionPersonnelDAOJdbcImpl();
+        return new PersonnelDAOJdbcImpl();
 
     }
 

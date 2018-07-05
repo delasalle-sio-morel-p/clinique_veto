@@ -8,13 +8,13 @@ import fr.eni.clinique.DAL.DAOFactory;
 
 import java.util.List;
 
-public class GestionClientManager {
+public class ClientManager {
 
     private ClientDAO daoClients;
     private List<Client> listeClients;
-    private static GestionClientManager instance = null;
+    private static ClientManager instance = null;
 
-    private GestionClientManager() throws BLLException {
+    private ClientManager() throws BLLException {
         daoClients = DAOFactory.getClientDAO();
         // Charger la liste de personnels
         try {
@@ -24,9 +24,9 @@ public class GestionClientManager {
         }
     }
 
-    public static GestionClientManager getInstance() throws BLLException {
+    public static ClientManager getInstance() throws BLLException {
         if (instance == null) {
-            instance = new GestionClientManager();
+            instance = new ClientManager();
         }
         return instance;
     }

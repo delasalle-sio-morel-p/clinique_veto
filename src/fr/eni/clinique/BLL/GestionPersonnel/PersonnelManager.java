@@ -13,15 +13,15 @@ import fr.eni.clinique.DAL.DALException;
 import fr.eni.clinique.DAL.PersonnelDAO;
 import fr.eni.clinique.DAL.RoleDAO;
 
-public class GestionPersonnelManager {
+public class PersonnelManager {
 
     private PersonnelDAO daoPersonnels;
     private RoleDAO daoRoles;
     private List<Personnel> listePersonnels;
     private List<Role> listeRolesPersonnels;
-    private static GestionPersonnelManager instance = null;
+    private static PersonnelManager instance = null;
 
-    private GestionPersonnelManager() throws BLLException {
+    private PersonnelManager() throws BLLException {
         daoPersonnels = DAOFactory.getPersonnelDAO();
         daoRoles = DAOFactory.getRoleDAO();
         // Charger la liste de personnels
@@ -33,9 +33,9 @@ public class GestionPersonnelManager {
         }
     }
 
-    public static GestionPersonnelManager getInstance() throws BLLException {
+    public static PersonnelManager getInstance() throws BLLException {
         if (instance == null) {
-            instance = new GestionPersonnelManager();
+            instance = new PersonnelManager();
         }
         return instance;
     }

@@ -12,7 +12,7 @@ import fr.eni.clinique.BO.*;
 import fr.eni.clinique.DAL.DALException;
 import fr.eni.clinique.DAL.PersonnelDAO;
 
-public class GestionPersonnelDAOJdbcImpl implements PersonnelDAO {
+public class PersonnelDAOJdbcImpl implements PersonnelDAO {
 
     private static final String SELECT_BY_ID = "SELECT * FROM Personnels WHERE CodePers=?";
 

@@ -1,7 +1,7 @@
 package fr.eni.clinique.IHM.GestionPersonnel;
 
 import fr.eni.clinique.BLL.BLLException;
-import fr.eni.clinique.BLL.GestionPersonnel.GestionPersonnelManager;
+import fr.eni.clinique.BLL.GestionPersonnel.PersonnelManager;
 import fr.eni.clinique.BO.*;
 import fr.eni.clinique.IHM.Connexion.AccueilController;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
@@ -16,7 +16,7 @@ public class GestionPersonnelController {
     private SupprimerPersonnel supprimerPersonnel;
     private ReinitialiserMDP reinitialiserMDP;
 
-    private GestionPersonnelManager manager;
+    private PersonnelManager manager;
 
     private List<Personnel> listePersonnels;
     private List<Role> listeRolesPersonnels;
@@ -31,7 +31,7 @@ public class GestionPersonnelController {
     //Constructeur
     private GestionPersonnelController() {
         try {
-            manager = GestionPersonnelManager.getInstance();
+            manager = PersonnelManager.getInstance();
 
             //Initialisation du catalogue en mémoire
             listePersonnels = manager.getListePersonnels();

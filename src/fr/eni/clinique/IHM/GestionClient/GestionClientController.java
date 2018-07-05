@@ -1,13 +1,11 @@
 package fr.eni.clinique.IHM.GestionClient;
 
 import fr.eni.clinique.BLL.BLLException;
-import fr.eni.clinique.BLL.GestionClient.GestionClientManager;
+import fr.eni.clinique.BLL.GestionClient.ClientManager;
 import fr.eni.clinique.BO.Client;
 import fr.eni.clinique.IHM.Animaux.AjouterAnimal;
-import fr.eni.clinique.IHM.Animaux.SupprimerAnimal;
 import fr.eni.clinique.IHM.Connexion.AccueilController;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
-import fr.eni.clinique.IHM.GestionPersonnel.TablePersonnelModel;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -24,7 +22,7 @@ public class GestionClientController {
     private Client clientSelectionne;
     private TableClientModel modele;
 
-    private GestionClientManager manager;
+    private ClientManager manager;
 
     private List<Client> listeClients;
     private ArrayList<Client> listeClientsSelectionne;
@@ -35,7 +33,7 @@ public class GestionClientController {
     //Constructeur
     private GestionClientController() {
         try {
-            manager = GestionClientManager.getInstance();
+            manager = ClientManager.getInstance();
 
             //Initialisation du catalogue en mémoire
             listeClients = manager.getListeClients();
