@@ -5,23 +5,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni.clinique.BO.Animal;
+import fr.eni.clinique.BO.Espece;
+import fr.eni.clinique.BO.Race;
 import fr.eni.clinique.DAL.AnimalDAO;
 import fr.eni.clinique.DAL.DAOFactory;
 import fr.eni.clinique.DAL.DALException;
+import fr.eni.clinique.DAL.EspeceDAO;
 
 public class AnimalManager {
 
     /* ******* SINGLETON ******* */
 
     private AnimalDAO daoAnimal;
-
+    private EspeceDAO daoEspece;
+    private List<Animal> listeAnimaux;
+    private List<Espece> listeEspeces;
+    private List<String> listeSexes = new ArrayList<String>(){{ add("F"); add("M"); add("H"); }};
     private static AnimalManager instance = null;
 
-    private AnimalManager() {
+    private AnimalManager() throws BLLException {
+
         daoAnimal = DAOFactory.getAnimalDAO();
+        daoEspece = DAOFactory.getEspeceDAO();
+        try {
+            listeAnimaux = daoAnimal.selectAll();
+            listeEspeces = daoEspece.selectAll();
+        } catch (DALException e) {
+            throw new BLLException("Echec du chargement de la liste des animaux et des especes - ", e);
+        }
     }
 
-    public static AnimalManager getInstance() {
+    public static AnimalManager getInstance() throws BLLException {
         if (instance == null) {
             instance = new AnimalManager();
         }
@@ -30,13 +44,17 @@ public class AnimalManager {
 
     /* ******* METHODES DU MANAGER ******* */
 
-    /**
-     * Méthode qui permet d'ajouter un animal dans la base
-     * si l'ensemble de ses informations sont correctes
-     *
-     * @param animal
-     * @throws BLLException
-     */
+    public List<Animal> getListeAnimaux() throws BLLException {
+        return listeAnimaux;
+    }
+
+    public List<Espece> getListeEspeces() throws BLLException {
+        return listeEspeces;
+    }
+
+    public List<String> getListeSexe() throws BLLException{
+        return listeSexes;
+    }
     public void addAnimal(Animal animal) throws BLLException {
         this.validerAnimal(animal);
 
@@ -56,7 +74,7 @@ public class AnimalManager {
      * @throws BLLException
      */
     public List<Animal> selectAnimaux(int codeClient) throws BLLException {
-        List<Animal> animauxDuClient = new ArrayList<>();
+        List<Animal> animauxDuClient;
 
         try {
             animauxDuClient = daoAnimal.selectAnimauxByClient(codeClient);
@@ -68,12 +86,6 @@ public class AnimalManager {
         return animauxDuClient;
     }
 
-    /**
-     * Méthode qui met à jour un animal
-     *
-     * @param animal
-     * @throws BLLException
-     */
     public void updateAnimal(Animal animal) throws BLLException {
 
         this.validerAnimal(animal);
@@ -100,14 +112,6 @@ public class AnimalManager {
 
     }
 
-    /* ******* METHODE DE VERIFICATION ******* */
-
-    /**
-     * Vérifie que les attributs de l'animal passé en paramètre sont valides
-     *
-     * @param animal
-     * @throws BLLException
-     */
     private void validerAnimal(Animal animal) throws BLLException {
         verificationNomAnimal(animal);
         verificationCouleur(animal);
@@ -116,8 +120,6 @@ public class AnimalManager {
         verificationRace(animal);
         verificationTatouage(animal);
     }
-
-    /* ******* SOUS-METHODES DE VERIFICATION ******* */
 
     private void verificationNomAnimal(Animal animal) throws BLLException {
         if (animal.getNomAnimal() == null || animal.getNomAnimal().trim().isEmpty()) {

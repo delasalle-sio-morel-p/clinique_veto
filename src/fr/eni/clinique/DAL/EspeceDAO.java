@@ -6,6 +6,6 @@ import fr.eni.clinique.BO.Race;
 
 public interface EspeceDAO extends DAO<Espece> {
 
-    List<Race> selectEspByRace(String espece) throws DALException;
+    List<Race> selectRaceByEsp(String espece) throws DALException;
 
 }

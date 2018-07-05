@@ -21,7 +21,7 @@ public class EspeceDAOJdbcImpl implements EspeceDAO {
 
 
     @Override
-    public List<Race> selectEspByRace(String espece) throws DALException {
+    public List<Race> selectRaceByEsp(String espece) throws DALException {
         Connection cnx;
         ResultSet rs;
         List<Race> racesSelect = new ArrayList<>();
@@ -36,7 +36,7 @@ public class EspeceDAOJdbcImpl implements EspeceDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new DALException("selectEspByRace");
+            throw new DALException("selectRaceByEsp");
         }
 
         return racesSelect;
@@ -64,7 +64,7 @@ public class EspeceDAOJdbcImpl implements EspeceDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new DALException("selectEspByRace");
+            throw new DALException("selectRaceByEsp");
         }
         return especesSelect;
     }

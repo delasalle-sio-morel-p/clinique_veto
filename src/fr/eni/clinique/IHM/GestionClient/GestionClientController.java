@@ -1,9 +1,13 @@
 package fr.eni.clinique.IHM.GestionClient;
 
+import fr.eni.clinique.BLL.AnimalManager;
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.GestionClient.ClientManager;
+import fr.eni.clinique.BO.Animal;
 import fr.eni.clinique.BO.Client;
+import fr.eni.clinique.BO.Espece;
 import fr.eni.clinique.IHM.Animaux.AjouterAnimal;
+import fr.eni.clinique.IHM.Animaux.SupprimerAnimal;
 import fr.eni.clinique.IHM.Connexion.AccueilController;
 import fr.eni.clinique.IHM.Connexion.EcranAccueil;
 
@@ -27,6 +31,14 @@ public class GestionClientController {
     private Client clientSelectionne;
     private  boolean isPresent;
 
+    private AjouterAnimal ajouterAnimal;
+    private SupprimerAnimal supprimerAnimal;
+
+    private AnimalManager animalManager;
+
+    private List<Animal> listeAnimaux;
+    private List<Espece> listeEspeces;
+    private List<String> listeSexes;
     private static GestionClientController instance;
 
 
@@ -34,6 +46,12 @@ public class GestionClientController {
     private GestionClientController() {
         try {
             manager = ClientManager.getInstance();
+            animalManager = AnimalManager.getInstance();
+
+            //Initialisation du catalogue en mémoire
+            listeAnimaux = animalManager.getListeAnimaux();
+            listeEspeces = animalManager.getListeEspeces();
+            listeSexes = animalManager.getListeSexe();
 
             //Initialisation du catalogue en mémoire
             listeClients = manager.getListeClients();
@@ -45,6 +63,14 @@ public class GestionClientController {
 
     public List<Client> getListeClients() {
         return listeClients;
+    }
+
+    public List<Espece> getListeEspeces() {
+        return listeEspeces;
+    }
+
+    public List<String> getListeSexes() {
+        return listeSexes;
     }
 
     //Méthodes

@@ -36,13 +36,13 @@ public class AjouterAnimal extends JDialog {
         labelCodeValeur = new JLabel();
         labelNom = new JLabel();
         textFieldNom = new JTextField();
-        comboBoxGenre = new JComboBox();
+        comboBoxGenre = new JComboBox(gestionClientController.getListeSexes().toArray());
         labelCouleur = new JLabel();
         textFieldCouleur = new JTextField();
         labelEspece = new JLabel();
-        comboBoxEspece = new JComboBox();
+        comboBoxEspece = new JComboBox(gestionClientController.getListeEspeces().toArray());
         labelRace = new JLabel();
-        comboBoxRace = new JComboBox();
+        comboBoxRace = new JComboBox(gestionClientController.getListeEspeces().toArray());
         labelTatouage = new JLabel();
         textFieldTatouage = new JTextField();
         buttonBar = new JPanel();

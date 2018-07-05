@@ -37,7 +37,7 @@ public class EspeceManager {
         List<Race> racesSelect= new ArrayList<>();
 
         try {
-            racesSelect = daoEspece.selectEspByRace(espece);
+            racesSelect = daoEspece.selectRaceByEsp(espece);
 
         } catch (DALException e) {
             e.printStackTrace();
