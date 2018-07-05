@@ -3,6 +3,7 @@ package fr.eni.clinique.IHM.Connexion;
 import fr.eni.clinique.BLL.BLLException;
 import fr.eni.clinique.BLL.Connexion.ConnexionManager;
 import fr.eni.clinique.BO.Personnel;
+import fr.eni.clinique.BO.Role;
 import fr.eni.clinique.IHM.GestionPersonnel.GestionPersonnelController;
 
 import javax.swing.*;
@@ -19,6 +20,7 @@ public class ConnexionController {
     private static ConnexionController instance;
 
     private boolean isPresent;
+    private Personnel user;
 
     //Constructeur
     private ConnexionController() {
@@ -56,13 +58,14 @@ public class ConnexionController {
         for (Personnel personne : listePersonnels) {
 
             if (personne.getNom().equals(txtNom.getText().toUpperCase().trim()) && personne.getMotPasse().equals(mdp.getText())) {
+                user = personne;
                 isPresent = true;
                 break;
             }
         }
         if (isPresent) {
             System.out.println("ok");
-            callEcranAccueil();
+            callEcranAccueil(user.getRole());
             ecranConnexion.setVisible(false);
         } else
             System.out.println("wrong credentials");
@@ -74,7 +77,7 @@ public class ConnexionController {
         ecranConnexion.setVisible(true);
     }
 
-    public void callEcranAccueil(){
-        AccueilController.get().affichageEcranAccueil();
+    public void callEcranAccueil(String role){
+        AccueilController.get().affichageEcranAccueil(role);
     }
 }

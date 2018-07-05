@@ -4,6 +4,9 @@
 
 package fr.eni.clinique.IHM.Connexion;
 
+import fr.eni.clinique.BO.Admin;
+import fr.eni.clinique.BO.Secretaire;
+import fr.eni.clinique.BO.Veterinaire;
 import fr.eni.clinique.IHM.GestionClient.GestionClientController;
 import fr.eni.clinique.IHM.GestionPersonnel.GestionPersonnelController;
 
@@ -57,6 +60,23 @@ public class EcranAccueil extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         initComponents();
+    }
+
+    public EcranAccueil(AccueilController accueilController, String role) {
+        this.gestionClientController = gestionClientController;
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setTitle("Clinique vétérinaire");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        switch (role) {
+            case "adm":
+                break;
+            case "vet":
+                break;
+            default:
+                break;
+        }
+        initComponents(role);
     }
 
     private void initComponents() {
@@ -129,6 +149,91 @@ public class EcranAccueil extends JFrame {
                 menuGestionPersonnel.setText("Gestion du personnel");
             }
             menuBar.add(menuGestionPersonnel);
+        }
+        setJMenuBar(menuBar);
+        pack();
+        setLocationRelativeTo(getOwner());
+
+        // JFormDesigner - End of component initialization  //GEN-END:initComponents
+    }
+    private void initComponents(String role) {
+        // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
+        menuBar = new JMenuBar();
+        menuFermer = new JMenu();
+        menuItemDeconnexion = new JMenuItem();
+        menuItemfermer = new JMenuItem();
+        menuRDV = new JMenu();
+        menuItemPriseRDV = new JMenuItem();
+        menuItemClient = new JMenuItem();
+        menuAgenda = new JMenu();
+        menuGestionPersonnel = new JMenu();
+
+        //======== this ========
+        Container contentPane = getContentPane();
+        contentPane.setLayout(new GridBagLayout());
+        ((GridBagLayout)contentPane.getLayout()).columnWidths = new int[] {0, 0, 0, 0};
+        ((GridBagLayout)contentPane.getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0};
+        ((GridBagLayout)contentPane.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
+        ((GridBagLayout)contentPane.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+
+        //======== listener =======
+        actionBtnDeconnexion();
+        actionMenuGestionPersonnel();
+        actionMenuClient();
+
+        //======== menuBar ========
+        {
+
+            //======== menuFermer ========
+            {
+                menuFermer.setText("Fichier");
+                menuFermer.setPreferredSize(new Dimension(100, 21));
+
+                //---- Deconnexion ----
+                menuItemDeconnexion.setText("D\u00e9connexion");
+                menuFermer.add(menuItemDeconnexion);
+
+                //---- Fermer ----
+                menuItemfermer.setText("Fermer");
+                menuFermer.add(menuItemfermer);
+            }
+            menuBar.add(menuFermer);
+
+            //======== menuRDV ========
+            {
+                menuRDV.setText("Gestion des rendez-vous");
+                menuRDV.setPreferredSize(new Dimension(160, 21));
+
+                //---- PriseRDV ----
+                menuItemPriseRDV.setText("Prise de rendez-vous");
+                menuRDV.add(menuItemPriseRDV);
+
+                //---- menuItem2 ----
+                menuItemClient.setText("Gestion des clients");
+                menuRDV.add(menuItemClient);
+            }
+            if(role.equals("adm") || role.equals("sec")) {
+                menuBar.add(menuRDV);
+            }
+
+            //======== Agenda ========
+            {
+                menuAgenda.setText("Agenda");
+            }
+            if(role.equals("adm") || role.equals("vet")){
+                menuBar.add(menuAgenda);
+            }
+
+
+            //======== GestionPersonnel ========
+            {
+                menuGestionPersonnel.setText("Gestion du personnel");
+            }
+            if(role.equals("adm")){
+                menuBar.add(menuGestionPersonnel);
+            }
+
         }
         setJMenuBar(menuBar);
         pack();
