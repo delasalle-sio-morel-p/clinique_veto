@@ -23,6 +23,7 @@ public class GestionClientController {
     private AjouterAnimal ajoutAnimal;
     private SupprimerClient supprimerClient;
     private TableClientModel modele;
+    private TableAnimalModel modeleAnimal;
 
     private ClientManager manager;
 
@@ -36,6 +37,7 @@ public class GestionClientController {
 
     private AnimalManager animalManager;
 
+    private ArrayList<Animal> listeAnimauxClient;
     private List<Animal> listeAnimaux;
     private List<Espece> listeEspeces;
     private List<String> listeSexes;
@@ -65,6 +67,10 @@ public class GestionClientController {
         return listeClients;
     }
 
+    public List<Animal> getListeAnimaux() {
+        return listeAnimaux;
+    }
+
     public List<Espece> getListeEspeces() {
         return listeEspeces;
     }
@@ -87,9 +93,9 @@ public class GestionClientController {
         return ecranGestionClient;
     }
 
-    public void afficherRechercherClient(JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille) {
+    public void afficherRechercherClient(JTable tableAnimaux, JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille) {
         System.out.println("rechercher client");
-        rechercherClient = new ResultatRechercheClient(AccueilController.get().getEcranAccueil(), textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille, this);
+        rechercherClient = new ResultatRechercheClient(AccueilController.get().getEcranAccueil(), tableAnimaux, textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille, this);
         rechercherClient.setVisible(true);
     }
 
@@ -114,8 +120,9 @@ public class GestionClientController {
         System.out.println(listeClientsSelectionne);
     }
 
-    public Client selectionnerClient(JTable tableClients, JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille) {
+    public Client selectionnerClient(JTable tableClients, JTable tableAnimaux, JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille) {
         clientSelectionne = new Client();
+        listeAnimauxClient = new ArrayList<>();
         int ligneSelectionne = tableClients.getSelectedRow();
         System.out.println("selectionner client");
         if (ligneSelectionne != -1) {
@@ -132,6 +139,12 @@ public class GestionClientController {
             textFieldCodePostal.setText(clientSelectionne.getCodePostal());
             textFieldVille.setText(clientSelectionne.getVille());
             System.out.println(clientSelectionne);
+
+            listeAnimauxClient = selectionListeAnimauxClient(clientSelectionne);
+
+            modeleAnimal = new TableAnimalModel(listeAnimauxClient);
+            tableAnimaux.setModel(modeleAnimal);
+            modeleAnimal.fireTableDataChanged();
             rechercherClient.setVisible(false);
             return clientSelectionne;
         }
@@ -177,6 +190,25 @@ public class GestionClientController {
             return clientSelectionne;
         } else
             System.out.println("Client non présent en base de donnée");
+        return null;
+    }
+
+    public ArrayList<Animal> selectionListeAnimauxClient(Client client) {
+        listeAnimauxClient = new ArrayList<>();
+        for (Animal animal : listeAnimaux) {
+            System.out.println(listeClients);
+            System.out.println(listeAnimaux);
+            if (client.getCodeClient() == animal.getCodeClient()) {
+                listeAnimauxClient.add(animal);
+            }
+        }
+
+        if (!listeAnimauxClient.isEmpty()) {
+            System.out.println("Le client sélectionné " + client + " possède un (ou plusieurs) animal");
+            System.out.println(listeAnimauxClient);
+            return listeAnimauxClient;
+        } else
+            System.out.println("Le client sélectionné ne possède pas d'animal");
         return null;
     }
 

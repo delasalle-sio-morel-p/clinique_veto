@@ -25,9 +25,10 @@ public class ResultatRechercheClient extends JDialog {
         initComponents();
     }
 
-    public ResultatRechercheClient(Frame owner, JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille, GestionClientController gestionClientController) {
+    public ResultatRechercheClient(Frame owner, JTable tableAnimaux, JTextField textFieldCode, JTextField textFieldNom, JTextField textFieldPrenom, JTextField textFieldAdresse1, JTextField textFieldAdresse2, JTextField textFieldCodePostal, JTextField textFieldVille, GestionClientController gestionClientController) {
         super(owner);
         this.gestionClientController = gestionClientController;
+        this.tableAnimaux = tableAnimaux;
         this.textFieldCode = textFieldCode;
         this.textFieldNom = textFieldNom;
         this.textFieldPrenom = textFieldPrenom;
@@ -143,7 +144,7 @@ public class ResultatRechercheClient extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionClientController.selectionnerClient(tableClients, textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille);
+                    gestionClientController.selectionnerClient(tableClients, tableAnimaux, textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -157,6 +158,7 @@ public class ResultatRechercheClient extends JDialog {
     private JPanel contentPanel;
     private JScrollPane scrollPane1;
     private JTable tableClients;
+    private JTable tableAnimaux;
     private JButton boutonSelectionner;
     private JPanel buttonBar;
     private JToolBar toolBar1;

@@ -183,7 +183,6 @@ public class GestionPersonnelController {
 
     public void refreshTable(JTable table){
         System.out.println(getListePersonnels());
-        System.out.println(listePersonnels);
         modele = new TablePersonnelModel(getListePersonnels());
         table.setModel(modele);
         modele.fireTableDataChanged();

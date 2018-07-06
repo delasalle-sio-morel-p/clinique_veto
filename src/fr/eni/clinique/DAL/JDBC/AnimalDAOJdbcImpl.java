@@ -27,6 +27,8 @@ public class AnimalDAOJdbcImpl implements AnimalDAO {
             + "FROM Clients as C JOIN Animaux as A ON C.CodeClient = A.CodeClient "
             + "WHERE A.CodeClient=? AND A.Archive=0";
 
+    private static final String SELECT_ALL = "SELECT * FROM Animaux WHERE Archive=0";
+
     private static final String INSERT_ANIMAL = "INSERT INTO Animaux(NomAnimal, Sexe, Couleur, Race, Espece, CodeClient, "
             + "Tatouage, Antecedents, Archive) " + "VALUES (?,?,?,?,?,?,?,?,?)";
 
@@ -86,6 +88,29 @@ public class AnimalDAOJdbcImpl implements AnimalDAO {
 
         return listeAnimaux;
 
+    }
+
+    @Override
+    public List<Animal> selectAll() throws DALException {
+        Connection cnx = null;
+        Statement rqt = null;
+        ResultSet rs = null;
+
+        List<Animal> listeAnimaux = new ArrayList<>();
+
+        try {
+            cnx = JDBCTools.getConnection();
+            rqt = cnx.createStatement();
+            rs = rqt.executeQuery(SELECT_ALL);
+            while (rs.next()) {
+                listeAnimaux.add(this.animalBuilder(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new DALException("Erreur récupération liste complète des animaux");
+        }
+
+        return listeAnimaux;
     }
 
     @Override
@@ -195,12 +220,6 @@ public class AnimalDAOJdbcImpl implements AnimalDAO {
         if (!animal.isArchive())
             rqt.setByte(9, (byte) 0);
 
-    }
-
-    @Override
-    public List<Animal> selectAll() throws DALException {
-        // TODO Auto-generated method stub
-        return null;
     }
 
 }

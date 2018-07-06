@@ -262,7 +262,7 @@ public class EcranGestionClient extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    gestionClientController.afficherRechercherClient(textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille);
+                    gestionClientController.afficherRechercherClient(tableAnimaux,textFieldCode, textFieldNom, textFieldPrenom, textFieldAdresse1, textFieldAdresse2, textFieldCodePostal, textFieldVille);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
