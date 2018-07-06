@@ -55,17 +55,6 @@ public class AnimalManager {
     public List<String> getListeSexe() throws BLLException{
         return listeSexes;
     }
-    public void addAnimal(Animal animal) throws BLLException {
-        this.validerAnimal(animal);
-
-        try {
-            daoAnimal.insert(animal);
-        } catch (DALException e) {
-            e.printStackTrace();
-            throw new BLLException("L'Animal n'a pas pu être ajouté");
-        }
-
-    }
 
     /**
      * Méthode qui renvoie la liste des animaux appartenant à un client
@@ -86,6 +75,19 @@ public class AnimalManager {
         return animauxDuClient;
     }
 
+    public void addAnimal(Animal animal) throws BLLException {
+        this.validerAnimal(animal);
+
+        try {
+            daoAnimal.insert(animal);
+            listeAnimaux.add(animal);
+        } catch (DALException e) {
+            e.printStackTrace();
+            throw new BLLException("L'Animal n'a pas pu être ajouté");
+        }
+
+    }
+
     public void updateAnimal(Animal animal) throws BLLException {
 
         this.validerAnimal(animal);
@@ -104,7 +106,7 @@ public class AnimalManager {
 
         try {
             daoAnimal.delete(animal);
-            //listePersonnels.remove(personnel);
+            listeAnimaux.remove(animal);
         } catch (DALException e) {
             throw new BLLException("Erreur lors de l'archivage en BDD du personnel.");
         }

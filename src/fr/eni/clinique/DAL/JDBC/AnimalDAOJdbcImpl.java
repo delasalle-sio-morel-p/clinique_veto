@@ -151,7 +151,7 @@ public class AnimalDAOJdbcImpl implements AnimalDAO {
             cnx = JDBCTools.getConnection();
             rqt = cnx.prepareStatement(UPDATE_ANIMAL);
             preparerParametres(animal, rqt);
-            rqt.setInt(6, animal.getCodeAnimal());
+            rqt.setInt(10, animal.getCodeAnimal());
             rqt.executeUpdate();
 
         } catch (SQLException e) {
@@ -171,7 +171,6 @@ public class AnimalDAOJdbcImpl implements AnimalDAO {
         try {
             cnx = JDBCTools.getConnection();
             rqt = cnx.prepareStatement(DELETE_ANIMAL);
-            preparerParametres(animal, rqt);
             rqt.setInt(1, animal.getCodeAnimal());
             rqt.executeUpdate();
         } catch (SQLException e) {

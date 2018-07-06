@@ -4,7 +4,11 @@
 
 package fr.eni.clinique.IHM.Animaux;
 
+import fr.eni.clinique.IHM.GestionClient.GestionClientController;
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
@@ -17,9 +21,10 @@ public class SupprimerAnimal extends JDialog {
         super(owner);
         initComponents();
     }
-
-    public SupprimerAnimal(Dialog owner) {
+    public SupprimerAnimal(Frame owner, JTable tableAnimaux, GestionClientController gestionClientController) {
         super(owner);
+        this.gestionClientController = gestionClientController;
+        this.tableAnimaux = tableAnimaux;
         initComponents();
     }
 
@@ -29,13 +34,17 @@ public class SupprimerAnimal extends JDialog {
         dialogPane = new JPanel();
         contentPanel = new JPanel();
         labelSupprimerAnimal = new JLabel();
-        buttonBar = new JPanel();
-        okButton = new JButton();
-        cancelButton = new JButton();
+        panelButtonBar = new JPanel();
+        boutonOK = new JButton();
+        boutonAnnuler = new JButton();
 
         //======== this ========
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
+
+        //======== listener =======
+        actionBtnOK();
+        actionBtnAnnuler();
 
         //======== dialogPane ========
         {
@@ -69,24 +78,24 @@ public class SupprimerAnimal extends JDialog {
 
             //======== buttonBar ========
             {
-                buttonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
-                buttonBar.setLayout(new GridBagLayout());
-                ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
-                ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
+                panelButtonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
+                panelButtonBar.setLayout(new GridBagLayout());
+                ((GridBagLayout)panelButtonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
+                ((GridBagLayout)panelButtonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
                 //---- okButton ----
-                okButton.setText("OK");
-                buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                boutonOK.setText("OK");
+                panelButtonBar.add(boutonOK, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- cancelButton ----
-                cancelButton.setText("Cancel");
-                buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                boutonAnnuler.setText("Cancel");
+                panelButtonBar.add(boutonAnnuler, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
             }
-            dialogPane.add(buttonBar, BorderLayout.SOUTH);
+            dialogPane.add(panelButtonBar, BorderLayout.SOUTH);
         }
         contentPane.add(dialogPane, BorderLayout.CENTER);
         pack();
@@ -94,13 +103,43 @@ public class SupprimerAnimal extends JDialog {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    private void actionBtnOK() {
+        boutonOK.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.supprimerAnimal(tableAnimaux);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void actionBtnAnnuler() {
+        boutonAnnuler.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    gestionClientController.annuler();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Mathieu BOURVIC
     private JPanel dialogPane;
     private JPanel contentPanel;
     private JLabel labelSupprimerAnimal;
-    private JPanel buttonBar;
-    private JButton okButton;
-    private JButton cancelButton;
+    private JPanel panelButtonBar;
+    private JButton boutonOK;
+    private JButton boutonAnnuler;
+    private JTable tableAnimaux;
+    private GestionClientController gestionClientController;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

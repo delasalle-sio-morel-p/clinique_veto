@@ -34,6 +34,7 @@ public class GestionClientController {
 
     private AjouterAnimal ajouterAnimal;
     private SupprimerAnimal supprimerAnimal;
+    private Animal animalSelectionne;
 
     private AnimalManager animalManager;
 
@@ -156,6 +157,10 @@ public class GestionClientController {
             ajouterClient.setVisible(false);
         if (supprimerClient != null)
             supprimerClient.setVisible(false);
+        if (ajouterAnimal != null)
+            ajouterAnimal.setVisible(false);
+        if (supprimerAnimal != null)
+            supprimerAnimal.setVisible(false);
     }
 
     public ArrayList<Client> selectionListeClients(String nom) {
@@ -276,8 +281,8 @@ public class GestionClientController {
     }
 
     public void affichageSupprimerAnimal(JTable tableAnimaux) {
-//        supprimerAnimal = new SupprimerAnimal(AccueilController.get().getEcranAccueil(), this);
-//        supprimerAnimal.setVisible(true);
+        supprimerAnimal = new SupprimerAnimal(AccueilController.get().getEcranAccueil(), tableAnimaux, this);
+        supprimerAnimal.setVisible(true);
     }
 
     public void affichageModifierAnimal(JTable tableAnimaux) {
@@ -285,4 +290,51 @@ public class GestionClientController {
 //        supprimerAnimal.setVisible(true);
     }
 
+    public Animal selectionnerAnimal(String nomAnimal, int codeClient){
+        isPresent = false;
+        animalSelectionne = new Animal();
+        for (Animal animal : listeAnimaux) {
+
+            if (animal.getNomAnimal().equals(nomAnimal) && animal.getCodeClient() == codeClient) {
+                isPresent = true;
+                animalSelectionne = animal;
+                break;
+            }
+        }
+        if (isPresent) {
+            System.out.println("Animal présent en base de donnée :");
+            System.out.println(animalSelectionne);
+            return animalSelectionne;
+        } else
+            System.out.println("Animal non présent en base de donnée");
+        return null;
+    }
+
+    public void supprimerAnimal(JTable tableAnimaux) {
+        int ligneSelectionne = tableAnimaux.getSelectedRow();
+        if (ligneSelectionne != -1) {
+            String nomAnimalSelectionne = (String) tableAnimaux.getValueAt(ligneSelectionne, 0);
+            int codeClientAnimalSelectionne = (int) tableAnimaux.getValueAt(ligneSelectionne, 5);
+            System.out.println(tableAnimaux.getValueAt(ligneSelectionne, 0));
+            System.out.println(tableAnimaux.getValueAt(ligneSelectionne, 5));
+            animalSelectionne = selectionnerAnimal(nomAnimalSelectionne, codeClientAnimalSelectionne);
+            System.out.println("Animal sélectionné : " + animalSelectionne);
+            try {
+                animalManager.deleteAnimal(animalSelectionne);
+                System.out.println(animalSelectionne + " archivé");
+                supprimerAnimal.setVisible(false);
+                refreshTable(tableAnimaux);
+            } catch (BLLException e) {
+                e.printStackTrace();
+            }
+        } else
+            System.out.print("Pas de ligne sélectionnée");
+    }
+
+    public void refreshTable(JTable table){
+        System.out.println(getListeAnimaux());
+        modeleAnimal = new TableAnimalModel(getListeAnimaux());
+        table.setModel(modele);
+        modeleAnimal.fireTableDataChanged();
+    }
 }
