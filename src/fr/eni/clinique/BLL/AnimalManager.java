@@ -20,7 +20,7 @@ public class AnimalManager {
     private EspeceDAO daoEspece;
     private List<Animal> listeAnimaux;
     private List<Espece> listeEspeces;
-    private List<String> listeSexes = new ArrayList<String>(){{ add("Female"); add("Male"); add("Hermaphrodite"); }};
+    private List<String> listeSexes = new ArrayList<String>(){{ add("F"); add("M"); add("H"); }};
     private static AnimalManager instance = null;
 
     private AnimalManager() throws BLLException {
